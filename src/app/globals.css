@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: linear-gradient(
+    134deg,
+    theme('colors.primary.500') 8.33%,
+    theme('colors.black') 97.92%
+  );
+}
