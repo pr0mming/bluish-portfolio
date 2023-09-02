@@ -11,6 +11,7 @@
       "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"]
     }
   ],
+  "ignorePatterns": ["!.storybook"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"

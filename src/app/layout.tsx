@@ -1,3 +1,4 @@
+import Navbar from '@/components/layout/navbar/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} custom-background-primary`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
