@@ -1,7 +1,12 @@
-import Navbar from '@/components/layout/navbar/Navbar'
+// Styles
 import './globals.css'
+
+// Next
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+
+// Components
+import Navbar from '@src/components/layout/navbar/Navbar'
 
 const inter = Montserrat({ subsets: ['latin'] })
 
