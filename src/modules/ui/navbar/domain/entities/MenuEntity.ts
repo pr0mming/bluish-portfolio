@@ -3,7 +3,7 @@ import { MenuEnum } from '../enums/MenuEnum'
 type MenuEntity = {
   type: MenuEnum
   text: string
-  redirect?: string
+  redirect: string
   icon: string
 }
 

@@ -65,6 +65,9 @@ const config: Config = {
           900: '#787878',
           950: '#6A6A6A'
         }
+      },
+      boxShadow: {
+        'sm-accent': `5px 5px 0px 0px theme('colors.accent.DEFAULT')`
       }
     }
   },

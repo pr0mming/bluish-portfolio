@@ -8,9 +8,7 @@ export default {
   argTypes: {}
 } as Meta<typeof Navbar>
 
-const Story: StoryFn<typeof Navbar> = (arguments_) => (
-  <Navbar {...(arguments_ as INavbarProps)} />
-)
+const Story: StoryFn<typeof Navbar> = (arguments_) => <Navbar {...arguments_} />
 
 export const Component = Story.bind({})
 

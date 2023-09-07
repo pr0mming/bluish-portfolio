@@ -19,7 +19,7 @@ export const textMotion = {
   hover: {
     color: whiteColor['DEFAULT'],
     opacity: 1,
-    x: 10,
+    x: 26,
     transition: {
       duration: 0.4,
       type: 'tween',
@@ -38,7 +38,7 @@ export const slashMotion = {
   hover: {
     color: whiteColor['DEFAULT'],
     opacity: 1,
-    x: -10,
+    x: 12,
     transition: {
       duration: 0.4,
       type: 'tween',

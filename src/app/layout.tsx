@@ -6,9 +6,9 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
 // Components
-import Navbar from '@src/components/layout/navbar/Navbar'
+import Menu from '@src/components/layout/menu/Menu'
 
-const inter = Montserrat({ subsets: ['latin'] })
+const font = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Julián Bernal | @pr0mming',
@@ -22,8 +22,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} custom-background-primary`}>
-        <Navbar />
+      <body className={`${font.className} custom-background-primary`}>
+        <Menu />
         {children}
       </body>
     </html>
