@@ -3,9 +3,6 @@
 // Next
 import Image from 'next/image'
 
-// React
-import { Fragment } from 'react'
-
 // Modules
 import MenuEntity from '@src/modules/ui/navbar/domain/entities/MenuEntity'
 
@@ -35,7 +32,7 @@ export interface INavbarProps {
 const Navbar = ({ menus, isOpenSidebar, setOpenSidebar }: INavbarProps) => {
   return (
     <nav className="block bg-primary border-b-[1px] border-b-accent border-opacity-70">
-      <div className="max-w-screen-xl flex flex-nowrap items-center justify-between mx-auto px-4 py-6">
+      <div className="w-full flex flex-nowrap items-center justify-between mx-auto px-4 py-6">
         <a
           href="https://google.com"
           className="flex flex-1 justify-start items-center px-5 lg:px-10"
@@ -60,17 +57,15 @@ const Navbar = ({ menus, isOpenSidebar, setOpenSidebar }: INavbarProps) => {
         <div className="hidden w-full md:flex justify-center md:w-auto">
           <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row xl:space-x-8 md:mt-0 md:p-0">
             {menus.map((menu) => (
-              <Fragment key={menu.type}>
-                <li>
-                  <AnimatedNavLink
-                    text={menu.text}
-                    path={menu.redirect}
-                    className="relative inline-block w-full p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
-                  >
-                    <FontAwesomeIcon icon={['fas', menu.icon as IconName]} />
-                  </AnimatedNavLink>
-                </li>
-              </Fragment>
+              <li key={menu.type}>
+                <AnimatedNavLink
+                  text={menu.text}
+                  path={menu.path}
+                  className="relative inline-block w-full p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
+                >
+                  <FontAwesomeIcon icon={['fas', menu.icon as IconName]} />
+                </AnimatedNavLink>
+              </li>
             ))}
           </ul>
         </div>

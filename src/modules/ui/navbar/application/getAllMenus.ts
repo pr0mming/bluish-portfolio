@@ -6,26 +6,30 @@ const getAllMenus = (): MenuEntity[] => {
     {
       type: MenuEnum.HOME,
       text: 'Home',
-      redirect: 'home',
-      icon: 'house'
+      path: 'home',
+      icon: 'house',
+      isDefault: true
     },
     {
       type: MenuEnum.ME,
       text: 'Me',
-      redirect: 'me',
-      icon: 'face-smile-beam'
+      path: 'me',
+      icon: 'face-smile-beam',
+      isDefault: false
     },
     {
       type: MenuEnum.PROJECTS,
       text: 'Projects',
-      redirect: 'projects',
-      icon: 'briefcase'
+      path: 'projects',
+      icon: 'briefcase',
+      isDefault: false
     },
     {
       type: MenuEnum.CONTACT,
       text: 'Contact',
-      redirect: 'contact',
-      icon: 'address-book'
+      path: 'contact',
+      icon: 'address-book',
+      isDefault: false
     }
   ]
 }

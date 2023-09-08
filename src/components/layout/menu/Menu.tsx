@@ -11,20 +11,20 @@ import getAllMenus from '@src/modules/ui/navbar/application/getAllMenus'
 import MobileSidebar from '@src/components/layout/menu/mobile-sidebar/MobileSidebar'
 import Navbar from '@src/components/layout/menu/navbar/Navbar'
 
-export interface INavbarProps {}
+export interface IMenuProps {}
 
 const Menu = () => {
   const menus: MenuEntity[] = getAllMenus()
   const [isOpenSidebar, setOpenSidebar] = useState(false)
 
   return (
-    <header className="fixed w-screen">
+    <header className="fixed w-full">
       <Navbar
         menus={menus}
         isOpenSidebar={isOpenSidebar}
         setOpenSidebar={setOpenSidebar}
       />
-      {isOpenSidebar && <MobileSidebar menus={menus} />}
+      <MobileSidebar menus={menus} isOpenSidebar={isOpenSidebar} />
     </header>
   )
 }

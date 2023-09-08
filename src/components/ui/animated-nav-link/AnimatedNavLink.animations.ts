@@ -46,3 +46,11 @@ export const slashMotion = {
     }
   }
 }
+
+export const selectedLinkMotion = {
+  type: 'spring',
+  bounce: 0.25,
+  stiffness: 130,
+  damping: 9,
+  duration: 0.3
+}
