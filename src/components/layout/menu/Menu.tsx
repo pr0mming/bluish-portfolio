@@ -1,5 +1,8 @@
 'use client'
 
+// Next
+import dynamic from 'next/dynamic'
+
 // React
 import { useState } from 'react'
 
@@ -8,8 +11,10 @@ import MenuEntity from '@src/modules/ui/navbar/domain/entities/MenuEntity'
 import getAllMenus from '@src/modules/ui/navbar/application/getAllMenus'
 
 // Components
-import MobileSidebar from '@src/components/layout/menu/mobile-sidebar/MobileSidebar'
 import Navbar from '@src/components/layout/menu/navbar/Navbar'
+const MobileSidebar = dynamic(
+  () => import('@src/components/layout/menu/mobile-sidebar/MobileSidebar')
+)
 
 export interface IMenuProps {}
 
@@ -24,7 +29,7 @@ const Menu = () => {
         isOpenSidebar={isOpenSidebar}
         setOpenSidebar={setOpenSidebar}
       />
-      <MobileSidebar menus={menus} isOpenSidebar={isOpenSidebar} />
+      {isOpenSidebar && <MobileSidebar menus={menus} />}
     </header>
   )
 }

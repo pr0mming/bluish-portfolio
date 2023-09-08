@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
   content: [
@@ -68,9 +69,23 @@ const config: Config = {
       },
       boxShadow: {
         'sm-accent': `5px 5px 0px 0px theme('colors.accent.DEFAULT')`
+      },
+      textShadow: {
+        'sm-secondary': `8px 8px 0px theme('colors.secondary.DEFAULT')`
       }
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value
+          })
+        },
+        { values: theme('textShadow') }
+      )
+    })
+  ]
 }
 export default config

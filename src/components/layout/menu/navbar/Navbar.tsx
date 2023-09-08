@@ -3,6 +3,9 @@
 // Next
 import Image from 'next/image'
 
+// Framer
+import { motion } from 'framer-motion'
+
 // Modules
 import MenuEntity from '@src/modules/ui/navbar/domain/entities/MenuEntity'
 
@@ -15,13 +18,22 @@ import {
   faBriefcase,
   faAddressBook,
   faBars,
-  faGlobe
+  faGlobe,
+  faXmark
 } from '@fortawesome/free-solid-svg-icons'
 
 // Components
 import AnimatedNavLink from '@src/components/ui/animated-nav-link/AnimatedNavLink'
 
-library.add(faHome, faSmileBeam, faBriefcase, faAddressBook, faGlobe, faBars)
+library.add(
+  faHome,
+  faSmileBeam,
+  faBriefcase,
+  faAddressBook,
+  faGlobe,
+  faBars,
+  faXmark
+)
 
 export interface INavbarProps {
   menus: MenuEntity[]
@@ -46,13 +58,23 @@ const Navbar = ({ menus, isOpenSidebar, setOpenSidebar }: INavbarProps) => {
           />
         </a>
 
-        <button
+        <motion.button
           className="inline-flex items-center justify-center md:hidden p-2 w-10 h-10 text-white text-opacity-70"
           type="button"
           onClick={() => setOpenSidebar(!isOpenSidebar)}
+          whileTap={{ scale: 0.9 }}
         >
-          <FontAwesomeIcon icon={['fas', 'bars']} size="lg" />
-        </button>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <FontAwesomeIcon
+              icon={['fas', isOpenSidebar ? 'xmark' : 'bars']}
+              size="2x"
+            />
+          </motion.span>
+        </motion.button>
 
         <div className="hidden w-full md:flex justify-center md:w-auto">
           <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row xl:space-x-8 md:mt-0 md:p-0">
@@ -74,6 +96,7 @@ const Navbar = ({ menus, isOpenSidebar, setOpenSidebar }: INavbarProps) => {
           <button
             className="transition ease-in-out delay-50 text-white text-opacity-70 hover:scale-125 hover:text-white duration-200"
             type="button"
+            aria-label="Change Language"
           >
             <FontAwesomeIcon icon={['fas', 'globe']} size="2x" />
           </button>
