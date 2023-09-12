@@ -1,11 +1,11 @@
-import FloatingIconEntity from '../domain/entities/FloatingIconEntity'
+import FloatingIconEntity from '../domain/FloatingIconEntity'
 
 const getAllFloatingIcons = (): FloatingIconEntity[][] => {
   return [
     [
       {
         iconPath: '/icons/dotnet_icon.svg',
-        position: { bottom: 10 }
+        position: { top: 30 }
       },
       {
         iconPath: '/icons/golang_icon.svg',
@@ -35,7 +35,7 @@ const getAllFloatingIcons = (): FloatingIconEntity[][] => {
     [
       {
         iconPath: '/icons/git_icon.svg',
-        position: { left: 10, bottom: 10 }
+        position: { left: 10, top: 30 }
       },
 
       {
@@ -48,7 +48,7 @@ const getAllFloatingIcons = (): FloatingIconEntity[][] => {
       },
       {
         iconPath: '/icons/react_icon.svg',
-        position: { top: 15, right: 10 }
+        position: { top: 10, right: 10 }
       },
       {
         iconPath: '/icons/angular_icon.svg',
@@ -56,12 +56,12 @@ const getAllFloatingIcons = (): FloatingIconEntity[][] => {
       },
       {
         iconPath: '/icons/js_icon.svg',
-        position: { right: 5, bottom: 30 }
+        position: { left: 20, top: 10 }
       },
 
       {
         iconPath: '/icons/linux_icon.svg',
-        position: { right: 20, bottom: 10 }
+        position: { right: 20, bottom: 5 }
       }
     ]
   ]
