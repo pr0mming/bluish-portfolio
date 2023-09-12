@@ -1,5 +1,3 @@
-'use client'
-
 // Next
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -56,7 +54,7 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
 
       {isActive && (
         <motion.div
-          className="absolute w-full bottom-0 left-0 h-full bg-secondary bg-opacity-70 rounded-md border-2 border-secondary shadow-sm-accent z-10"
+          className="absolute w-full bottom-0 left-0 h-full bg-secondary bg-opacity-70 rounded-md border-2 border-secondary shadow-custom-sm shadow-accent z-10"
           transition={selectedLinkMotion}
         />
       )}

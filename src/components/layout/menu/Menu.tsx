@@ -23,7 +23,7 @@ const Menu = () => {
   const [isOpenSidebar, setOpenSidebar] = useState(false)
 
   return (
-    <header className="fixed w-full">
+    <header className="fixed w-full z-10">
       <Navbar
         menus={menus}
         isOpenSidebar={isOpenSidebar}

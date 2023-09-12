@@ -68,10 +68,10 @@ const config: Config = {
         }
       },
       boxShadow: {
-        'sm-accent': `5px 5px 0px 0px theme('colors.accent.DEFAULT')`
+        'custom-sm': `5px 5px 0px 0px rgba(0, 0, 0, 0.0)`
       },
       textShadow: {
-        'sm-secondary': `8px 8px 0px theme('colors.secondary.DEFAULT')`
+        'secondary-sm': `8px 8px 0px theme('colors.secondary.DEFAULT')`
       }
     }
   },

@@ -40,9 +40,6 @@ const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
       >
         <motion.nav
           className="absolute -right-1/2 w-3/6 sm:w-5/12 h-screen bg-primary border-s-[1px] border-s-accent border-opacity-70 overflow-auto"
-          initial="closed"
-          animate="open"
-          exit="closed"
           variants={sidebarMotion}
         >
           <div className="flex flex-nowrap items-center justify-between mx-auto p-5">

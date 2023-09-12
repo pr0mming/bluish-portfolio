@@ -7,7 +7,7 @@ config.autoAddCss = false
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+    <main className="flex flex-col items-center min-h-screen py-28 overflow-hidden">
       <HomePage />
     </main>
   )
