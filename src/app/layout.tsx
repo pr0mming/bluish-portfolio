@@ -1,15 +1,21 @@
 // Styles
 import './globals.css'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // Next
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
+// Font Awesome
+import { config } from '@fortawesome/fontawesome-svg-core'
+
 // Components
 import Menu from '@src/components/layout/menu/Menu'
 import AppContextProvider from '@src/components/contexts/AppContextProvider'
 
-const font = Montserrat({ subsets: ['latin'] })
+config.autoAddCss = false
+
+const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Julián Bernal | @pr0mming',

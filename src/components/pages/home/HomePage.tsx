@@ -1,6 +1,9 @@
 // Next
 import Image from 'next/image'
+
+// Components
 import HomeIntroPanel from './home-intro-panel/HomeIntroPanel'
+import MainButton from '@src/components/ui/main-button/MainButton'
 
 export interface IHomePageProps {}
 
@@ -37,6 +40,12 @@ const HomePage = () => {
         <p className="text-white font-normal text-lg lg:text-2xl text-center md:text-start  mt-2">
           And welcome to my <strong>first</strong> portfolio website version :)
         </p>
+
+        <div className="mt-10 md:mt-20 flex justify-center md:block">
+          <MainButton type="secondary" ariaLabel="Check Experience">
+            <span>Check experience</span>
+          </MainButton>
+        </div>
       </header>
 
       <HomeIntroPanel />

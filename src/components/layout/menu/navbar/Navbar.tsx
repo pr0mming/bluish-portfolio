@@ -6,20 +6,11 @@ import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEnti
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconName, library } from '@fortawesome/fontawesome-svg-core'
-import {
-  faHome,
-  faSmileBeam,
-  faBriefcase,
-  faAddressBook,
-  faGlobe
-} from '@fortawesome/free-solid-svg-icons'
+import { IconName } from '@fortawesome/fontawesome-svg-core'
 
 // Components
 import AnimatedNavLink from '@src/components/ui/animated-nav-link/AnimatedNavLink'
 import MenuSwitcher from '@src/components/ui/menu-switcher/MenuSwitcher'
-
-library.add(faHome, faSmileBeam, faBriefcase, faAddressBook, faGlobe)
 
 export interface INavbarProps {
   menus: MenuEntity[]

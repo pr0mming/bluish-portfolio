@@ -6,6 +6,16 @@ import dynamic from 'next/dynamic'
 // React
 import { useEffect } from 'react'
 
+// FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+  faHome,
+  faSmileBeam,
+  faBriefcase,
+  faAddressBook,
+  faGlobe
+} from '@fortawesome/free-solid-svg-icons'
+
 // Modules
 import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
 import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
@@ -19,12 +29,14 @@ const MobileSidebar = dynamic(
 // Hooks
 import useAppContext from '@src/hooks/useAppContext'
 
-const menus: MenuEntity[] = getAllMenus()
+// Load icons for normal/responsive menu
+library.add(faHome, faSmileBeam, faBriefcase, faAddressBook, faGlobe)
 
 export interface IMenuProps {}
 
 const Menu = () => {
-  const { isOpenSidebar, activeMenu, changeActiveMenu } = useAppContext()
+  const menus: MenuEntity[] = getAllMenus()
+  const { activeMenu, changeActiveMenu } = useAppContext()
 
   useEffect(() => {
     if (!activeMenu) {
@@ -35,7 +47,7 @@ const Menu = () => {
   return (
     <header className="fixed w-full z-10">
       <Navbar menus={menus} />
-      {isOpenSidebar && <MobileSidebar menus={menus} />}
+      <MobileSidebar menus={menus} />
     </header>
   )
 }
