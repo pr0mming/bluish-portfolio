@@ -1,4 +1,4 @@
-type FloatingIconPosition = {
+type SpacingIcon = {
   top?: number
   bottom?: number
   right?: number
@@ -7,7 +7,7 @@ type FloatingIconPosition = {
 
 type FloatingIconEntity = {
   iconPath: string
-  position: FloatingIconPosition
+  position: SpacingIcon
 }
 
 export default FloatingIconEntity

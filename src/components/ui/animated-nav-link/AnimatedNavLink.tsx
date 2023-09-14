@@ -1,6 +1,7 @@
+'use client'
+
 // Next
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 // Framer
 import { motion } from 'framer-motion'
@@ -13,9 +14,7 @@ import {
 } from './AnimatedNavLink.animations'
 
 // Modules
-import getAllMenus from '@src/modules/ui/navbar/application/getAllMenus'
-
-const menuDefault = getAllMenus().find((menu) => menu.isDefault)?.path ?? ''
+import useAppContext from '@src/hooks/useAppContext'
 
 export interface IAnimatedNavLinkProps {
   className: string
@@ -25,13 +24,8 @@ export interface IAnimatedNavLinkProps {
 }
 
 const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
-  let pathname = usePathname()
-
-  if (pathname === '/') {
-    pathname = menuDefault
-  }
-
-  const isActive = props.path === pathname
+  const { activeMenu, changeActiveMenu } = useAppContext()
+  const isActive = props.path === activeMenu
 
   return (
     <motion.div
@@ -40,7 +34,13 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
       whileHover="hover"
       animate={isActive ? 'hover' : 'rest'}
     >
-      <Link href={props.path} className={props.className}>
+      <Link
+        href={props.path}
+        className={props.className}
+        onClick={() => {
+          changeActiveMenu(props.path)
+        }}
+      >
         <motion.div
           className="absolute left-0 translate-x-1/2 translate-y-1/2 opacity-0"
           variants={slashMotion}
@@ -54,7 +54,7 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
 
       {isActive && (
         <motion.div
-          className="absolute w-full bottom-0 left-0 h-full bg-secondary bg-opacity-70 rounded-md border-2 border-secondary shadow-custom-sm shadow-accent z-10"
+          className="absolute w-full bottom-0 left-0 h-full bg-secondary bg-opacity-70 rounded-md border-2 border-secondary shadow-custom-xs shadow-accent z-10"
           transition={selectedLinkMotion}
         />
       )}

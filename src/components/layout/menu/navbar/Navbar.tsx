@@ -1,13 +1,8 @@
-'use client'
-
 // Next
 import Image from 'next/image'
 
-// Framer
-import { motion } from 'framer-motion'
-
 // Modules
-import MenuEntity from '@src/modules/ui/navbar/domain/entities/MenuEntity'
+import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -17,36 +12,25 @@ import {
   faSmileBeam,
   faBriefcase,
   faAddressBook,
-  faBars,
-  faGlobe,
-  faXmark
+  faGlobe
 } from '@fortawesome/free-solid-svg-icons'
 
 // Components
 import AnimatedNavLink from '@src/components/ui/animated-nav-link/AnimatedNavLink'
+import MenuSwitcher from '@src/components/ui/menu-switcher/MenuSwitcher'
 
-library.add(
-  faHome,
-  faSmileBeam,
-  faBriefcase,
-  faAddressBook,
-  faGlobe,
-  faBars,
-  faXmark
-)
+library.add(faHome, faSmileBeam, faBriefcase, faAddressBook, faGlobe)
 
 export interface INavbarProps {
   menus: MenuEntity[]
-  isOpenSidebar: boolean
-  setOpenSidebar: (value: boolean) => void
 }
 
-const Navbar = ({ menus, isOpenSidebar, setOpenSidebar }: INavbarProps) => {
+const Navbar = ({ menus }: INavbarProps) => {
   return (
     <nav className="block bg-primary border-b-[1px] border-b-accent border-opacity-70">
       <div className="w-full flex flex-nowrap items-center justify-between mx-auto px-4 py-6">
         <a
-          href="https://google.com"
+          href="/"
           className="flex flex-1 justify-start items-center px-5 lg:px-10"
         >
           <Image
@@ -54,27 +38,11 @@ const Navbar = ({ menus, isOpenSidebar, setOpenSidebar }: INavbarProps) => {
             alt="App Logo"
             width={150}
             height={65}
-            priority={true}
+            priority
           />
         </a>
 
-        <motion.button
-          className="inline-flex items-center justify-center md:hidden p-2 w-10 h-10 text-white text-opacity-70"
-          type="button"
-          onClick={() => setOpenSidebar(!isOpenSidebar)}
-          whileTap={{ scale: 0.9 }}
-        >
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <FontAwesomeIcon
-              icon={['fas', isOpenSidebar ? 'xmark' : 'bars']}
-              size="2x"
-            />
-          </motion.span>
-        </motion.button>
+        <MenuSwitcher />
 
         <div className="hidden w-full md:flex justify-center md:w-auto">
           <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row xl:space-x-8 md:mt-0 md:p-0">

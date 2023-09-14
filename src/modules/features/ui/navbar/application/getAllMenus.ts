@@ -6,28 +6,28 @@ const getAllMenus = (): MenuEntity[] => {
     {
       type: MenuEnum.HOME,
       text: 'Home',
-      path: 'home',
+      path: '#home',
       icon: 'house',
       isDefault: true
     },
     {
       type: MenuEnum.ME,
       text: 'Me',
-      path: 'me',
+      path: '#me',
       icon: 'face-smile-beam',
       isDefault: false
     },
     {
       type: MenuEnum.PROJECTS,
       text: 'Projects',
-      path: 'projects',
+      path: '#projects',
       icon: 'briefcase',
       isDefault: false
     },
     {
       type: MenuEnum.CONTACT,
       text: 'Contact',
-      path: 'contact',
+      path: '#contact',
       icon: 'address-book',
       isDefault: false
     }

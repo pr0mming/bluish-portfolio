@@ -1,10 +1,8 @@
-import getAllMenus from '@src/modules/ui/navbar/application/getAllMenus'
+import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
 import { INavbarProps } from './Navbar'
 
 const base: INavbarProps = {
-  menus: getAllMenus(),
-  isOpenSidebar: false,
-  setOpenSidebar: () => {}
+  menus: getAllMenus()
 }
 
 export const mockProps = {

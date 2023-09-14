@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import { motion, useAnimate } from 'framer-motion'
 
 // Modules
-import FloatingIconEntity from '@src/modules/pages/home/domain/FloatingIconEntity'
+import FloatingIconEntity from '@src/modules/features/pages/home/domain/FloatingIconEntity'
 
 // Extensions
 import runFloatMotion from './FloatingIconsPanel.animations'
@@ -33,7 +33,6 @@ const FloatingIconsPanel = ({ className, icons }: IFloatingIconsPanelProps) => {
       {icons.map((icon) => (
         <div key={icon.iconPath}>
           <Image
-            className="flex-1"
             style={{
               marginTop: icon.position.top,
               marginBottom: icon.position.bottom,
@@ -44,6 +43,7 @@ const FloatingIconsPanel = ({ className, icons }: IFloatingIconsPanelProps) => {
             alt="Tech Icon"
             width={55}
             height={55}
+            priority
           />
         </div>
       ))}

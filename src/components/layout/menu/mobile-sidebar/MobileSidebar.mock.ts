@@ -1,4 +1,4 @@
-import getAllMenus from '@src/modules/ui/navbar/application/getAllMenus'
+import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
 import { IMobileSidebarProps } from './MobileSidebar'
 
 const base: IMobileSidebarProps = {
