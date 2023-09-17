@@ -15,9 +15,9 @@ import { barsMotion, justMeMotion } from './HomeIntroPanel.animations'
 // Modules
 import getAllFloatingIcons from '@src/modules/features/pages/home/application/getAllFloatingIcons'
 
-const [firstSetIcons, secondSetIcons] = getAllFloatingIcons()
-
 const HomeIntroPanel = () => {
+  const [firstSetIcons, secondSetIcons] = getAllFloatingIcons()
+
   return (
     <section className="flex mx-16 md:mx-20">
       <div className="relative">

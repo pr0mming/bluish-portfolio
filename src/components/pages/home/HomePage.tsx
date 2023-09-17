@@ -13,9 +13,9 @@ const HomePage = () => {
       className="flex flex-col md:flex-row flex-1 justify-center items-center gap-10 lg:gap-20"
       style={{ marginBottom: 216 }}
     >
-      <header className="flex flex-col mx-5 md:mx-10 mt-5">
+      <header className="flex flex-col mx-2 md:ms-20 lg:ms-10 mt-5">
         <hgroup className="text-center md:text-start">
-          <span className="text-white font-semibold text-4xl my-2">
+          <span className="text-white font-semibold text-3xl my-2">
             Hello, I&apos;m
           </span>
           <h1 className="text-white font-extrabold text-6xl md:text-7xl lg:text-8xl text-shadow-secondary-sm my-2">
@@ -25,7 +25,7 @@ const HomePage = () => {
             Software Engineer
             <div className="relative w-[25px] h-[25px] md:w-[40px] md:h-[40px] ml-2">
               <Image
-                src="/icons/colombia_rounded_icon.svg"
+                src="/icons/colombia-rounded-icon.svg"
                 alt="Colombia"
                 sizes="40px"
                 fill

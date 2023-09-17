@@ -11,7 +11,6 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 
 // Components
 import Menu from '@src/components/layout/menu/Menu'
-import AppContextProvider from '@src/components/contexts/AppContextProvider'
 
 config.autoAddCss = false
 
@@ -37,10 +36,8 @@ export default function RootLayout({
       <body
         className={`${font.className} custom-background-primary h-full min-h-screen`}
       >
-        <AppContextProvider>
-          <Menu />
-          {children}
-        </AppContextProvider>
+        <Menu />
+        {children}
       </body>
     </html>
   )

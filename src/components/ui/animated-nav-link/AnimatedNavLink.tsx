@@ -3,6 +3,9 @@
 // Next
 import Link from 'next/link'
 
+// React
+import { useMemo } from 'react'
+
 // Framer
 import { m, LazyMotion, domAnimation } from 'framer-motion'
 
@@ -13,8 +16,8 @@ import {
   selectedLinkMotion
 } from './AnimatedNavLink.animations'
 
-// Modules
-import useAppContext from '@src/hooks/useAppContext'
+// Store
+import useStore from '@src/store/AppStore'
 
 export interface IAnimatedNavLinkProps {
   className: string
@@ -24,8 +27,15 @@ export interface IAnimatedNavLinkProps {
 }
 
 const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
-  const { activeMenu, changeActiveMenu } = useAppContext()
-  const isActive = props.path === activeMenu
+  const [activeMenu, setActiveMenu] = useStore((state) => [
+    state.activeMenu,
+    state.setActiveMenu
+  ])
+
+  const isActive = useMemo(
+    () => props.path === activeMenu,
+    [activeMenu, props.path]
+  )
 
   return (
     <LazyMotion features={domAnimation}>
@@ -39,7 +49,7 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
           href={props.path}
           className={props.className}
           onClick={() => {
-            changeActiveMenu(props.path)
+            setActiveMenu(props.path)
           }}
         >
           <m.div

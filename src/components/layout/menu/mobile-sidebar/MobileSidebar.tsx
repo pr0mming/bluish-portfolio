@@ -14,15 +14,15 @@ import AnimatedNavLink from '@src/components/ui/animated-nav-link/AnimatedNavLin
 // Extensions
 import { backdropMotion, sidebarMotion } from './MobileSidebar.animations'
 
-// Hooks
-import useAppContext from '@src/hooks/useAppContext'
+// Store
+import useStore from '@src/store/AppStore'
 
 export interface IMobileSidebarProps {
   menus: MenuEntity[]
 }
 
 const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
-  const { isOpenSidebar } = useAppContext()
+  const [isOpenSidebar] = useStore((state) => [state.isOpenSidebar])
 
   return (
     <AnimatePresence>

@@ -5,7 +5,6 @@ type MenuEntity = {
   text: string
   path: string
   icon: string
-  isDefault: boolean
 }
 
 export default MenuEntity
