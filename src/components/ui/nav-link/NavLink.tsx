@@ -14,20 +14,20 @@ import {
   textMotion,
   slashMotion,
   selectedLinkMotion
-} from './AnimatedNavLink.animations'
+} from './NavLink.animations'
 
 // Store
 import useAppStore from '@src/store/AppStore'
 import { shallow } from 'zustand/shallow'
 
-export interface IAnimatedNavLinkProps {
+export interface INavLinkProps {
   className: string
   text: string
   path: string
   children: React.ReactNode
 }
 
-const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
+const NavLink = ({ className, text, path, children }: INavLinkProps) => {
   const { activeMenu, setActiveMenu } = useAppStore(
     (state) => ({
       activeMenu: state.activeMenu,
@@ -36,10 +36,7 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
     shallow
   )
 
-  const isActive = useMemo(
-    () => props.path === activeMenu,
-    [activeMenu, props.path]
-  )
+  const isActive = useMemo(() => path === activeMenu, [activeMenu, path])
 
   return (
     <m.div
@@ -49,20 +46,20 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
       animate={isActive ? 'hover' : 'rest'}
     >
       <Link
-        href={props.path}
-        className={props.className}
+        href={path}
+        className={className}
         onClick={() => {
-          setActiveMenu(props.path)
+          setActiveMenu(path)
         }}
       >
         <m.div
           className="absolute left-0 translate-x-1/2 translate-y-1/2 opacity-0"
           variants={slashMotion}
         >
-          {props.children}
+          {children}
         </m.div>
         <m.h1 className="tracking-widest mr-7" variants={textMotion}>
-          {props.text}
+          {text}
         </m.h1>
       </Link>
 
@@ -76,4 +73,4 @@ const AnimatedNavLink = (props: IAnimatedNavLinkProps) => {
   )
 }
 
-export default AnimatedNavLink
+export default NavLink

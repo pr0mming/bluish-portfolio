@@ -40,7 +40,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
     <AnimatePresence>
       <m.div
         className={`
-          w-[100px]
+          w-[115px]
           h-auto
           relative
         bg-white
@@ -57,7 +57,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
         exit="hidden"
         variants={skillCardMotion}
       >
-        <div className="absolute flex gap-2 -top-3 md:-top-[15px] right-2">
+        <div className="absolute flex gap-2 -top-[14px] right-2">
           <FontAwesomeIcon
             icon={skillLevelIcon as IconName}
             className="text-2xl"
@@ -77,7 +77,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
               }}
             />
           </div>
-          <span className="text-center text-sm lg:text-md font-bold">
+          <span className="h-[40px] flex items-center text-center text-sm font-bold">
             {name}
           </span>
         </div>

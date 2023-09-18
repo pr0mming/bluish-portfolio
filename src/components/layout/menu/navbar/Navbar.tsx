@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 
 // Components
-import AnimatedNavLink from '@src/components/ui/animated-nav-link/AnimatedNavLink'
+import NavLink from '@src/components/ui/nav-link/NavLink'
 import MenuSwitcher from '@src/components/ui/menu-switcher/MenuSwitcher'
 
 export interface INavbarProps {
@@ -39,13 +39,13 @@ const Navbar = ({ menus }: INavbarProps) => {
           <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row xl:space-x-8 md:mt-0 md:p-0">
             {menus.map((menu) => (
               <li key={menu.type}>
-                <AnimatedNavLink
+                <NavLink
                   text={menu.text}
                   path={menu.path}
                   className="relative inline-block w-full p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
                 >
-                  <FontAwesomeIcon icon={['fas', menu.icon as IconName]} />
-                </AnimatedNavLink>
+                  <FontAwesomeIcon icon={menu.icon as IconName} />
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -57,7 +57,7 @@ const Navbar = ({ menus }: INavbarProps) => {
             type="button"
             aria-label="Change Language"
           >
-            <FontAwesomeIcon icon={['fas', 'globe']} size="2x" />
+            <FontAwesomeIcon icon={'globe'} size="2x" />
           </button>
         </div>
       </div>

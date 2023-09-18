@@ -61,7 +61,7 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
           id: 8,
           name: 'Bootstrap',
           imgPath: '/skills/bootstrap.png',
-          level: SkillLevelEnum.CONFIDENT,
+          level: SkillLevelEnum.REPOSAITO,
           isFavorite: false
         },
         {
@@ -95,14 +95,14 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
           id: 12,
           name: '.NET Framework',
           imgPath: '/skills/net-framework.png',
-          level: SkillLevelEnum.ENTHUSIAST,
+          level: SkillLevelEnum.REPOSAITO,
           isFavorite: false
         },
         {
           id: 13,
           name: '.NET',
           imgPath: '/skills/dotnet.png',
-          level: SkillLevelEnum.ENTHUSIAST,
+          level: SkillLevelEnum.CONFIDENT,
           isFavorite: true
         },
         {
@@ -143,7 +143,7 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
           id: 18,
           name: 'Mongo DB',
           imgPath: '/skills/mongodb.png',
-          level: SkillLevelEnum.ENTHUSIAST,
+          level: SkillLevelEnum.CONFIDENT,
           isFavorite: false
         },
         {
@@ -205,14 +205,14 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
           name: 'Python',
           imgPath: '/skills/python.png',
           level: SkillLevelEnum.CONFIDENT,
-          isFavorite: false
+          isFavorite: true
         },
         {
           id: 26,
           name: 'OWASP',
           imgPath: '/skills/owasp.png',
-          level: SkillLevelEnum.ENTHUSIAST,
-          isFavorite: false
+          level: SkillLevelEnum.CONFIDENT,
+          isFavorite: true
         },
         {
           id: 27,
@@ -225,7 +225,7 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
           id: 28,
           name: 'SOLID',
           imgPath: '/skills/solid.png',
-          level: SkillLevelEnum.ENTHUSIAST,
+          level: SkillLevelEnum.CONFIDENT,
           isFavorite: true
         }
       ]

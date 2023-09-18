@@ -33,7 +33,7 @@ const SkillLevelControls = () => {
       <section className="grid grid-cols-1 md:grid-cols-2 gap-5 w-fit items-stretch mx-auto my-10">
         {skillLevels.map((level) => (
           <SkillLevelButton key={level.id} level={level}>
-            <FontAwesomeIcon icon={['fas', level.icon as IconName]} size="2x" />
+            <FontAwesomeIcon icon={level.icon as IconName} size="2x" />
           </SkillLevelButton>
         ))}
       </section>

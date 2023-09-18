@@ -84,7 +84,7 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
         <span className="flex gap-2">
           <span className="text-lg md:text-xl">{title}</span>
           <Tooltip text={description}>
-            <FontAwesomeIcon icon={['fas', 'circle-info']} size="lg" />
+            <FontAwesomeIcon icon={'circle-info'} size="lg" />
           </Tooltip>
         </span>
 

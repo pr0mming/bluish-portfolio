@@ -21,7 +21,10 @@ const useAppStore = createWithEqualityFn<IAppState>(
   (set) => ({
     isOpenSidebar: false,
     activeMenu: '',
-    skillsFilters: [],
+    skillsFilters: {
+      levels: [],
+      isFavorite: false
+    },
     initialSkills: [],
     skillsFiltered: [],
     setOpenSidebar: (value) => set(() => setOpenSidebar(value)),

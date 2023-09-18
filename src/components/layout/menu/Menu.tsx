@@ -6,6 +6,9 @@ import dynamic from 'next/dynamic'
 // React
 import { useEffect } from 'react'
 
+// Framer
+import { AnimatePresence } from 'framer-motion'
+
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -41,6 +44,8 @@ export interface IMenuProps {}
 
 const Menu = () => {
   const menus: MenuEntity[] = getAllMenus()
+
+  const isOpenSidebar = useAppStore((state) => state.isOpenSidebar)
   const setActiveMenu = useAppStore((state) => state.setActiveMenu)
 
   const { hash } = useHash()
@@ -52,7 +57,9 @@ const Menu = () => {
   return (
     <header className="fixed w-full z-10">
       <Navbar menus={menus} />
-      <MobileSidebar menus={menus} />
+      <AnimatePresence>
+        {isOpenSidebar && <MobileSidebar menus={menus} />}
+      </AnimatePresence>
     </header>
   )
 }

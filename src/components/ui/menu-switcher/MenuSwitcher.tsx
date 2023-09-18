@@ -36,10 +36,7 @@ const MenuSwitcher = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <FontAwesomeIcon
-          icon={['fas', isOpenSidebar ? 'xmark' : 'bars']}
-          size="2x"
-        />
+        <FontAwesomeIcon icon={isOpenSidebar ? 'xmark' : 'bars'} size="2x" />
       </m.span>
     </m.button>
   )
