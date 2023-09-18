@@ -11,11 +11,12 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 // Components
 import Tooltip from '../tooltip/Tooltip'
 
-// Store
-import useStore from '@src/store/AppStore'
-
 // Modules
 import MeSkillLevelEntity from '@src/modules/features/pages/me/domain/MeSkillLevelEntity'
+
+// Store
+import useAppStore from '@src/store/AppStore'
+import { shallow } from 'zustand/shallow'
 
 library.add(faCircleInfo)
 
@@ -28,17 +29,20 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
   const { title, description, workExperience } = level
 
   const [isActive, setIsActive] = useState(level.type != undefined)
-  const [
+  const {
     addSkillFilter,
     removeSkillFilter,
     addFavSkillFilter,
     removeFavSkillFilter
-  ] = useStore((state) => [
-    state.addSkillFilter,
-    state.removeSkillFilter,
-    state.addFavSkillFilter,
-    state.removeFavSkillFilter
-  ])
+  } = useAppStore(
+    (state) => ({
+      addSkillFilter: state.addSkillFilter,
+      removeSkillFilter: state.removeSkillFilter,
+      addFavSkillFilter: state.addFavSkillFilter,
+      removeFavSkillFilter: state.removeFavSkillFilter
+    }),
+    shallow
+  )
 
   const handleButtonClick = () => {
     setIsActive((state) => !state)

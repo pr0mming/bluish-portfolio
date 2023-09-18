@@ -1,13 +1,29 @@
+'use client'
+
 // Next
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
+
+// React
+import { useRef } from 'react'
+
+// Framer
+import { useInView } from 'framer-motion'
 
 // Components
-import HomeIntroPanel from './home-intro-panel/HomeIntroPanel'
 import MainButton from '@src/components/ui/main-button/MainButton'
+
+// Lazy (Load the JS animation later)
+const HomeIntroPanel = dynamic(
+  () => import('./home-intro-panel/HomeIntroPanel')
+)
 
 export interface IHomePageProps {}
 
 const HomePage = () => {
+  const homePanelRef = useRef(null)
+  const isInView = useInView(homePanelRef, { once: true })
+
   return (
     <section
       className="flex flex-col md:flex-row flex-1 justify-center items-center gap-10 lg:gap-20"
@@ -48,7 +64,9 @@ const HomePage = () => {
         </div>
       </header>
 
-      <HomeIntroPanel />
+      <section ref={homePanelRef} className="w-auto md:w-[470px] md:h-[500px]">
+        {isInView && <HomeIntroPanel />}
+      </section>
     </section>
   )
 }

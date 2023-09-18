@@ -11,6 +11,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 
 // Components
 import Menu from '@src/components/layout/menu/Menu'
+import FramerWrapper from '@src/components/framer-motion/framer-wrapper'
 
 config.autoAddCss = false
 
@@ -36,8 +37,10 @@ export default function RootLayout({
       <body
         className={`${font.className} custom-background-primary h-full min-h-screen`}
       >
-        <Menu />
-        {children}
+        <FramerWrapper>
+          <Menu />
+          {children}
+        </FramerWrapper>
       </body>
     </html>
   )

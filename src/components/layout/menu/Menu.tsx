@@ -29,7 +29,9 @@ const MobileSidebar = dynamic(
 )
 
 // Store
-import useStore from '@src/store/AppStore'
+import useAppStore from '@src/store/AppStore'
+
+// Hooks
 import useHash from '@src/hooks/useHash'
 
 // Load icons for normal/responsive menu
@@ -39,13 +41,13 @@ export interface IMenuProps {}
 
 const Menu = () => {
   const menus: MenuEntity[] = getAllMenus()
-  const setActiveMenu = useStore((state) => state.setActiveMenu)
+  const setActiveMenu = useAppStore((state) => state.setActiveMenu)
 
   const { hash } = useHash()
 
   useEffect(() => {
     setActiveMenu(hash)
-  }, [hash])
+  }, [hash, setActiveMenu])
 
   return (
     <header className="fixed w-full z-10">

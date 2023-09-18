@@ -1,6 +1,6 @@
 // Components
 import HomePage from '@src/components/pages/home/HomePage'
-import MePage from '@src/components/pages/me/MePage'
+import PagesTree from '@src/components/pages/pages-tree/PagesTree'
 
 export default function App() {
   return (
@@ -8,12 +8,8 @@ export default function App() {
       <section className="flex flex-col items-center mt-32">
         <HomePage />
       </section>
-      <section
-        id="me"
-        className="flex flex-col items-center py-10 mx-6 md:px-20"
-      >
-        <MePage />
-      </section>
+
+      <PagesTree />
     </div>
   )
 }

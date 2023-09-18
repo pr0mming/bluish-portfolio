@@ -14,33 +14,35 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 // Store
-import useStore from '@src/store/AppStore'
+import useAppStore from '@src/store/AppStore'
+import { shallow } from 'zustand/shallow'
 
 // Modules
 import getAllMeSkillsCatalog from '@src/modules/features/pages/me/application/getAllMeSkillsCatalog'
+import getActiveSkillFilters from '@src/modules/features/pages/me/application/getActiveSkillFilters'
 
 // Components
 import SkillCategory from '../skill-category/SkillCategory'
-import { getActiveSkillFilters } from '@src/modules/features/pages/me/application/getActiveSkillFilters'
 
 library.add(faPencil, faBrain, faBrain, faDatabase, faCloud, faPuzzlePiece)
 
 const SkillsList = () => {
-  const [setSkillsFilters, skills, setInitialSkills] = useStore((state) => [
-    state.setSkillsFilters,
-    state.skillsFiltered,
-    state.setInitialSkills
-  ])
+  const { setSkillsFilters, skills, setInitialSkills } = useAppStore(
+    (state) => ({
+      setSkillsFilters: state.setSkillsFilters,
+      skills: state.skillsFiltered,
+      setInitialSkills: state.setInitialSkills
+    }),
+    shallow
+  )
 
   const defaultFilters = useMemo(() => getActiveSkillFilters(), [])
   const initialSkills = useMemo(() => getAllMeSkillsCatalog(), [])
 
   useEffect(() => {
-    console.log(1)
     setSkillsFilters(defaultFilters)
-
     setInitialSkills(initialSkills)
-  }, [setSkillsFilters, setInitialSkills])
+  }, [defaultFilters, initialSkills, setSkillsFilters, setInitialSkills])
 
   return (
     <section className="flex flex-col justify-center gap-20">
