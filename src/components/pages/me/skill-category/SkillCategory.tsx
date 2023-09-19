@@ -1,6 +1,9 @@
 // React
 import { useMemo } from 'react'
 
+// Framer
+import { AnimatePresence } from 'framer-motion'
+
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
@@ -28,7 +31,7 @@ const SkillCategory = ({ categoryType, skills }: ISkillCategoryProps) => {
   )
 
   return (
-    <div className="flex flex-col justify-center gap-14">
+    <div className="flex flex-col justify-center gap-10">
       <div className="flex justify-center items-center gap-5 flex-nowrap text-secondary">
         <h4 className="bold text-center text-2xl font-bold uppercase tracking-wider">
           {category?.name}
@@ -40,9 +43,11 @@ const SkillCategory = ({ categoryType, skills }: ISkillCategoryProps) => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-6 mx-2 lg:mx-20">
-        {skills.map((skill) => (
-          <SkillCard key={skill.id} skill={skill} />
-        ))}
+        <AnimatePresence>
+          {skills.map((skill) => (
+            <SkillCard key={skill.id} skill={skill} />
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   )

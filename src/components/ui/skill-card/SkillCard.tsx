@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { useMemo } from 'react'
 
 // Framer
-import { m, AnimatePresence } from 'framer-motion'
+import { m } from 'framer-motion'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -37,9 +37,8 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
   const skillLevelIcon = useMemo(() => resolveIconForSkillLevel(level), [level])
 
   return (
-    <AnimatePresence>
-      <m.div
-        className={`
+    <m.div
+      className={`
           w-[115px]
           h-auto
           relative
@@ -52,37 +51,36 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
           shadow-custom-xs
           shadow-secondary
         `}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        variants={skillCardMotion}
-      >
-        <div className="absolute flex gap-2 -top-[14px] right-2">
-          <FontAwesomeIcon
-            icon={skillLevelIcon as IconName}
-            className="text-2xl"
-          />
+      initial="hidden"
+      animate="show"
+      exit="hidden"
+      variants={skillCardMotion}
+    >
+      <div className="absolute flex gap-2 -top-[14px] right-2">
+        <FontAwesomeIcon
+          icon={skillLevelIcon as IconName}
+          className="text-2xl"
+        />
 
-          {isFavorite && <FontAwesomeIcon icon="heart" className="text-2xl" />}
+        {isFavorite && <FontAwesomeIcon icon="heart" className="text-2xl" />}
+      </div>
+      <div className="flex flex-col flex-1 items-center gap-1">
+        <div className="relative w-[45px] h-[45px] my-auto">
+          <Image
+            src={imgPath}
+            alt={name}
+            sizes="45px"
+            fill
+            style={{
+              objectFit: 'contain'
+            }}
+          />
         </div>
-        <div className="flex flex-col flex-1 items-center gap-5">
-          <div className="relative w-[45px] h-[45px] my-auto">
-            <Image
-              src={imgPath}
-              alt={name}
-              sizes="45px"
-              fill
-              style={{
-                objectFit: 'contain'
-              }}
-            />
-          </div>
-          <span className="h-[40px] flex items-center text-center text-sm font-bold">
-            {name}
-          </span>
-        </div>
-      </m.div>
-    </AnimatePresence>
+        <span className="h-[40px] flex items-center text-center text-sm font-bold">
+          {name}
+        </span>
+      </div>
+    </m.div>
   )
 }
 

@@ -30,7 +30,7 @@ const SkillLevelControls = () => {
         <br />
         If you want you can filter them by:
       </p>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-5 w-fit items-stretch mx-auto my-10">
+      <section className="grid grid-cols-2 gap-5 w-fit items-stretch mx-auto my-10">
         {skillLevels.map((level) => (
           <SkillLevelButton key={level.id} level={level}>
             <FontAwesomeIcon icon={level.icon as IconName} size="2x" />

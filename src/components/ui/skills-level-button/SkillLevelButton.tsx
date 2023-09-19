@@ -60,6 +60,8 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
       flex
       flex-col
       md:flex-row
+      justify-center
+      md:justify-start
       items-center
       gap-2
       md:gap-5
@@ -82,16 +84,16 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
       {children}
       <span className="flex flex-col gap-2 text-center md:text-left ">
         <span className="flex gap-2">
-          <span className="text-lg md:text-xl">{title}</span>
+          <span className="text-base md:text-xl">{title}</span>
           <Tooltip text={description}>
-            <FontAwesomeIcon icon={'circle-info'} size="lg" />
+            <FontAwesomeIcon icon={'circle-info'} size="sm" />
           </Tooltip>
         </span>
 
-        <span className=" flex flex-col lg:flex-row md:gap-2 font-semibold">
+        <span className=" flex flex-col lg:flex-row md:gap-2 text-sm md:text-md font-semibold">
           {workExperience && (
             <>
-              <span className="font-bold text-md">Work Exp:</span>
+              <span className="font-bold">Work Exp:</span>
               {workExperience}
             </>
           )}

@@ -5,6 +5,9 @@ import { createWithEqualityFn } from 'zustand/traditional'
 import { IAppState } from './state/IAppState'
 
 // Reducers
+import { setActiveMenu } from './reducers/menuReducers'
+import { setOpenSidebar } from './reducers/sidebarReducers'
+
 import {
   addFavSkillFilter,
   addSkillFilter,
@@ -13,9 +16,6 @@ import {
   setInitialSkills,
   setSkillsFilters
 } from './reducers/skillsReducers'
-
-import { setActiveMenu } from './reducers/menuReducers'
-import { setOpenSidebar } from './reducers/sidebarReducers'
 
 const useAppStore = createWithEqualityFn<IAppState>(
   (set) => ({

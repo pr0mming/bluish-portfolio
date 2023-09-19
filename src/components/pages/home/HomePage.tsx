@@ -2,6 +2,7 @@
 
 // Next
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 
 // React
@@ -21,13 +22,18 @@ const HomeIntroPanel = dynamic(
 export interface IHomePageProps {}
 
 const HomePage = () => {
+  const router = useRouter()
   const homePanelRef = useRef(null)
   const isInView = useInView(homePanelRef, { once: true })
+
+  const handleExperienceClick = () => {
+    router.push('#experience')
+  }
 
   return (
     <section
       className="flex flex-col md:flex-row flex-1 justify-center items-center gap-10 lg:gap-20"
-      style={{ marginBottom: 216 }}
+      style={{ marginBottom: 280 }}
     >
       <header className="flex flex-col mx-2 md:ms-20 lg:ms-10 mt-5">
         <hgroup className="text-center md:text-start">
@@ -58,13 +64,17 @@ const HomePage = () => {
         </p>
 
         <div className="mt-10 md:mt-20 flex justify-center md:block">
-          <MainButton type="secondary" ariaLabel="Check Experience">
+          <MainButton
+            type="secondary"
+            ariaLabel="Check Experience"
+            handleClick={() => handleExperienceClick()}
+          >
             <span>Check experience</span>
           </MainButton>
         </div>
       </header>
 
-      <section ref={homePanelRef} className="w-auto md:w-[470px] md:h-[500px]">
+      <section ref={homePanelRef} className="w-auto md:w-[500px] md:h-[500px]">
         {isInView && <HomeIntroPanel />}
       </section>
     </section>

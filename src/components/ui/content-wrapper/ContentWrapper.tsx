@@ -7,6 +7,7 @@ const ContentWrapper = ({ type, children }: IContentWrapperProps) => {
   return (
     <section
       className={`
+        w-full
         max-w-7xl
         ${type === 'primary' ? 'bg-white' : 'bg-secondary'}
         bg-opacity-95

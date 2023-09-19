@@ -2,6 +2,7 @@ export interface IMainButtonProps {
   type: 'primary' | 'secondary'
   ariaLabel: string
   className?: string
+  handleClick: () => void
   children: React.ReactNode
 }
 
@@ -9,6 +10,7 @@ const MainButton = ({
   type,
   ariaLabel,
   className,
+  handleClick,
   children
 }: IMainButtonProps) => {
   return (
@@ -30,6 +32,7 @@ const MainButton = ({
       ${type == 'primary' ? 'hover:shadow-primary' : 'hover:shadow-secondary'}
       ${className}`}
       aria-label={ariaLabel}
+      onClick={handleClick}
     >
       {children}
     </button>

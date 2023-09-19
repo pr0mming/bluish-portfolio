@@ -68,7 +68,7 @@ const SkillsList = () => {
   }
 
   return (
-    <section className="flex flex-col justify-center gap-20">
+    <section className="flex flex-col justify-center gap-16">
       {skills.map((item) => {
         if (item.skillList.length) {
           return (
