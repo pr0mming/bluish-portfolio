@@ -15,13 +15,12 @@ const getAllExperience = (): ExperienceEntity[][] => {
           '.NET Framework',
           'C#',
           'VB.NET',
-          'ASMX',
           'Bootstrap',
           'JavaScript',
           'jQuery',
-          'CSS',
+          'MS SQL Server',
           'Azure DevOps',
-          'MS SQL Server'
+          'ASMX'
         ]
       }
     ],
@@ -45,8 +44,8 @@ const getAllExperience = (): ExperienceEntity[][] => {
           'Angular',
           'Angular Material',
           'NgRx',
-          'Firebase Authentication',
           'Golang',
+          'Firebase Authentication',
           'Mongo DB',
           'AWS Lambda',
           'Solidity'
@@ -65,18 +64,18 @@ const getAllExperience = (): ExperienceEntity[][] => {
           "I played a supporting part in enhancing a foreigner rental bond platform's user interface and experience. By closely aligning with the client's requirements and incorporating best practices in UI/UX design."
         ],
         technologies: [
+          'Angular',
+          'Bootstrap',
           'Golang',
-          'gRPC',
           '.NET',
           'C#',
+          'Microservices',
+          'Mongo DB',
+          'Azure DevOps',
           'CQRS',
           'Ocelot',
           'Clean Architecture',
-          'Microservices',
-          'Angular',
-          'Bootstrap',
-          'Mongo DB',
-          'Azure DevOps'
+          'gRPC'
         ]
       }
     ],
@@ -95,14 +94,15 @@ const getAllExperience = (): ExperienceEntity[][] => {
         ],
         technologies: [
           'Angular',
-          'PrimeNG',
-          'Firebase Realtime',
-          'Bootstrap',
-          '.NET Core',
-          'Oracle Database',
           'Angular Material',
-          'Azure DevOps',
           'TypeScript',
+          'Bootstrap',
+          'PrimeNG',
+          '.NET Core',
+          'C#',
+          'Firebase Realtime',
+          'Oracle Database',
+          'Azure DevOps',
           'Gitflow'
         ]
       }
@@ -132,7 +132,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
       {
         id: 6,
         position: 'Junior Application Development Analyst',
-        companyName: 'jun. 2017 - dec. 2019 (2 year 7 months)',
+        companyName: 'UTAP',
         companyWebsite: 'https://www.utap.edu.co',
         time: 'jan. 2021 - feb. 2022 (1 year 2 months)',
         description:
@@ -142,6 +142,9 @@ const getAllExperience = (): ExperienceEntity[][] => {
           'My involvement extended to the enhancement of a substantial corporative Desktop App, pivotal to managing diverse business processes and manual tasks. In a collaborative environment, I enthusiastically took on the responsibility of fulfilling diverse requirements that aimed to improve app functionality and user experience.'
         ],
         technologies: [
+          'Bootstrap',
+          'CSS',
+          'jQuery',
           '.NET Framework',
           'C#',
           'MS SQL Server',
@@ -150,9 +153,6 @@ const getAllExperience = (): ExperienceEntity[][] => {
           'Winforms',
           'EF',
           'ASMX',
-          'Bootstrap',
-          'jQuery',
-          'CSS',
           'SVN'
         ]
       }

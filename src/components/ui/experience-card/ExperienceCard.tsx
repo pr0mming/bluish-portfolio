@@ -59,8 +59,8 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         </a>
       </span>
       <h5 className="font-medium text-sm">{time}</h5>
-      <p className="font-light">{description}</p>
-      <ul className="list-disc font-light text-base ms-5">
+      <p className="font-light text-sm md:text-base">{description}</p>
+      <ul className="list-disc font-light text-sm md:text-base ms-5">
         {details?.map((detail) => (
           <li key={detail} className="mb-5">
             {detail}
@@ -71,7 +71,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         {technologies.map((tech) => (
           <div
             key={tech}
-            className="bg-accent text-white font-medium text-sm rounded-full px-4 py-2"
+            className="bg-accent text-white font-medium text-xs md:text-sm rounded-full px-4 py-2"
           >
             {tech}
           </div>

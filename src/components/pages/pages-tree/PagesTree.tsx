@@ -1,9 +1,7 @@
 'use client'
-// Next
-import dynamic from 'next/dynamic'
 
-// Lazy
-const PageInView = dynamic(() => import('./PageInView'))
+// Components
+import PageInView from './PageInView'
 
 // Extensions
 import getCustomPages from './lazy-definition'
