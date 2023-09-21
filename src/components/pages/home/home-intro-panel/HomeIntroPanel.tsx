@@ -1,5 +1,3 @@
-'use client'
-
 // Next
 import Image from 'next/image'
 

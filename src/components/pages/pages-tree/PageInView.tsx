@@ -1,5 +1,3 @@
-'use client'
-
 // React
 import { ComponentType, useRef } from 'react'
 

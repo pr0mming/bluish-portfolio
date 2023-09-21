@@ -1,11 +1,11 @@
-// Next
-import Image from 'next/image'
-
 // Components
 import ExperienceCard from '@src/components/ui/experience-card/ExperienceCard'
 
 // Modules
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
+
+// Components
+import ExperienceCurvedArrow from '@src/components/ui/experience-curved-arrow/ExperienceCurvedArrow'
 
 export interface IExperienceLastRoleProps {
   type: 'left' | 'right'
@@ -29,26 +29,7 @@ const ExperienceLastRole = ({
       >
         <ExperienceCard experience={experience} />
 
-        {!isLastItem && (
-          <>
-            <div className="relative hidden lg:block -bottom-16 pe-2">
-              <Image
-                src="/misc/curved-arrow.svg"
-                alt="Curved Arrow"
-                width={290}
-                height={266}
-              />
-            </div>
-            <div className="block lg:hidden">
-              <Image
-                src="/misc/twisted-blue-arrow.svg"
-                alt="Colombia"
-                width={93}
-                height={80}
-              />
-            </div>
-          </>
-        )}
+        {!isLastItem && <ExperienceCurvedArrow isFlipped={false} />}
       </div>
     )
   }
@@ -60,29 +41,7 @@ const ExperienceLastRole = ({
           isFirstItem ? 'lg:mt-16' : ''
         }`}
       >
-        {!isLastItem && (
-          <>
-            <div className="relative hidden lg:block -bottom-16 ps-2">
-              <Image
-                src="/misc/curved-arrow.svg"
-                alt="Curved Arrow"
-                width={290}
-                height={266}
-                style={{
-                  transform: 'scaleX(-1)'
-                }}
-              />
-            </div>
-            <div className="block lg:hidden">
-              <Image
-                src="/misc/twisted-blue-arrow.svg"
-                alt="Colombia"
-                width={93}
-                height={80}
-              />
-            </div>
-          </>
-        )}
+        {!isLastItem && <ExperienceCurvedArrow isFlipped={true} />}
 
         <ExperienceCard experience={experience} />
       </div>

@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react'
-import HomePage, { IHomePageProps } from './HomePage'
+import { IHomePageProps } from './HomePage'
+import HomePage from './HomePage'
 import { mockProps } from './HomePage.mock'
 
 export default {
