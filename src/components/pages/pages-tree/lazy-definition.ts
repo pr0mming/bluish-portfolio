@@ -11,18 +11,23 @@ export interface ICustomPages {
 
 // Lazy
 const getCustomPages = (): ICustomPages[] => {
-  return [
+  const components = [
     {
       id: 'me',
-      componentFn: dynamic(() => import('@src/components/pages/me/MePage'))
+      path: import('@src/components/pages/me/MePage')
     },
     {
       id: 'experience',
-      componentFn: dynamic(
-        () => import('@src/components/pages/experience/ExperiencePage')
-      )
+      path: import('@src/components/pages/experience/ExperiencePage')
     }
   ]
+
+  return components.map((component) => {
+    return {
+      id: component.id,
+      componentFn: dynamic(() => component.path)
+    } as ICustomPages
+  })
 }
 
 export default getCustomPages

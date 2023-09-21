@@ -16,16 +16,7 @@ const PageInView = ({ id, Page }: IPageInViewProps) => {
   const pageInView = useInView(pageRef, { once: true })
 
   return (
-    <section
-      id={id}
-      className="py-10 mx-6 md:px-20"
-      style={{
-        minHeight: 600
-      }}
-      onScroll={() => {
-        console.log('sx')
-      }}
-    >
+    <section id={id} className="py-10 mx-6 md:px-20">
       <div
         className={`
           flex
@@ -33,11 +24,11 @@ const PageInView = ({ id, Page }: IPageInViewProps) => {
           items-center
           transition duration-700 delay-300 ease-in-out
           ${pageInView ? 'opacity-100' : 'opacity-0'}
-          ${pageInView ? 'transform-none' : 'transform -translate-x-[200px]'}
+          ${pageInView ? 'transform-none' : 'transform -translate-x-52'}
         `}
         ref={pageRef}
       >
-        {pageInView && <Page />}
+        <Page />
       </div>
     </section>
   )

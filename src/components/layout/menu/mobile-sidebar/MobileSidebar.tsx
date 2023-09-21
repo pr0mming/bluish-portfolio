@@ -28,8 +28,9 @@ const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
       variants={backdropMotion}
     >
       <m.nav
-        className="absolute -right-1/2 w-3/6 sm:w-5/12 h-screen bg-primary border-s-[1px] border-s-accent border-opacity-70 overflow-auto"
+        className="absolute -right-1/2 w-3/6 sm:w-5/12 h-screen bg-primary border-s-accent border-opacity-70 overflow-auto"
         variants={sidebarMotion}
+        style={{ borderInlineStartWidth: '1px' }}
       >
         <div className="flex flex-nowrap items-center justify-between mx-auto p-5">
           <div className="shrink-1 w-full">

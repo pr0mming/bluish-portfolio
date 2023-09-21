@@ -1,8 +1,8 @@
 'use client'
 
 // Next
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 // React
@@ -45,7 +45,10 @@ const HomePage = () => {
           </h1>
           <h2 className="inline-flex text-white font-semibold text-xl md:text-2xl lg:text-4xl items-center justify-center flex-wrap md:flex-nowrap my-2">
             Software Engineer
-            <div className="relative w-[25px] h-[25px] md:w-[40px] md:h-[40px] ml-2">
+            <div
+              className="relative md:w-10 md:h-10 ml-2"
+              style={{ width: '25px', height: '25px' }}
+            >
               <Image
                 src="/icons/colombia-rounded-icon.svg"
                 alt="Colombia"
@@ -74,7 +77,7 @@ const HomePage = () => {
         </div>
       </header>
 
-      <section ref={homePanelRef} className="w-auto md:w-[500px] md:h-[500px]">
+      <section ref={homePanelRef} className="w-auto lg:w-[500px] lg:h-[500px]">
         {isInView && <HomeIntroPanel />}
       </section>
     </section>

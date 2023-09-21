@@ -39,7 +39,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
   return (
     <m.div
       className={`
-          w-[115px]
+          w-24
           h-auto
           relative
         bg-white
@@ -56,7 +56,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
       exit="hidden"
       variants={skillCardMotion}
     >
-      <div className="absolute flex gap-2 -top-[14px] right-2">
+      <div className="absolute flex gap-2 right-2" style={{ top: '-14px' }}>
         <FontAwesomeIcon
           icon={skillLevelIcon as IconName}
           className="text-2xl"
@@ -65,7 +65,10 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
         {isFavorite && <FontAwesomeIcon icon="heart" className="text-2xl" />}
       </div>
       <div className="flex flex-col flex-1 items-center gap-1">
-        <div className="relative w-[45px] h-[45px] my-auto">
+        <div
+          className="relative my-auto"
+          style={{ width: '45px', height: '45px' }}
+        >
           <Image
             src={imgPath}
             alt={name}
@@ -76,7 +79,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
             }}
           />
         </div>
-        <span className="h-[40px] flex items-center text-center text-sm font-bold">
+        <span className="h-10 flex items-center text-center text-xs md:text-sm font-bold">
           {name}
         </span>
       </div>

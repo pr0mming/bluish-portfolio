@@ -181,7 +181,7 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
       skillList: [
         {
           id: 22,
-          name: 'Microservices',
+          name: 'Micro services',
           imgPath: '/skills/microservices.png',
           level: SkillLevelEnum.ENTHUSIAST,
           isFavorite: true

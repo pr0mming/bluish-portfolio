@@ -70,7 +70,8 @@ const config: Config = {
       boxShadow: {
         'custom-xs': `5px 5px 0px 0px rgba(0, 0, 0, 0.0)`,
         'custom-sm': `10px 10px 0px 0px rgba(0, 0, 0, 0.0)`,
-        'custom-md': `15px 15px 0px 0px rgba(0, 0, 0, 0.0)`
+        'custom-md': `15px 15px 0px 0px rgba(0, 0, 0, 0.0)`,
+        'custom-up-right-md': `15px 15px 0px rgba(0, 0, 0, 0.0)`
       },
       textShadow: {
         'secondary-sm': `8px 8px 0px theme('colors.secondary.DEFAULT')`

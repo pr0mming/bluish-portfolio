@@ -18,7 +18,10 @@ export interface INavbarProps {
 
 const Navbar = ({ menus }: INavbarProps) => {
   return (
-    <nav className="block bg-primary border-b-[1px] border-b-accent border-opacity-70">
+    <nav
+      className="block bg-primary border-b-accent border-opacity-70"
+      style={{ borderBottomWidth: '1px' }}
+    >
       <div className="w-full flex flex-nowrap items-center justify-between mx-auto px-4 py-6">
         <a
           href="/"

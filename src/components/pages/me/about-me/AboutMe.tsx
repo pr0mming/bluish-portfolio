@@ -23,7 +23,7 @@ const AboutMe = () => {
 
   return (
     <article>
-      <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase">
+      <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase mb-5">
         About Me
       </h3>
       <section className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
@@ -36,7 +36,7 @@ const AboutMe = () => {
             height={581}
           />
         </div>
-        <ul className="list-none">
+        <ul className="list-none me-5">
           {meFeatures.map((feature) => (
             <li
               key={feature.id}

@@ -5,7 +5,7 @@ export interface ITooltipProps {
 
 const Tooltip = ({ text, children }: ITooltipProps) => {
   return (
-    <div className="group flex justify-center">
+    <div className="hidden md:flex group justify-center">
       {children}
       <span
         className={`absolute
