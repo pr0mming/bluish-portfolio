@@ -3,7 +3,10 @@ type ExperienceEntity = {
   position: string
   companyName: string
   companyWebsite: string
-  time: string
+  time: {
+    startDate: Date
+    endDate: Date
+  }
   description: string
   details?: string[]
   technologies: string[]

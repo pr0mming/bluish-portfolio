@@ -37,7 +37,6 @@ const getAllFloatingIcons = (): FloatingIconEntity[][] => {
         iconPath: '/icons/git-icon.svg',
         position: { left: 10, top: 30 }
       },
-
       {
         iconPath: '/icons/firebase-icon.svg',
         position: { top: 30 }
@@ -58,7 +57,6 @@ const getAllFloatingIcons = (): FloatingIconEntity[][] => {
         iconPath: '/icons/js-icon.svg',
         position: { left: 20, top: 10 }
       },
-
       {
         iconPath: '/icons/linux-icon.svg',
         position: { right: 20, bottom: 5 }

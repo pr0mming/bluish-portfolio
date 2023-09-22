@@ -5,6 +5,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 // Modules
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
+import getWorkTime from '@src/modules/common/time/getWorkTime'
 
 library.add(faArrowUp)
 
@@ -22,6 +23,8 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
     details,
     technologies
   } = experience
+
+  const expTimeStr = getWorkTime(time.startDate, time.endDate)
 
   return (
     <div
@@ -58,7 +61,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
           <FontAwesomeIcon icon="arrow-up" className="rotate-45 text-xl" />
         </a>
       </span>
-      <h5 className="font-medium text-sm">{time}</h5>
+      <h5 className="font-medium text-sm">{expTimeStr}</h5>
       <p className="font-light text-sm md:text-base">{description}</p>
       <ul className="list-disc font-light text-sm md:text-base ms-5">
         {details?.map((detail) => (

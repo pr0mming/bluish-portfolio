@@ -8,7 +8,10 @@ const getAllExperience = (): ExperienceEntity[][] => {
         position: 'Software Development Consultant',
         companyName: 'Sofka Technologies',
         companyWebsite: 'https://sofka.com.co',
-        time: 'jan. 2023 - Present (8 months)',
+        time: {
+          startDate: new Date(2023, 0, 1),
+          endDate: new Date()
+        },
         description:
           'Collaborating within a cross-functional team to drive innovation in a dynamic software development environment. Currently focusing on a credit line project, I analyze requirements and play a key role in ensuring the timely delivery of high-quality features on a substantial codebase solution',
         technologies: [
@@ -30,7 +33,10 @@ const getAllExperience = (): ExperienceEntity[][] => {
         position: 'Senior Full Stack Developer I',
         companyName: 'Double V Partners',
         companyWebsite: 'https://doublevpartners.com',
-        time: 'apr. 2022 - jan. 2023 (10 months)',
+        time: {
+          startDate: new Date(2022, 3, 1),
+          endDate: new Date(2023, 0, 1)
+        },
         description:
           'I put efforts across multiple teams to drive the successful execution of two distinct projects, each with its unique set of challenges and innovations:',
         details: [
@@ -56,7 +62,10 @@ const getAllExperience = (): ExperienceEntity[][] => {
         position: 'Ssr. Full Stack Developer II',
         companyName: 'Double V Partners',
         companyWebsite: 'https://doublevpartners.com',
-        time: 'oct. 2021 - mar. 2022 (6 months)',
+        time: {
+          startDate: new Date(2021, 9, 1),
+          endDate: new Date(2022, 2, 1)
+        },
         description:
           'I actively contributed to the success of several diverse projects, showcasing my versatility and technical acumen in delivering impactful solutions:',
         details: [
@@ -85,7 +94,10 @@ const getAllExperience = (): ExperienceEntity[][] => {
         position: 'Backend Developer Engineer',
         companyName: 'Optima Corporation',
         companyWebsite: 'https://optima.net.co',
-        time: 'mar. 2021 - oct. 2021 (8 months)',
+        time: {
+          startDate: new Date(2021, 2, 1),
+          endDate: new Date(2021, 9, 1)
+        },
         description:
           'I undertook pivotal roles in shaping and delivering impactful projects that spanned diverse domains. My technical expertise and commitment to innovation drove successful outcomes, showcasing my ability to collaborate and find solutions even in the face of unexpected challenges:',
         details: [
@@ -113,7 +125,10 @@ const getAllExperience = (): ExperienceEntity[][] => {
         position: 'Software Development Team Coordinator',
         companyName: 'UTAP',
         companyWebsite: 'https://www.utap.edu.co',
-        time: 'jan. 2021 - feb. 2022 (1 year 2 months)',
+        time: {
+          startDate: new Date(2020, 0, 1),
+          endDate: new Date(2021, 1, 1)
+        },
         description:
           'I played a pivotal role in orchestrating the successful execution of multifaceted projects that streamlined academic processes and elevated business operations.',
         details: [
@@ -134,7 +149,10 @@ const getAllExperience = (): ExperienceEntity[][] => {
         position: 'Junior Application Development Analyst',
         companyName: 'UTAP',
         companyWebsite: 'https://www.utap.edu.co',
-        time: 'jan. 2021 - feb. 2022 (1 year 2 months)',
+        time: {
+          startDate: new Date(2017, 5, 1),
+          endDate: new Date(2019, 11, 1)
+        },
         description:
           "I embarked on the first steps of my professional journey, making significant contributions to the university's technological landscape.",
         details: [
