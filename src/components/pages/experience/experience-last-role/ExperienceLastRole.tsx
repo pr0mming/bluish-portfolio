@@ -6,6 +6,7 @@ import ExperienceEntity from '@src/modules/features/pages/experience/domain/Expe
 
 // Components
 import ExperienceCurvedArrow from '@src/components/ui/experience-curved-arrow/ExperienceCurvedArrow'
+import ExperienceTwistedArrow from '@src/components/ui/experience-twisted-arrow/ExperienceTwistedArrow'
 
 export interface IExperienceLastRoleProps {
   type: 'left' | 'right'
@@ -29,7 +30,12 @@ const ExperienceLastRole = ({
       >
         <ExperienceCard experience={experience} />
 
-        {!isLastItem && <ExperienceCurvedArrow isFlipped={false} />}
+        {!isLastItem && (
+          <>
+            <ExperienceCurvedArrow isFlipped={false} />{' '}
+            <ExperienceTwistedArrow />
+          </>
+        )}
       </div>
     )
   }
@@ -41,7 +47,12 @@ const ExperienceLastRole = ({
           isFirstItem ? 'lg:mt-16' : ''
         }`}
       >
-        {!isLastItem && <ExperienceCurvedArrow isFlipped={true} />}
+        {!isLastItem && (
+          <>
+            <ExperienceCurvedArrow isFlipped={true} />
+            <ExperienceTwistedArrow />
+          </>
+        )}
 
         <ExperienceCard experience={experience} />
       </div>

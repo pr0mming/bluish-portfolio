@@ -1,11 +1,11 @@
-// Next
-import Image from 'next/image'
-
 // Components
 import ExperienceCard from '@src/components/ui/experience-card/ExperienceCard'
 
 // Modules
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
+
+// Components
+import ExperienceMiniArrow from '@src/components/ui/experience-mini-arrow/ExperienceMiniArrow'
 
 export interface IExperienceRoleProps {
   type: 'left' | 'right'
@@ -32,16 +32,7 @@ const ExperienceRole = ({
       <div className="flex flex-col items-center">
         <ExperienceCard experience={experience} />
 
-        {!isLastItem && (
-          <div className="mt-2">
-            <Image
-              src="/misc/mini-arrow.svg"
-              alt="Mini Arrow"
-              width={60}
-              height={0}
-            />
-          </div>
-        )}
+        {!isLastItem && <ExperienceMiniArrow />}
       </div>
     </div>
   )

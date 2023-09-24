@@ -25,12 +25,12 @@ const HomePage = () => {
 
   return (
     <section
-      className="flex flex-col md:flex-row flex-1 justify-center items-center gap-10 lg:gap-20"
-      style={{ marginBottom: 280 }}
+      className="flex flex-col md:flex-row justify-center items-center gap-10 lg:gap-20"
+      style={{ marginBottom: 340 }}
     >
       <HomePresentationPanel />
 
-      <section ref={homePanelRef} className="w-auto lg:w-[500px] lg:h-[500px]">
+      <section ref={homePanelRef} className="w-auto lg:w-[550px] lg:h-[500px]">
         {isInView && <HomeIntroPanel />}
       </section>
     </section>

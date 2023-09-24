@@ -39,9 +39,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         border-accent
         shadow-custom-xs
         shadow-accent
-        py-10
-        px-5
-        md:px-10
+        p-10
         text-white
       `}
       style={{
@@ -49,9 +47,9 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         height: 'auto'
       }}
     >
-      <h3 className="font-semibold text-2xl">{position}</h3>
+      <h3 className="font-semibold text-xl lg:text-2xl">{position}</h3>
       <span className="flex items-center gap-2">
-        <h4 className="font-medium text-xl">{companyName}</h4>
+        <h4 className="font-medium text-lg lg:text-xl">{companyName}</h4>
         <a
           href={companyWebsite}
           target="_blank"
@@ -62,14 +60,19 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         </a>
       </span>
       <h5 className="font-medium text-sm">{expTimeStr}</h5>
-      <p className="font-light text-sm md:text-base">{description}</p>
+
+      <div className="text-sm font-light md:text-base">
+        <p dangerouslySetInnerHTML={{ __html: description }} />
+      </div>
+
       <ul className="list-disc font-light text-sm md:text-base ms-5">
         {details?.map((detail) => (
           <li key={detail} className="mb-5">
-            {detail}
+            <p dangerouslySetInnerHTML={{ __html: detail }}></p>
           </li>
         ))}
       </ul>
+
       <section className="flex flex-wrap gap-1">
         {technologies.map((tech) => (
           <div

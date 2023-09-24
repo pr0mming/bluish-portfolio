@@ -3,6 +3,8 @@ import ContentWrapper from '@src/components/ui/content-wrapper/ContentWrapper'
 
 // Modules
 import getAllExperience from '@src/modules/features/pages/experience/application/getAllExperience'
+
+// Components
 import ExperienceSection from './experience-section/ExperienceSection'
 
 const ExperiencePage = () => {

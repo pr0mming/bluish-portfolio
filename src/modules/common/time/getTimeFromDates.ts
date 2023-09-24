@@ -1,5 +1,5 @@
 const getTimeFromDates = (startDate: Date, endDate: Date): string => {
-  let yearDiff = endDate.getFullYear() - startDate.getMonth()
+  let yearDiff = endDate.getFullYear() - startDate.getFullYear()
   let monthDiff = endDate.getMonth() - startDate.getMonth() + 1
 
   if (monthDiff < 0) {

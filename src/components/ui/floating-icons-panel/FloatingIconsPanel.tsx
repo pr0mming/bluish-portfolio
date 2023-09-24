@@ -1,17 +1,14 @@
 // Next
 import Image from 'next/image'
 
-// React
-import { useEffect } from 'react'
-
 // Framer
-import { m, useAnimate } from 'framer-motion'
+import { m } from 'framer-motion'
 
 // Modules
 import FloatingIconEntity from '@src/modules/features/pages/home/domain/FloatingIconEntity'
 
-// Extensions
-import runFloatMotion from './FloatingIconsPanel.animations'
+// Hooks
+import useFloatingIconsAnimation from '@src/hooks/animations/useFloatingIconsAnimation'
 
 export interface IFloatingIconsPanelProps {
   className: string
@@ -19,11 +16,7 @@ export interface IFloatingIconsPanelProps {
 }
 
 const FloatingIconsPanel = ({ className, icons }: IFloatingIconsPanelProps) => {
-  const [scope, animate] = useAnimate()
-
-  useEffect(() => {
-    runFloatMotion(scope, animate)
-  })
+  const { scope } = useFloatingIconsAnimation()
 
   return (
     <m.div
