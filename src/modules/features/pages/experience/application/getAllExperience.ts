@@ -40,7 +40,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
         description:
           'I put efforts across multiple teams to drive the successful execution of <span class="font-semibold">two distinct projects</span>, each with its unique set of challenges and innovations:',
         details: [
-          'I took on the role of the development of <span class="font-semibold">core communication</span> between end-users and the <span class="font-semibold">Blockchain</span> components. As a key member of the team, I designed and implemented interfaces that facilitated part of the user interaction throught an <span class="font-semibold">interactive Web Application</span>.',
+          'In collaboration with a diverse team, I took on the role of the development of <span class="font-semibold">core communication</span> between end-users and the <span class="font-semibold">Blockchain</span> components for an <span class="font-semibold">NFT Marketplace</span> MVP. As a key member of the team, I designed and implemented interfaces that facilitated part of the user interaction throught an <span class="font-semibold">interactive Web Application</span>.',
           'In collaboration with a dedicated team, I played a role in creating a <span class="font-semibold">chatbot solution</span> aimed at enhancing issue resolution and process management for a client\'s application.'
         ],
         technologies: [
@@ -102,7 +102,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           'My technical expertise and commitment to innovation drove successful outcomes, showcasing my ability to collaborate and find solutions even in the face of <span class="font-semibold">unexpected challenges</span>:',
         details: [
           'In collaboration with a diverse team, I contributed to a significant project aimed at enhancing an <span class="font-semibold">e-commerce platform</span> for a <span class="font-semibold">foreign client</span>. I took charge of translating requirements into user-friendly interfaces, implementing <span class="font-semibold">real-time features</span> and integrating the communication with the backend components',
-          'Collaborating with a colleague, I meticulously designed and implemented the Frontend architecture for a <span class="font-semibold">Corporative newsletters Web Application</span>, developed comprehensive UX/UI elements that aligned with client requirements, and orchestrated seamless communication between the frontend and backend components.'
+          'Collaborating with a colleague, I designed and implemented the Frontend architecture for a <span class="font-semibold">Corporative newsletters Web Application</span>, developed comprehensive UX/UI elements that aligned with client requirements, and orchestrated seamless communication between the frontend and backend components.'
         ],
         technologies: [
           'Angular',

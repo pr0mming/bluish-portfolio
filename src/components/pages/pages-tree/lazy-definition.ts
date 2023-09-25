@@ -19,6 +19,10 @@ const getCustomPages = (): ICustomPages[] => {
     {
       id: 'experience',
       path: import('@src/components/pages/experience/ExperiencePage')
+    },
+    {
+      id: 'projects',
+      path: import('@src/components/pages/projects/ProjectsPage')
     }
   ]
 

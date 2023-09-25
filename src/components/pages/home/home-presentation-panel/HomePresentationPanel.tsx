@@ -1,16 +1,10 @@
 // Next
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
-// Components
-import MainButton from '@src/components/ui/main-button/MainButton'
-
 const HomePresentationPanel = () => {
-  const router = useRouter()
-
   return (
-    <header className="flex flex-col mx-2 md:ms-20 lg:ms-10 mt-5">
-      <hgroup className="text-center md:text-start">
+    <header className="flex flex-col mx-5 md:ms-20 lg:ms-10 mt-5">
+      <hgroup className="text-center lg:text-start">
         <span className="text-white font-semibold text-3xl my-2">
           Hello, I&apos;m
         </span>
@@ -39,18 +33,6 @@ const HomePresentationPanel = () => {
       <p className="text-white font-normal text-lg lg:text-2xl text-center md:text-start  mt-2">
         And welcome to my <strong>first</strong> portfolio website version :)
       </p>
-
-      <div className="mt-10 md:mt-20 flex justify-center md:block">
-        <MainButton
-          type="secondary"
-          ariaLabel="Check Experience"
-          handleClick={() => {
-            router.push('#experience')
-          }}
-        >
-          <span>Check experience</span>
-        </MainButton>
-      </div>
     </header>
   )
 }

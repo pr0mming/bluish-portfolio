@@ -26,7 +26,7 @@ const AboutMe = () => {
       <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase mb-5">
         About Me
       </h3>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
         <div className="p-0 md:p-10">
           <Image
             src="/me/just-me-article.png"

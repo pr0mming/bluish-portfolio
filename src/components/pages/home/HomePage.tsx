@@ -25,8 +25,8 @@ const HomePage = () => {
 
   return (
     <section
-      className="flex flex-col md:flex-row justify-center items-center gap-10 lg:gap-20"
-      style={{ marginBottom: 340 }}
+      className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20"
+      style={{ marginBottom: 250 }}
     >
       <HomePresentationPanel />
 

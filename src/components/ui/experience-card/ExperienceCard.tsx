@@ -1,3 +1,6 @@
+// Next
+import Link from 'next/link'
+
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -50,14 +53,14 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
       <h3 className="font-semibold text-xl lg:text-2xl">{position}</h3>
       <span className="flex items-center gap-2">
         <h4 className="font-medium text-lg lg:text-xl">{companyName}</h4>
-        <a
+        <Link
           href={companyWebsite}
           target="_blank"
           className="transition ease-in-out delay-75 duration-150 hover:text-white-600 hover:scale-125"
           aria-label="Check Website"
         >
           <FontAwesomeIcon icon="arrow-up" className="rotate-45 text-xl" />
-        </a>
+        </Link>
       </span>
       <h5 className="font-medium text-sm">{expTimeStr}</h5>
 
