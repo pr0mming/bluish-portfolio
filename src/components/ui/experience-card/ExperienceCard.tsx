@@ -42,7 +42,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         border-accent
         shadow-custom-xs
         shadow-accent
-        p-10
+        p-5 md:p-10
         text-white
       `}
       style={{

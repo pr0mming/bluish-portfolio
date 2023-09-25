@@ -1,22 +1,26 @@
 export interface ITooltipProps {
   text: string
+  className?: string
   children: React.ReactNode
 }
 
-const Tooltip = ({ text, children }: ITooltipProps) => {
+const Tooltip = ({ text, className, children }: ITooltipProps) => {
   return (
-    <div className="hidden md:flex group justify-center">
+    <div className={`group justify-center ${className}`}>
       {children}
       <span
-        className={`absolute
+        className={`
+        absolute
         inline-block
-        top-12
+        top-5
         scale-0
         transition
         ease-in-out
         duration-200
         rounded-lg
-        bg-primary
+        bg-secondary
+        border-accent
+        border-2
         font-medium
         text-xs
         text-white-600

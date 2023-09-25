@@ -4,7 +4,7 @@ import Image from 'next/image'
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faCode, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
 // Modules
 import ProjectEntity from '@src/modules/features/pages/projects/domain/ProjectEntity'
@@ -12,7 +12,7 @@ import ProjectEntity from '@src/modules/features/pages/projects/domain/ProjectEn
 // Components
 import MainButton from '../main-button/MainButton'
 
-library.add(faArrowUp)
+library.add(faCode, faArrowUp)
 
 export interface IProjectCardProps {
   project: ProjectEntity
@@ -34,7 +34,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
         border-secondary
         shadow-custom-xs
         shadow-secondary
-        p-10
+        p-5 md:p-10
         text-secondary
       `}
     >
@@ -72,12 +72,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
         >
           <span className="flex gap-2 items-center text-secondary">
             <span>Repo</span>
-            <Image
-              src="/icons/github-icon.svg"
-              alt="Project Url"
-              width={25}
-              height={15}
-            />
+            <FontAwesomeIcon icon="code" />
           </span>
         </MainButton>
 
@@ -90,7 +85,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
           >
             <span className="flex gap-2 items-center text-secondary">
               <span>Demo</span>
-              <FontAwesomeIcon icon="arrow-up" className="rotate-45 text-xl" />
+              <FontAwesomeIcon icon="arrow-up" className="rotate-45" />
             </span>
           </MainButton>
         )}
