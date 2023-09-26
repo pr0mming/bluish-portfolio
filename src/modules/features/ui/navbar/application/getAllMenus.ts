@@ -16,16 +16,16 @@ const getAllMenus = (): MenuEntity[] => {
       icon: 'face-smile-beam'
     },
     {
+      type: MenuEnum.EXPERIENCE,
+      text: 'Experience',
+      path: '#experience',
+      icon: 'arrow-trend-up'
+    },
+    {
       type: MenuEnum.PROJECTS,
       text: 'Projects',
       path: '#projects',
       icon: 'briefcase'
-    },
-    {
-      type: MenuEnum.CONTACT,
-      text: 'Contact',
-      path: '#contact',
-      icon: 'address-book'
     }
   ]
 }

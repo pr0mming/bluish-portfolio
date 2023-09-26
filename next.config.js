@@ -7,4 +7,21 @@ const nextPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development'
 })
 
-module.exports = nextPWA()
+module.exports = nextPWA({
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'projecteuler.net',
+        port: '',
+        pathname: '/profile/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'hackthebox.com',
+        port: '',
+        pathname: '/badge/**'
+      }
+    ]
+  }
+})

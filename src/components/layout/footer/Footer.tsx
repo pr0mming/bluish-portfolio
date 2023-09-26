@@ -1,12 +1,15 @@
 // Next
-import Tooltip from '@src/components/ui/tooltip/Tooltip'
 import Image from 'next/image'
+
+// Components
+import Tooltip from '@src/components/ui/tooltip/Tooltip'
+import SocialMediaBar from '@src/components/ui/social-media-bar/SocialMediaBar'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <section
+    <footer
       className="flex flex-col items-center gap-5 bg-primary border-t-accent border-opacity-70 text-white text-opacity-70 p-8"
       style={{ borderTopWidth: 1 }}
     >
@@ -54,7 +57,9 @@ const Footer = () => {
         </div>
       </div>
       <span>© Julián Bernal {currentYear}</span>
-    </section>
+
+      <SocialMediaBar type="footer" />
+    </footer>
   )
 }
 

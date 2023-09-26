@@ -15,7 +15,7 @@ import {
   faHome,
   faSmileBeam,
   faBriefcase,
-  faAddressBook,
+  faArrowTrendUp,
   faGlobe
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -38,7 +38,7 @@ import useAppStore from '@src/store/AppStore'
 import useHash from '@src/hooks/useHash'
 
 // Load icons for normal/responsive menu
-library.add(faHome, faSmileBeam, faBriefcase, faAddressBook, faGlobe)
+library.add(faHome, faSmileBeam, faBriefcase, faArrowTrendUp, faGlobe)
 
 export interface IMenuProps {}
 

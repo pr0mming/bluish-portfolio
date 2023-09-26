@@ -29,9 +29,9 @@ const getAllMeSkillCategories = (): MeSkillCategoryEntity[] => {
     },
     {
       id: 5,
-      name: 'Misc',
+      name: 'Others',
       icon: 'puzzle-piece',
-      type: SkillCategoryEnum.MISC
+      type: SkillCategoryEnum.OTHERS
     }
   ]
 }

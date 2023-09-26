@@ -3,5 +3,5 @@ export enum SkillCategoryEnum {
   BACKEND,
   DATABASE,
   CLOUD,
-  MISC
+  OTHERS
 }

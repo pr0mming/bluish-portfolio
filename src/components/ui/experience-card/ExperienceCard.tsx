@@ -56,7 +56,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         <Link
           href={companyWebsite}
           target="_blank"
-          className="transition ease-in-out delay-75 duration-150 hover:text-white-600 hover:scale-125"
+          className="transition ease-in-out0 duration-150 hover:text-white-600 hover:scale-125"
           aria-label="Check Website"
         >
           <FontAwesomeIcon icon="arrow-up" className="rotate-45 text-xl" />

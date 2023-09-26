@@ -20,7 +20,7 @@ const HomeIntroPanel = () => {
     <section className="flex mx-16 md:mx-20">
       <div className="relative">
         <FloatingIconsPanel
-          className="top-0 -left-10 w-4/6 h-3/6 -z-10"
+          className="top-0 -left-10 w-3/6 h-3/6 -z-10"
           icons={firstSetIcons}
         />
         <FloatingIconsPanel

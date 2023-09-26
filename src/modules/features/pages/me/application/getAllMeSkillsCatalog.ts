@@ -177,7 +177,7 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
     },
     {
       id: 5,
-      categoryType: SkillCategoryEnum.MISC,
+      categoryType: SkillCategoryEnum.OTHERS,
       skillList: [
         {
           id: 22,

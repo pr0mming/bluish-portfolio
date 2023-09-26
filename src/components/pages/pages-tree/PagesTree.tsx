@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 // Components
 import PageInView from './PageInView'
 
@@ -12,7 +13,11 @@ const PagesTree = () => {
   return (
     <div className="lg:mt-10">
       {pages.map((page) => (
-        <PageInView key={page.id} id={page.id} Page={page.componentFn} />
+        <PageInView
+          key={page.id}
+          id={page.id}
+          Page={dynamic(() => page.componentFn)}
+        />
       ))}
     </div>
   )

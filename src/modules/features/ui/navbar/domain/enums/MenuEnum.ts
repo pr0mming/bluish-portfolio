@@ -2,6 +2,6 @@ export enum MenuEnum {
   HOME,
   ME,
   PROJECTS,
-  CONTACT,
+  EXPERIENCE,
   TRANSLATE
 }

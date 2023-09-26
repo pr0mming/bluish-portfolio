@@ -1,4 +1,5 @@
 // Next
+import SocialMediaBar from '@src/components/ui/social-media-bar/SocialMediaBar'
 import Image from 'next/image'
 
 const HomePresentationPanel = () => {
@@ -33,6 +34,10 @@ const HomePresentationPanel = () => {
       <p className="text-white font-normal text-lg lg:text-2xl text-center md:text-start  mt-2">
         And welcome to my <strong>first</strong> portfolio website version :)
       </p>
+
+      <div className="mt-10">
+        <SocialMediaBar type="default" />
+      </div>
     </header>
   )
 }
