@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const HomePresentationPanel = () => {
   return (
-    <header className="flex flex-col mx-5 md:ms-20 lg:ms-10 mt-5">
+    <header className="flex flex-col mx-5 md:ms-20 mt-5">
       <hgroup className="text-center lg:text-start">
         <span className="text-white font-semibold text-3xl my-2">
           Hello, I&apos;m

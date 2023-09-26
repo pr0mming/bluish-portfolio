@@ -1,7 +1,7 @@
 // Next
 import Link from 'next/link'
 
-export interface IMainButtonProps {
+export interface IMainLinkProps {
   type: 'primary' | 'secondary'
   href: string
   target?: string
@@ -9,13 +9,13 @@ export interface IMainButtonProps {
   children: React.ReactNode
 }
 
-const MainButton = ({
+const MainLink = ({
   type,
   href,
   target,
   className,
   children
-}: IMainButtonProps) => {
+}: IMainLinkProps) => {
   return (
     <Link
       href={href}
@@ -38,4 +38,4 @@ const MainButton = ({
   )
 }
 
-export default MainButton
+export default MainLink

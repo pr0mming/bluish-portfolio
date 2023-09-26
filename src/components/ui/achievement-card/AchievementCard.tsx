@@ -38,7 +38,7 @@ const AchievementCard = ({ achievement }: IProjectCardProps) => {
       `}
     >
       <span className="flex items-center gap-2">
-        <h4 className="font-semibold text-xl lg:text-2xl">{title}</h4>
+        <h4 className="font-semibold text-lg lg:text-xl">{title}</h4>
         <Link
           href={platformUrl}
           target="_blank"

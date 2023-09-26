@@ -1,8 +1,10 @@
+import dynamic from 'next/dynamic'
+import { ComponentType } from 'react'
+
 export interface ICustomPages {
   id: string
   /* eslint-disable */
-
-  componentFn: Promise<any>
+  componentFn: ComponentType
 }
 
 // Lazy
@@ -10,15 +12,19 @@ const getCustomPages = (): ICustomPages[] => {
   return [
     {
       id: 'me',
-      componentFn: import('@src/components/pages/me/MePage')
+      componentFn: dynamic(() => import('@src/components/pages/me/MePage'))
     },
     {
       id: 'experience',
-      componentFn: import('@src/components/pages/experience/ExperiencePage')
+      componentFn: dynamic(
+        () => import('@src/components/pages/experience/ExperiencePage')
+      )
     },
     {
       id: 'projects',
-      componentFn: import('@src/components/pages/projects/ProjectsPage')
+      componentFn: dynamic(
+        () => import('@src/components/pages/projects/ProjectsPage')
+      )
     }
   ]
 }

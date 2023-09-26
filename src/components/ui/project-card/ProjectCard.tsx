@@ -10,7 +10,7 @@ import { faCode, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import ProjectEntity from '@src/modules/features/pages/projects/domain/ProjectEntity'
 
 // Components
-import MainButton from '../main-button/MainButton'
+import MainLink from '../main-link/MainLink'
 
 library.add(faCode, faArrowUp)
 
@@ -64,7 +64,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
       </section>
 
       <section className="flex gap-3 mt-2">
-        <MainButton
+        <MainLink
           type="secondary"
           href={repoUrl}
           target="_blank"
@@ -74,10 +74,10 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
             <span>Repo</span>
             <FontAwesomeIcon icon="code" />
           </span>
-        </MainButton>
+        </MainLink>
 
         {demoUrl && (
-          <MainButton
+          <MainLink
             type="secondary"
             href={demoUrl}
             target="_blank"
@@ -87,7 +87,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
               <span>Demo</span>
               <FontAwesomeIcon icon="arrow-up" className="rotate-45" />
             </span>
-          </MainButton>
+          </MainLink>
         )}
       </section>
     </div>
