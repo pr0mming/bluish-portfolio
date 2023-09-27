@@ -6,7 +6,6 @@ import { useInView } from 'framer-motion'
 
 export interface IPageInViewProps {
   id: string
-  /* eslint-disable */
   Page: ComponentType
 }
 

@@ -1,3 +1,5 @@
+'use client'
+
 // React
 import { useMemo } from 'react'
 

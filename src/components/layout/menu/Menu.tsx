@@ -3,9 +3,6 @@
 // Next
 import dynamic from 'next/dynamic'
 
-// React
-import { useEffect } from 'react'
-
 // Framer
 import { AnimatePresence } from 'framer-motion'
 
@@ -34,9 +31,6 @@ const MobileSidebar = dynamic(
 // Store
 import useAppStore from '@src/store/AppStore'
 
-// Hooks
-import useHash from '@src/hooks/useHash'
-
 // Load icons for normal/responsive menu
 library.add(faHome, faSmileBeam, faBriefcase, faArrowTrendUp, faGlobe)
 
@@ -46,13 +40,6 @@ const Menu = () => {
   const menus: MenuEntity[] = getAllMenus()
 
   const isOpenSidebar = useAppStore((state) => state.isOpenSidebar)
-  const setActiveMenu = useAppStore((state) => state.setActiveMenu)
-
-  const { hash } = useHash()
-
-  useEffect(() => {
-    setActiveMenu(hash)
-  }, [hash, setActiveMenu])
 
   return (
     <header className="fixed w-full z-10">

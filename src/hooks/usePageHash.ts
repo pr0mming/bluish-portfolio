@@ -1,9 +1,8 @@
-'use client'
-
 import { useCallback, useEffect, useState } from 'react'
 
-const useHash = () => {
+const usePageHash = () => {
   const [hash, setHash] = useState('')
+  const [scrollFirstTime, setScrollFirstTime] = useState(true)
 
   const hashChangeHandler = useCallback(() => {
     setHash(window.location.hash)
@@ -11,6 +10,7 @@ const useHash = () => {
 
   useEffect(() => {
     setHash(() => window.location.hash)
+
     window.addEventListener('hashchange', hashChangeHandler)
 
     return () => {
@@ -18,14 +18,19 @@ const useHash = () => {
     }
   }, [hashChangeHandler])
 
-  const updateHash = useCallback(
-    (newHash: string) => {
-      if (newHash !== hash) window.location.hash = newHash
-    },
-    [hash]
-  )
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.slice(1)
 
-  return { hash, updateHash }
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }, 900)
+
+      setScrollFirstTime(false)
+    }
+  }, [hash, scrollFirstTime])
+
+  return { hash }
 }
 
-export default useHash
+export default usePageHash

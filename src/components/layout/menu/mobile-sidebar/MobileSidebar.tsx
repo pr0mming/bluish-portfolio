@@ -32,7 +32,7 @@ const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
         variants={sidebarMotion}
         style={{ borderInlineStartWidth: '1px' }}
       >
-        <div className="flex flex-nowrap items-center justify-between mx-auto p-5">
+        <div className="flex flex-nowrap items-center justify-between mx-auto py-5 px-1">
           <div className="shrink-1 w-full">
             <ul className="flex flex-col gap-10 p-4">
               {menus.map((menu) => (

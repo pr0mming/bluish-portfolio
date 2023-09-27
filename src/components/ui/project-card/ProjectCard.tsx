@@ -44,6 +44,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
         className="rounded-xl"
         width={700}
         height={450}
+        priority
       />
 
       <h3 className="font-semibold text-xl lg:text-2xl">{title}</h3>

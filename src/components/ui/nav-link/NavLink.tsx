@@ -58,7 +58,10 @@ const NavLink = ({ className, text, path, children }: INavLinkProps) => {
         >
           {children}
         </m.div>
-        <m.h1 className="tracking-widest mr-7" variants={textMotion}>
+        <m.h1
+          className="tracking-widest text-xs md:text-lg mr-7"
+          variants={textMotion}
+        >
           {text}
         </m.h1>
       </Link>

@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+// Modules
 import getAllSocialMedia from '@src/modules/features/ui/social-media-bar/application/getAllSocialMedia'
 
 export interface ISocialMediaBarProps {
@@ -17,7 +18,7 @@ const SocialMediaBar = ({ type }: ISocialMediaBarProps) => {
   return (
     <section
       className={`flex flex-nowrap ${
-        isDefault ? 'justify-center md:justify-start' : 'justify-center'
+        isDefault ? 'justify-center lg:justify-start' : 'justify-center'
       } gap-5`}
     >
       {socialMedia.map((item) => (
@@ -26,9 +27,8 @@ const SocialMediaBar = ({ type }: ISocialMediaBarProps) => {
           href={item.url}
           target="_blank"
           className={`${
-            !isDefault
-              ? 'transition ease-in-out delay-0 duration-150 hover:text-white-600 hover:scale-125'
-              : `
+            isDefault
+              ? `
               bg-secondary
               rounded-full
               border-2
@@ -36,6 +36,7 @@ const SocialMediaBar = ({ type }: ISocialMediaBarProps) => {
               hover:-translate-x-2
               hover:-translate-y-2
               hover:shadow-custom-xs hover:shadow-secondary border-secondary text-secondary p-1`
+              : 'transition ease-in-out delay-0 duration-150 hover:text-white-600 hover:scale-125'
           }`}
         >
           <Image
