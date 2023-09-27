@@ -5,7 +5,7 @@ const getAllMeFeatures = (): MeFeaturesEntity[] => {
     {
       id: 1,
       icon: 'fa-solid fa-earth-americas',
-      text: "I'm from <strong>Colombia</strong>"
+      text: "I'm from <strong>Cali, Colombia</strong>"
     },
     {
       id: 2,
