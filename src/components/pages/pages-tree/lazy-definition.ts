@@ -3,7 +3,6 @@ import { ComponentType } from 'react'
 
 export interface ICustomPages {
   id: string
-  /* eslint-disable */
   componentFn: ComponentType
 }
 

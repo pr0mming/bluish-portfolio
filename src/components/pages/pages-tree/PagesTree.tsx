@@ -20,16 +20,16 @@ const pages = getCustomPages()
 const PagesTree = () => {
   const setActiveMenu = useAppStore((state) => state.setActiveMenu)
 
-  const { hash } = usePageHash()
+  const { menu } = usePageHash()
 
   useEffect(() => {
-    setActiveMenu(hash)
-  }, [hash, setActiveMenu])
+    setActiveMenu(menu)
+  }, [menu, setActiveMenu])
 
   return (
     <div className="lg:mt-10">
       {pages.map((page) => (
-        <PageInView key={page.id} id={page.id} Page={page.componentFn} />
+        <PageInView key={page.id} menuId={page.id} Page={page.componentFn} />
       ))}
     </div>
   )

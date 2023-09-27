@@ -1,36 +1,37 @@
-import { useCallback, useEffect, useState } from 'react'
+// React
+import { useEffect, useState } from 'react'
 
 const usePageHash = () => {
-  const [hash, setHash] = useState('')
+  const [menu, setMenu] = useState('')
   const [scrollFirstTime, setScrollFirstTime] = useState(true)
 
-  const hashChangeHandler = useCallback(() => {
-    setHash(window.location.hash)
-  }, [])
-
   useEffect(() => {
-    setHash(() => window.location.hash)
+    setMenu(() => window.location.hash.slice(1))
 
     window.addEventListener('hashchange', hashChangeHandler)
 
     return () => {
       window.removeEventListener('hashchange', hashChangeHandler)
     }
-  }, [hashChangeHandler])
+  }, [])
 
   useEffect(() => {
-    if (hash) {
+    if (menu) {
       setTimeout(() => {
-        const id = hash.slice(1)
+        const id = menu
 
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }, 900)
+      }, 600)
 
       setScrollFirstTime(false)
     }
-  }, [hash, scrollFirstTime])
+  }, [menu, scrollFirstTime])
 
-  return { hash }
+  const hashChangeHandler = () => {
+    setMenu(window.location.hash.slice(1))
+  }
+
+  return { menu }
 }
 
 export default usePageHash

@@ -5,8 +5,12 @@ import Image from 'next/image'
 import Tooltip from '@src/components/ui/tooltip/Tooltip'
 import SocialMediaBar from '@src/components/ui/social-media-bar/SocialMediaBar'
 
+// Modules
+import getAllFavTech from '@src/modules/features/ui/footer/application/getAllFavTech'
+
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const favTechs = getAllFavTech()
 
   return (
     <footer
@@ -17,43 +21,26 @@ const Footer = () => {
         <p className="me-2">Made with love using</p>
 
         <div className="flex gap-1 flex-wrap">
-          <div className="relative" style={{ width: 30, height: 30 }}>
-            <Tooltip text="Figma">
-              <Image
-                src="/icons/figma-icon.svg"
-                alt="Figma"
-                width={30}
-                height={30}
-                priority
-              />
-            </Tooltip>
-          </div>
-
-          <div className="relative" style={{ width: 30, height: 30 }}>
-            <Tooltip text="Next">
-              <Image
-                src="/icons/nextjs-icon.svg"
-                alt="Next"
-                width={30}
-                height={30}
-                priority
-              />
-            </Tooltip>
-          </div>
-
-          <div className="relative" style={{ width: 30, height: 30 }}>
-            <Tooltip text="Framer">
-              <Image
-                src="/icons/framer-icon.svg"
-                alt="Framer"
-                sizes="30px"
-                fill
-                style={{
-                  objectFit: 'contain'
-                }}
-              />
-            </Tooltip>
-          </div>
+          {favTechs.map((tech) => (
+            <div
+              key={tech.name}
+              className="relative"
+              style={{ width: 30, height: 30 }}
+            >
+              <Tooltip text={tech.name}>
+                <Image
+                  src={tech.iconPath}
+                  alt={tech.name}
+                  sizes="30px"
+                  fill
+                  style={{
+                    objectFit: 'contain'
+                  }}
+                  priority
+                />
+              </Tooltip>
+            </div>
+          ))}
         </div>
       </div>
       <span>© Julián Bernal {currentYear}</span>

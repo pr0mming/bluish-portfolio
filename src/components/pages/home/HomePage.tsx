@@ -12,6 +12,9 @@ import { useInView } from 'framer-motion'
 // Components
 import HomePresentationPanel from './home-presentation-panel/HomePresentationPanel'
 
+// Hooks
+import usePageScroll from '@src/hooks/usePageScroll'
+
 // Lazy
 const HomeIntroPanel = dynamic(
   () => import('./home-intro-panel/HomeIntroPanel')
@@ -20,18 +23,27 @@ const HomeIntroPanel = dynamic(
 export interface IHomePageProps {}
 
 const HomePage = () => {
-  const homePanelRef = useRef(null)
-  const isInView = useInView(homePanelRef, { once: true })
+  const homeIntroPanelRef = useRef(null)
+  const pageInView = useInView(homeIntroPanelRef, { once: true })
+
+  const { pageRef } = usePageScroll({
+    menuId: 'home',
+    pxUnitOffset: 20
+  })
 
   return (
     <section
+      ref={pageRef}
       className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20"
       style={{ marginBottom: 250 }}
     >
       <HomePresentationPanel />
 
-      <section ref={homePanelRef} className="w-auto lg:w-[550px] lg:h-[500px]">
-        {isInView && <HomeIntroPanel />}
+      <section
+        ref={homeIntroPanelRef}
+        className="w-auto lg:w-[550px] lg:h-[500px]"
+      >
+        {pageInView && <HomeIntroPanel />}
       </section>
     </section>
   )

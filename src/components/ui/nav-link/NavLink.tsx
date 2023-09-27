@@ -18,7 +18,6 @@ import {
 
 // Store
 import useAppStore from '@src/store/AppStore'
-import { shallow } from 'zustand/shallow'
 
 export interface INavLinkProps {
   className: string
@@ -28,13 +27,7 @@ export interface INavLinkProps {
 }
 
 const NavLink = ({ className, text, path, children }: INavLinkProps) => {
-  const { activeMenu, setActiveMenu } = useAppStore(
-    (state) => ({
-      activeMenu: state.activeMenu,
-      setActiveMenu: state.setActiveMenu
-    }),
-    shallow
-  )
+  const activeMenu = useAppStore((state) => state.activeMenu)
 
   const isActive = useMemo(() => path === activeMenu, [activeMenu, path])
 
@@ -45,13 +38,7 @@ const NavLink = ({ className, text, path, children }: INavLinkProps) => {
       whileHover="hover"
       animate={isActive ? 'hover' : 'rest'}
     >
-      <Link
-        href={path}
-        className={className}
-        onClick={() => {
-          setActiveMenu(path)
-        }}
-      >
+      <Link href={`#${path}`} className={className}>
         <m.div
           className="absolute left-0 translate-x-1/2 translate-y-1/2 opacity-0"
           variants={slashMotion}

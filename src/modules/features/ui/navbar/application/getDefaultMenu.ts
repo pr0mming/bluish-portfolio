@@ -5,7 +5,7 @@ const getDefaultMenu = (): MenuEntity => {
   return {
     type: MenuEnum.HOME,
     text: 'Home',
-    path: '#home',
+    path: 'home',
     icon: 'house'
   }
 }

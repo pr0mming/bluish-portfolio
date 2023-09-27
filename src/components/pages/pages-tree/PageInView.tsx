@@ -1,20 +1,23 @@
 // React
-import { ComponentType, useRef } from 'react'
+import { ComponentType } from 'react'
 
 // Framer
 import { useInView } from 'framer-motion'
 
+// Hooks
+import usePageScroll from '@src/hooks/usePageScroll'
+
 export interface IPageInViewProps {
-  id: string
+  menuId: string
   Page: ComponentType
 }
 
-const PageInView = ({ id, Page }: IPageInViewProps) => {
-  const pageRef = useRef<HTMLDivElement>(null)
+const PageInView = ({ menuId, Page }: IPageInViewProps) => {
+  const { pageRef } = usePageScroll({ menuId, pxUnitOffset: 56 })
   const pageInView = useInView(pageRef, { once: true })
 
   return (
-    <section id={id} className="py-10 mx-6 md:px-20">
+    <section id={menuId} className="py-10 mx-6 md:px-20">
       <div
         className={`
           flex
