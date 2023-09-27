@@ -45,6 +45,7 @@ const SocialMediaBar = ({ type }: ISocialMediaBarProps) => {
             width={iconSize}
             height={iconSize}
             className={`${isDefault ? 'rounded-full' : ''}`}
+            priority
           />
         </Link>
       ))}

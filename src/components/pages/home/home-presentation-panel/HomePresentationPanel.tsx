@@ -1,6 +1,8 @@
 // Next
-import SocialMediaBar from '@src/components/ui/social-media-bar/SocialMediaBar'
 import Image from 'next/image'
+
+// Components
+import SocialMediaBar from '@src/components/ui/social-media-bar/SocialMediaBar'
 
 const HomePresentationPanel = () => {
   return (
@@ -12,20 +14,14 @@ const HomePresentationPanel = () => {
         <h1 className="text-white font-extrabold text-6xl md:text-7xl lg:text-8xl text-shadow-secondary-sm my-2">
           Julián Bernal
         </h1>
-        <h2 className="inline-flex text-white font-semibold text-xl md:text-2xl lg:text-4xl items-center justify-center flex-wrap md:flex-nowrap my-2">
+        <h2 className="inline-flex items-center justify-center flex-wrap md:flex-nowrap text-white font-semibold text-xl md:text-2xl lg:text-4xl my-2">
           Software Engineer
-          <div
-            className="relative md:w-10 md:h-10 ml-2"
-            style={{ width: '25px', height: '25px' }}
-          >
+          <div className="relative flex items-center md:w-10 md:h-10 ml-2">
             <Image
               src="/icons/colombia-rounded-icon.svg"
               alt="Colombia"
-              sizes="40px"
-              fill
-              style={{
-                objectFit: 'contain'
-              }}
+              width={25}
+              height={25}
               priority
             />
           </div>

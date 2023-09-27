@@ -35,7 +35,7 @@ const HomePage = () => {
     <section
       ref={pageRef}
       className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20"
-      style={{ marginBottom: 250 }}
+      style={{ marginTop: 130, marginBottom: 250 }}
     >
       <HomePresentationPanel />
 

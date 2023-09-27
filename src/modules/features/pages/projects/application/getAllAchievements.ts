@@ -8,7 +8,7 @@ const getAllAchievements = (): AchievementEntity[] => {
       description:
         "An awesome platform to solve coding challenges, it's a bit different because every challenge combines <strong>math</strong> and programming.",
       platformUrl: 'https://projecteuler.net/',
-      imgPath: 'https://projecteuler.net/profile/pr0mming.png'
+      imgPath: '/projects/p_euler.png'
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ const getAllAchievements = (): AchievementEntity[] => {
       description:
         "Ever since I met HTB I discovered another way to squeeze your brain and It's a good platform to get involved with <strong>OWASP</strong>.",
       platformUrl: 'https://app.hackthebox.com/profile/21806',
-      imgPath: 'https://hackthebox.com/badge/image/21806'
+      imgPath: '/projects/htb.png'
     },
     {
       id: 3,
