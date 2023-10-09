@@ -16,10 +16,6 @@ import {
   faGlobe
 } from '@fortawesome/free-solid-svg-icons'
 
-// Modules
-import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
-import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
-
 // Components
 import Navbar from '@src/components/layout/menu/navbar/Navbar'
 
@@ -31,14 +27,17 @@ const MobileSidebar = dynamic(
 // Store
 import useAppStore from '@src/store/AppStore'
 
+// Modules
+import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
+
 // Load icons for normal/responsive menu
 library.add(faHome, faSmileBeam, faBriefcase, faArrowTrendUp, faGlobe)
 
-export interface IMenuProps {}
+export interface IMenuProps {
+  menus: MenuEntity[]
+}
 
-const Menu = () => {
-  const menus: MenuEntity[] = getAllMenus()
-
+const Menu = ({ menus }: IMenuProps) => {
   const isOpenSidebar = useAppStore((state) => state.isOpenSidebar)
 
   return (

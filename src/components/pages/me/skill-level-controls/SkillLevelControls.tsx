@@ -8,28 +8,33 @@ import {
   faHeart
 } from '@fortawesome/free-solid-svg-icons'
 
-// Modules
-import getAllMeSkillLevels from '@src/modules/features/pages/me/application/getAllMeSkillLevels'
-
 // Components
 import SkillLevelButton from '@src/components/ui/skills-level-button/SkillLevelButton'
 
+// Hooks
+import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
+import useSkillLevelsTranslation from '@src/hooks/i18n/features/useSkillLevelsTranslation'
+
 library.add(faFaceSmile, faFaceLaughBeam, faFaceKiss, faHeart)
 
-const SkillLevelControls = () => {
-  const skillLevels = getAllMeSkillLevels()
+export interface ISkillLevelControlsProps {
+  lang: string
+}
+
+const SkillLevelControls = ({ lang }: ISkillLevelControlsProps) => {
+  const skillLevels = useSkillLevelsTranslation(lang)
+
+  const { t } = useClientTranslation(lang, 'skills')
 
   return (
     <article className="mt-10">
-      <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase mb-5">
-        Tech Skills
+      <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-5">
+        {t('title')}
       </h3>
-      <p className="text-center text-md md:text-xl font-semibold text-secondary">
-        I&apos;ve worked with some skills for a longer time than other, also
-        there are skills that a love to use...
-        <br />
-        If you want you can filter them by:
-      </p>
+      <p
+        className="text-center text-md md:text-xl font-semibold text-secondary mx-5"
+        dangerouslySetInnerHTML={{ __html: t('description') }}
+      />
       <section className="grid grid-cols-2 gap-5 w-fit items-stretch mx-auto my-10">
         {skillLevels.map((level) => (
           <SkillLevelButton key={level.id} level={level}>

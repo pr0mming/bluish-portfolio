@@ -11,7 +11,7 @@ const ProjectsPage = () => {
   return (
     <ContentWrapper type="primary">
       <section className="mb-10">
-        <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase mb-10">
+        <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-10">
           Personal Projects
         </h3>
 

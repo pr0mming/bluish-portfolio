@@ -7,6 +7,7 @@ type ExperienceEntity = {
     startDate: Date
     endDate: Date
   }
+  timeStr?: string
   description: string
   details?: string[]
   technologies: string[]

@@ -1,0 +1,14 @@
+{
+  "firstLevel.title": "Enthusiast",
+  "firstLevel.description": "I've used the skill for a time, but I feel that I need master it",
+  "firstLevel.workExperience": "1 year or less",
+  "secondLevel.title": "Confident",
+  "secondLevel.description": "I have more experience and I can use the skill without problems",
+  "secondLevel.workExperience": "2 years",
+  "thirdLevel.title": "\"Reposaito\"",
+  "thirdLevel.description": "I've worked with the skill almost all of my life and I've faced hard problems",
+  "thirdLevel.workExperience": "3 years or more",
+  "fourthLevel.title": "My Favorite",
+  "fourthLevel.description": "It's just a flag for mark my favorite skills regardless of my expertise",
+  "workExperienceLabel": "Work Exp"
+}

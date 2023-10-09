@@ -1,19 +1,21 @@
 // Components
 import ContentWrapper from '@src/components/ui/content-wrapper/ContentWrapper'
 
-// Modules
-import getAllExperience from '@src/modules/features/pages/experience/application/getAllExperience'
-
 // Components
 import ExperienceSection from './experience-section/ExperienceSection'
+import useExperienceTranslation from '@src/hooks/i18n/features/useExperienceTranslation'
 
-const ExperiencePage = () => {
-  const workExperience = getAllExperience()
+export interface IExperiencePageProps {
+  lang: string
+}
+
+const ExperiencePage = ({ lang }: IExperiencePageProps) => {
+  const { title, workExperience } = useExperienceTranslation(lang)
 
   return (
     <ContentWrapper type="secondary">
-      <h3 className="text-white text-3xl text-center font-bold tracking-wider uppercase mb-10">
-        Experience
+      <h3 className="text-white text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-10">
+        {title}
       </h3>
       <section>
         {workExperience.map((experiences, i) => (

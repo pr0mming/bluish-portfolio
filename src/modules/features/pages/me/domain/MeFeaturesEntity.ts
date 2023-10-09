@@ -1,6 +1,6 @@
 type MeFeaturesEntity = {
   id: number
-  text: string
+  textKey: string
   icon: string
 }
 

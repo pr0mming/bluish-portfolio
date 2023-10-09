@@ -26,7 +26,7 @@ export interface ISkillLevelButtonProps {
 }
 
 const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
-  const { title, description, workExperience } = level
+  const { title, description, workExperience, workExperienceLabel } = level
 
   const [isActive, setIsActive] = useState(level.type != undefined)
   const {
@@ -90,10 +90,10 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
           </Tooltip>
         </span>
 
-        <span className=" flex flex-col lg:flex-row md:gap-2 text-sm md:text-md font-semibold">
+        <span className=" flex flex-col lg:flex-row md:gap-2 text-xs md:text-base font-semibold">
           {workExperience && (
             <>
-              <span className="font-bold">Work Exp:</span>
+              <span className="font-bold">{workExperienceLabel}:</span>
               {workExperience}
             </>
           )}

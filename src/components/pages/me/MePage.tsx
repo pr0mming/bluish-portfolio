@@ -5,17 +5,21 @@ import ContentWrapper from '@src/components/ui/content-wrapper/ContentWrapper'
 import AboutMe from './about-me/AboutMe'
 
 // Skills
-import SkillLevelControls from './skill-level-controls/SkillControls'
+import SkillLevelControls from './skill-level-controls/SkillLevelControls'
 import SkillsList from './skills-list/SkillsList'
 
-const MePage = () => {
+export interface IMePageProps {
+  lang: string
+}
+
+const MePage = ({ lang }: IMePageProps) => {
   return (
     <ContentWrapper type="primary">
-      <AboutMe />
+      <AboutMe lang={lang} />
 
-      <SkillLevelControls />
+      <SkillLevelControls lang={lang} />
 
-      <SkillsList />
+      <SkillsList lang={lang} />
     </ContentWrapper>
   )
 }

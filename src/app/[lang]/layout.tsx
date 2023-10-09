@@ -1,9 +1,8 @@
 // Styles
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // Next
-import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 
 // Font Awesome
@@ -11,37 +10,40 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 
 // Components
 import FramerWrapper from '@src/components/framer-motion/framer-wrapper'
-import Menu from '@src/components/layout/menu/Menu'
-import Footer from '@src/components/layout/footer/Footer'
+import MenuSSR from '@src/components/layout/menu/menu-ssr/MenuSSR'
+import FooterSSR from '@src/components/layout/footer/footer-ssr/FooterSSR'
+
+// i18n
+import { languages } from '../i18n/settings'
+import { dir } from 'i18next'
 
 config.autoAddCss = false
 
 const font = Montserrat({ subsets: ['latin'], display: 'swap' })
 
-export const metadata: Metadata = {
-  title: 'Julián Bernal | @pr0mming',
-  description: 'Welcome to the first version of my portfolio'
+// Generate SSG routes
+export async function generateStaticParams() {
+  return languages.map((lang) => ({ lang }))
 }
 
-export default function RootLayout({
-  children
+export default async function RootLayout({
+  children,
+  params: { lang }
 }: {
   children: React.ReactNode
+  params: {
+    lang: string
+  }
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon.png"></link>
-        <meta name="theme-color" content="#fff" />
-      </head>
+    <html lang={lang} dir={dir(lang)}>
       <body
         className={`${font.className} custom-background-primary h-full min-h-screen`}
       >
         <FramerWrapper>
-          <Menu />
+          <MenuSSR lang={lang} />
           {children}
-          <Footer />
+          <FooterSSR lang={lang} />
         </FramerWrapper>
       </body>
     </html>

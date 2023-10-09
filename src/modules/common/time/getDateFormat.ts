@@ -1,6 +1,6 @@
-const getDateFormat = (date: Date): string => {
+const getDateFormat = (lang: string, date: Date): string => {
   const shortMonth = date
-    .toLocaleString('default', { month: 'short' })
+    .toLocaleString(lang, { month: 'short' })
     .toLocaleLowerCase()
   const fullYear = date.getFullYear()
 

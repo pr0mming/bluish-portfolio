@@ -5,25 +5,25 @@ const getAllMenus = (): MenuEntity[] => {
   return [
     {
       type: MenuEnum.HOME,
-      text: 'Home',
+      text: 'home',
       path: 'home',
       icon: 'house'
     },
     {
       type: MenuEnum.ME,
-      text: 'Me',
+      text: 'me',
       path: 'me',
       icon: 'face-smile-beam'
     },
     {
       type: MenuEnum.EXPERIENCE,
-      text: 'Experience',
+      text: 'experience',
       path: 'experience',
       icon: 'arrow-trend-up'
     },
     {
       type: MenuEnum.PROJECTS,
-      text: 'Projects',
+      text: 'projects',
       path: 'projects',
       icon: 'briefcase'
     }

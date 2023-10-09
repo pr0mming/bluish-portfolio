@@ -28,7 +28,11 @@ library.add(
   faFaceFlushed
 )
 
-const SkillsList = () => {
+export interface ISkillsListProps {
+  lang: string
+}
+
+const SkillsList = ({ lang }: ISkillsListProps) => {
   const { skills, isEmpty } = useSkillsFilter()
 
   if (isEmpty) {
@@ -44,6 +48,7 @@ const SkillsList = () => {
               key={item.id}
               categoryType={item.categoryType}
               skills={item.skillList}
+              lang={lang}
             />
           )
         }

@@ -5,31 +5,31 @@ const getAllMeSkillCategories = (): MeSkillCategoryEntity[] => {
   return [
     {
       id: 1,
-      name: 'Frontend',
+      name: 'firstCategory.title',
       icon: 'pencil',
       type: SkillCategoryEnum.FRONTEND
     },
     {
       id: 2,
-      name: 'Backend',
+      name: 'secondCategory.title',
       icon: 'brain',
       type: SkillCategoryEnum.BACKEND
     },
     {
       id: 3,
-      name: 'Database',
+      name: 'thirdCategory.title',
       icon: 'database',
       type: SkillCategoryEnum.DATABASE
     },
     {
       id: 4,
-      name: 'Cloud',
+      name: 'fourthCategory.title',
       icon: 'cloud',
       type: SkillCategoryEnum.CLOUD
     },
     {
       id: 5,
-      name: 'Others',
+      name: 'fifthCategory.title',
       icon: 'puzzle-piece',
       type: SkillCategoryEnum.OTHERS
     }

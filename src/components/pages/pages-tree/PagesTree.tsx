@@ -1,26 +1,45 @@
 'use client'
 
+// Next
+import dynamic from 'next/dynamic'
+
 // React
 import { useEffect } from 'react'
 
 // Components
-import PageInView from './PageInView'
-
-// Extensions
-import getCustomPages from './lazy-definition'
+import PageWrapper from './PageWrapper'
 
 // Store
 import useAppStore from '@src/store/AppStore'
 
 // Hooks
 import usePageHash from '@src/hooks/usePageHash'
+import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 
-const pages = getCustomPages()
+// i18n
+import { defaultNS } from '@src/app/i18n/settings'
 
-const PagesTree = () => {
+// Lazy
+const MePage = dynamic(() => import('@src/components/pages/me/MePage'))
+const ExperiencePage = dynamic(
+  () => import('@src/components/pages/experience/ExperiencePage')
+)
+const ProjectsPage = dynamic(
+  () => import('@src/components/pages/projects/ProjectsPage')
+)
+
+export interface IPageTreeProps {
+  lang: string
+}
+
+const PagesTree = ({ lang }: IPageTreeProps) => {
   const setActiveMenu = useAppStore((state) => state.setActiveMenu)
 
   const { menu } = usePageHash()
+
+  // Little workaround to solve the changeLanguage call (async)
+  // Before the wrong language reaches the other client components :(
+  const {} = useClientTranslation(lang, defaultNS)
 
   useEffect(() => {
     setActiveMenu(menu)
@@ -28,9 +47,17 @@ const PagesTree = () => {
 
   return (
     <div className="lg:mt-10">
-      {pages.map((page) => (
-        <PageInView key={page.id} menuId={page.id} Page={page.componentFn} />
-      ))}
+      <PageWrapper menuId="me">
+        <MePage lang={lang} />
+      </PageWrapper>
+
+      <PageWrapper menuId="experience">
+        <ExperiencePage lang={lang} />
+      </PageWrapper>
+
+      <PageWrapper menuId="projects">
+        <ProjectsPage />
+      </PageWrapper>
     </div>
   )
 }

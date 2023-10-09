@@ -6,7 +6,7 @@ const AchievementsList = () => {
 
   return (
     <section>
-      <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase mb-10">
+      <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-10">
         Other Achievements
       </h3>
       <p className="text-center text-md md:text-xl font-semibold text-secondary">

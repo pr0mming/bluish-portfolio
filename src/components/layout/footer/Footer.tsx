@@ -8,7 +8,11 @@ import SocialMediaBar from '@src/components/ui/social-media-bar/SocialMediaBar'
 // Modules
 import getAllFavTech from '@src/modules/features/ui/footer/application/getAllFavTech'
 
-const Footer = () => {
+export interface IFooterProps {
+  legend: string
+}
+
+const Footer = ({ legend }: IFooterProps) => {
   const currentYear = new Date().getFullYear()
   const favTechs = getAllFavTech()
 
@@ -18,7 +22,7 @@ const Footer = () => {
       style={{ borderTopWidth: 1 }}
     >
       <div className="flex items-center flex-wrap">
-        <p className="me-2">Made with love using</p>
+        <p className="me-2">{legend}</p>
 
         <div className="flex gap-1 flex-wrap">
           {favTechs.map((tech) => (

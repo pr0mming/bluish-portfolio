@@ -15,16 +15,26 @@ import {
 
 // Modules
 import getAllMeFeatures from '@src/modules/features/pages/me/application/getAllMeFeatures'
+import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
+
+// i18n
+// import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 
 library.add(faEarthAmericas, faBriefcase, faBrain, faBook, faDumbbell, faGuitar)
 
-const AboutMe = () => {
+export interface IAboutMeProps {
+  lang: string
+}
+
+const AboutMe = ({ lang }: IAboutMeProps) => {
   const meFeatures = getAllMeFeatures()
+
+  const { t } = useClientTranslation(lang, 'me')
 
   return (
     <article>
-      <h3 className="text-secondary text-3xl text-center font-bold tracking-wider uppercase mb-5">
-        About Me
+      <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-5">
+        {t('me.title')}
       </h3>
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
         <div className="p-0 md:p-10">
@@ -48,7 +58,7 @@ const AboutMe = () => {
                   icon={feature.icon as IconName}
                 />
               </span>
-              <p dangerouslySetInnerHTML={{ __html: feature.text }} />
+              <p dangerouslySetInnerHTML={{ __html: t(feature.textKey) }} />
             </li>
           ))}
         </ul>

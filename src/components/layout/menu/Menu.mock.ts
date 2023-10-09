@@ -1,6 +1,8 @@
 import { IMenuProps } from './Menu'
 
-const base: IMenuProps = {}
+const base: IMenuProps = {
+  menus: []
+}
 
 export const mockProps = {
   base

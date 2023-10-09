@@ -64,14 +64,14 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
         ))}
       </section>
 
-      <section className="flex gap-3 mt-2">
+      <section className="flex flex-col sm:flex-row gap-3 mt-2">
         <MainLink
           type="secondary"
           href={repoUrl}
           target="_blank"
           className="font-bold text-sm md:text-lg px-5 py-2"
         >
-          <span className="flex gap-2 items-center text-secondary">
+          <span className="flex gap-2 justify-center items-center text-secondary">
             <span>Repo</span>
             <FontAwesomeIcon icon="code" />
           </span>
@@ -84,7 +84,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
             target="_blank"
             className="font-bold text-sm md:text-lg px-5 py-2"
           >
-            <span className="flex gap-2 items-center text-secondary">
+            <span className="flex gap-2 justify-center items-center text-secondary">
               <span>Demo</span>
               <FontAwesomeIcon icon="arrow-up" className="rotate-45" />
             </span>

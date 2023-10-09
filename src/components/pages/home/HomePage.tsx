@@ -20,9 +20,12 @@ const HomeIntroPanel = dynamic(
   () => import('./home-intro-panel/HomeIntroPanel')
 )
 
-export interface IHomePageProps {}
+export interface IHomePageProps {
+  // eslint-disable-next-line
+  lang: string
+}
 
-const HomePage = () => {
+const HomePage = ({ lang }: IHomePageProps) => {
   const homeIntroPanelRef = useRef(null)
   const pageInView = useInView(homeIntroPanelRef, { once: true })
 
@@ -37,7 +40,7 @@ const HomePage = () => {
       className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20"
       style={{ marginTop: 130, marginBottom: 250 }}
     >
-      <HomePresentationPanel />
+      <HomePresentationPanel lang={lang} />
 
       <section
         ref={homeIntroPanelRef}
