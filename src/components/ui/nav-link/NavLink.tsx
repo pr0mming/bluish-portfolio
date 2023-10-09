@@ -9,6 +9,9 @@ import { useMemo } from 'react'
 // Framer
 import { m } from 'framer-motion'
 
+// Modules
+import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
+
 // Extensions
 import {
   textMotion,
@@ -23,13 +26,20 @@ export interface INavLinkProps {
   className: string
   text: string
   path: string
+  type: MenuTypeEnum
   children: React.ReactNode
 }
 
-const NavLink = ({ className, text, path, children }: INavLinkProps) => {
+const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
   const activeMenu = useAppStore((state) => state.activeMenu)
+  const setOpenSidebar = useAppStore((state) => state.setOpenSidebar)
 
   const isActive = useMemo(() => path === activeMenu, [activeMenu, path])
+
+  const handleClick = () => {
+    //document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    if (type === MenuTypeEnum.SIDEBAR) setOpenSidebar(false)
+  }
 
   return (
     <m.div
@@ -38,7 +48,11 @@ const NavLink = ({ className, text, path, children }: INavLinkProps) => {
       whileHover="hover"
       animate={isActive ? 'hover' : 'rest'}
     >
-      <Link href={`#${path}`} className={className}>
+      <Link
+        href={`#${path}`}
+        className={className}
+        onClick={() => handleClick()}
+      >
         <m.div
           className="absolute left-0 translate-x-1/2 translate-y-1/2 opacity-0"
           variants={slashMotion}

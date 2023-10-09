@@ -9,7 +9,7 @@ const useExperienceTranslation = (lang: string) => {
   const i18nForTime = useClientTranslation(lang, 'time')
 
   return {
-    title: t('experience.title'),
+    title: t('title'),
     workExperience: workExperience.map((experiences) =>
       experiences.map((experience) => {
         const timeStr = getWorkTime({

@@ -56,7 +56,7 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
       </PageWrapper>
 
       <PageWrapper menuId="projects">
-        <ProjectsPage />
+        <ProjectsPage lang={lang} />
       </PageWrapper>
     </div>
   )

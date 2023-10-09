@@ -4,9 +4,8 @@ const getAllProjects = (): ProjectEntity[] => {
   return [
     {
       id: 1,
-      title: 'Bomberman (NES)',
-      description:
-        "A little universitarian project, it's a copy of the classic Bomberman (NES) (it's still <strong>unfinished</strong>) developed with the help of an awesome JS Framework for videogames using the <strong>prototype-based</strong> programming.",
+      title: 'firstProject.title',
+      description: 'firstProject.description',
       skills: ['HTML', 'CSS', 'Phaser.js', 'JavaScript'],
       imgPath: '/projects/01.png',
       repoUrl: 'https://github.com/pr0mming/Bomberman-JS',
@@ -14,9 +13,8 @@ const getAllProjects = (): ProjectEntity[] => {
     },
     {
       id: 2,
-      title: 'Tower of Hanoi',
-      description:
-        "Another little universitarian project, it's a copy of the classic puzzle Tower of Hanoi (with the intention to understand the algorithm) and also simulates the solution of the game from any combination.",
+      title: 'secondProject.title',
+      description: 'secondProject.description',
       skills: ['HTML', 'CSS', 'Phaser.js', 'JavaScript'],
       imgPath: '/projects/02.png',
       repoUrl: 'https://github.com/pr0mming/TowerHanoi',
@@ -24,9 +22,8 @@ const getAllProjects = (): ProjectEntity[] => {
     },
     {
       id: 3,
-      title: 'Snake',
-      description:
-        'It was my first videogame project inspired in the classic videogame from Nokia, I created this version with the help of the widely-used Java Swing toolkit on <strong>NetBeans</strong>, implementing a <strong>2D array logic</strong> to bring the game to life.',
+      title: 'thirdProject.title',
+      description: 'thirdProject.description',
       skills: ['Java', 'Java Swing', 'POO'],
       imgPath: '/projects/03.png',
       repoUrl: 'https://github.com/pr0mming/SnakeGame',
@@ -34,9 +31,8 @@ const getAllProjects = (): ProjectEntity[] => {
     },
     {
       id: 4,
-      title: "Conway's Game of Life",
-      description:
-        "Actually It's not a game, it's a <strong>simulator</strong> applying a set of rules, the result is the creation of <strong>visual patterns</strong> really interesting, I saw a those patterns on a video and I did the simulator to check if that was true.",
+      title: 'fourthProject.title',
+      description: 'fourthProject.description',
       skills: ['Java', 'Java FX', 'POO'],
       imgPath: '/projects/04.png',
       repoUrl: 'https://github.com/pr0mming/GameOfLife',

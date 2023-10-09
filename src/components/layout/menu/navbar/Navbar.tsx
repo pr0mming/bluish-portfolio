@@ -11,6 +11,7 @@ import { IconName } from '@fortawesome/fontawesome-svg-core'
 // Components
 import NavLink from '@src/components/ui/nav-link/NavLink'
 import MenuSwitcher from '@src/components/ui/menu-switcher/MenuSwitcher'
+import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
 
 export interface INavbarProps {
   menus: MenuEntity[]
@@ -45,6 +46,7 @@ const Navbar = ({ menus }: INavbarProps) => {
                 <NavLink
                   text={menu.text}
                   path={menu.path}
+                  type={MenuTypeEnum.NAVBAR}
                   className="relative inline-block w-full p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
                 >
                   <FontAwesomeIcon icon={menu.icon as IconName} />

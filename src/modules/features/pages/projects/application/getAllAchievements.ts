@@ -5,16 +5,14 @@ const getAllAchievements = (): AchievementEntity[] => {
     {
       id: 1,
       title: 'Eulerian',
-      description:
-        "An awesome platform to solve coding challenges, it's a bit different because every challenge combines <strong>math</strong> and programming.",
+      description: 'firstAchievements.description',
       platformUrl: 'https://projecteuler.net/',
       imgPath: '/projects/p_euler.png'
     },
     {
       id: 2,
       title: 'HTB Player',
-      description:
-        "Ever since I met HTB I discovered another way to squeeze your brain and It's a good platform to get involved with <strong>OWASP</strong>.",
+      description: 'secondAchievements.description',
       platformUrl: 'https://app.hackthebox.com/profile/21806',
       imgPath: '/projects/htb.png'
     },
@@ -22,8 +20,7 @@ const getAllAchievements = (): AchievementEntity[] => {
       id: 3,
       title: 'Hacker Rank',
       platformUrl: 'https://www.hackerrank.com/pr0mming',
-      description:
-        'I like to solve the classic Hacker Rank problems, It turned out in a good way to <strong>study algorithms</strong>, a good preparation for technical tests and a bit of <strong>optimization</strong>.'
+      description: 'thirdAchievements.description'
     }
   ]
 }

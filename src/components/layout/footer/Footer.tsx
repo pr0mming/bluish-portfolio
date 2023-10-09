@@ -21,7 +21,7 @@ const Footer = ({ legend }: IFooterProps) => {
       className="flex flex-col items-center gap-5 bg-primary border-t-accent border-opacity-70 text-white text-opacity-70 p-8"
       style={{ borderTopWidth: 1 }}
     >
-      <div className="flex items-center flex-wrap">
+      <div className="flex justify-center items-center flex-wrap">
         <p className="me-2">{legend}</p>
 
         <div className="flex gap-1 flex-wrap">
