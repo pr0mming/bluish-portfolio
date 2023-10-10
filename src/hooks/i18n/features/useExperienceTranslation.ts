@@ -1,6 +1,9 @@
+// Modules
 import getAllExperience from '@src/modules/features/pages/experience/application/getAllExperience'
-import { useClientTranslation } from '../useClientTranslation'
 import getWorkTime from '@src/modules/common/time/getWorkTime'
+
+// i18n
+import { useClientTranslation } from '../useClientTranslation'
 
 const useExperienceTranslation = (lang: string) => {
   const workExperience = getAllExperience()

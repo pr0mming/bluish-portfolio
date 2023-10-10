@@ -1,4 +1,7 @@
+// Modules
 import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
+
+// i18n
 import { getServerTranslation } from '@src/app/i18n/getServerTranslation'
 
 const getMenuTranslation = async (lang: string) => {

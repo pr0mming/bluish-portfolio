@@ -3,6 +3,8 @@ import ContentWrapper from '@src/components/ui/content-wrapper/ContentWrapper'
 
 // Components
 import ExperienceSection from './experience-section/ExperienceSection'
+
+// Hooks
 import useExperienceTranslation from '@src/hooks/i18n/features/useExperienceTranslation'
 
 export interface IExperiencePageProps {

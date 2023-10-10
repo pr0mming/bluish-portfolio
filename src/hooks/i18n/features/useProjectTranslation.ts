@@ -1,4 +1,7 @@
+// Modules
 import getAllProjects from '@src/modules/features/pages/projects/application/getAllProjects'
+
+// i18n
 import { useClientTranslation } from '../useClientTranslation'
 
 const useProjectTranslation = (lang: string) => {

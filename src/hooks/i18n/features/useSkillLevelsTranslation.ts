@@ -1,5 +1,8 @@
-import { useClientTranslation } from '../useClientTranslation'
+// Modules
 import getAllMeSkillLevels from '@src/modules/features/pages/me/application/getAllMeSkillLevels'
+
+// i18n
+import { useClientTranslation } from '../useClientTranslation'
 
 const useSkillLevelsTranslation = (lang: string) => {
   const skillLevels = getAllMeSkillLevels()
