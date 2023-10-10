@@ -8,8 +8,8 @@ import getAllMeSkillsCatalog from '@src/modules/features/pages/me/application/ge
 import getActiveSkillFilters from '@src/modules/features/pages/me/application/getActiveSkillFilters'
 
 // Store
-import useAppStore from '@src/store/AppStore'
 import { shallow } from 'zustand/shallow'
+import useAppStore from '@src/store/AppStore'
 
 const useSkillsFilter = () => {
   const { skills, setSkillsFilters, setInitialSkills } = useAppStore(

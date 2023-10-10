@@ -21,7 +21,6 @@ const HomeIntroPanel = dynamic(
 )
 
 export interface IHomePageProps {
-  // eslint-disable-next-line
   lang: string
 }
 

@@ -6,7 +6,7 @@ const useExperienceTranslation = (lang: string) => {
   const workExperience = getAllExperience()
 
   const { t } = useClientTranslation(lang, 'experience')
-  const i18nForTime = useClientTranslation(lang, 'time')
+  const i18nForTime = useClientTranslation(lang, 'others')
 
   return {
     title: t('title'),

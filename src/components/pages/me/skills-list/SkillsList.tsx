@@ -36,7 +36,7 @@ const SkillsList = ({ lang }: ISkillsListProps) => {
   const { skills, isEmpty } = useSkillsFilter()
 
   if (isEmpty) {
-    return <SkillsListEmpty />
+    return <SkillsListEmpty lang={lang} />
   }
 
   return (

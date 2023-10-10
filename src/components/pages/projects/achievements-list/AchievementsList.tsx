@@ -1,4 +1,7 @@
+// Components
 import AchievementCard from '@src/components/ui/achievement-card/AchievementCard'
+
+// Hooks
 import useAchievementsTranslation from '@src/hooks/i18n/features/useAchievementsTranslation'
 
 export interface IAchievementsListProps {
@@ -17,9 +20,13 @@ const AchievementsList = ({ lang }: IAchievementsListProps) => {
         {description}
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
-        {achievements.map((achievement) => (
-          <AchievementCard key={achievement.id} achievement={achievement} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+        {achievements.map((achievement, i) => (
+          <AchievementCard
+            key={achievement.id}
+            isLast={i === achievements.length - 1}
+            achievement={achievement}
+          />
         ))}
       </div>
     </section>

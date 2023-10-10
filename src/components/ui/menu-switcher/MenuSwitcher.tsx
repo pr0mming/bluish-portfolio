@@ -9,8 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 // Store
-import useAppStore from '@src/store/AppStore'
 import { shallow } from 'zustand/shallow'
+import useAppStore from '@src/store/AppStore'
 
 library.add(faBars, faXmark)
 
@@ -25,7 +25,7 @@ const MenuSwitcher = () => {
 
   return (
     <m.button
-      className="inline-flex items-center justify-center md:hidden p-2 w-10 h-10 text-white text-opacity-70"
+      className="inline-flex items-center justify-center lg:hidden p-2 w-10 h-10 text-white text-opacity-70"
       type="button"
       onClick={() => setOpenSidebar(!isOpenSidebar)}
       whileTap={{ scale: 0.9 }}

@@ -15,10 +15,9 @@ import {
 
 // Modules
 import getAllMeFeatures from '@src/modules/features/pages/me/application/getAllMeFeatures'
-import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 
-// i18n
-// import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
+// Hooks
+import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 
 library.add(faEarthAmericas, faBriefcase, faBrain, faBook, faDumbbell, faGuitar)
 

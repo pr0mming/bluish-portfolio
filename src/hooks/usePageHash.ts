@@ -23,7 +23,7 @@ const usePageHash = () => {
         const id = menu
 
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }, 600)
+      }, 650)
 
       setScrollFirstTime(false)
     }

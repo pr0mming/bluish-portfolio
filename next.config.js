@@ -30,7 +30,6 @@ const generateAppDirEntry = (entry) => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   trailingSlash: true,
   webpack: (config) => {
     if (process.env.NODE_ENV === 'development') return config

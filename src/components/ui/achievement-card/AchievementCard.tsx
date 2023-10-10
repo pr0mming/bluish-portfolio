@@ -13,10 +13,11 @@ import AchievementEntity from '@src/modules/features/pages/projects/domain/Achie
 library.add(faArrowUp)
 
 export interface IProjectCardProps {
+  isLast: boolean
   achievement: AchievementEntity
 }
 
-const AchievementCard = ({ achievement }: IProjectCardProps) => {
+const AchievementCard = ({ isLast, achievement }: IProjectCardProps) => {
   const { title, description, platformUrl, imgPath } = achievement
 
   return (
@@ -35,6 +36,7 @@ const AchievementCard = ({ achievement }: IProjectCardProps) => {
         shadow-secondary
         p-5 md:p-10
         text-secondary
+        ${isLast ? `col-auto sm:col-span-2 lg:col-auto` : 'col-auto'}
       `}
     >
       <span className="flex items-center gap-2">

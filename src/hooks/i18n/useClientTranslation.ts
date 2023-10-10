@@ -2,15 +2,22 @@
 
 // Hook taken from: https://locize.com/blog/next-13-app-dir-i18n/
 
-import i18next from 'i18next'
+// React
 import { useEffect, useState } from 'react'
+import { useCookies } from 'react-cookie'
+
+// i18next
+import i18next from 'i18next'
 import {
   initReactI18next,
   useTranslation as useTranslationOrg
 } from 'react-i18next'
-import { useCookies } from 'react-cookie'
+
+// i18n Plugins
 import resourcesToBackend from 'i18next-resources-to-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
+
+// i18n config
 import { getOptions, languages, cookieName } from '@src/app/i18n/settings'
 
 const runsOnServerSide = typeof window === 'undefined'
@@ -25,7 +32,6 @@ i18next
         import(`@src/app/i18n/locales/${language}/${namespace}.json`)
     )
   )
-  // .use(LocizeBackend) // locize backend could be used on client side, but prefer to keep it in sync with server side
   .init({
     ...getOptions(),
     lng: undefined, // let detect the language on client side

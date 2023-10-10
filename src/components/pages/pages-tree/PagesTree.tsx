@@ -39,7 +39,7 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
 
   // Little workaround to solve the changeLanguage call (async)
   // Before the wrong language reaches the other client components :(
-  const {} = useClientTranslation(lang, defaultNS)
+  useClientTranslation(lang, defaultNS)
 
   useEffect(() => {
     setActiveMenu(menu)

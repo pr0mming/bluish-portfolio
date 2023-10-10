@@ -25,9 +25,8 @@ const getTimeFromDates = (params: IGetTimeFromDatesParams): string => {
 
     if (yearDiff > 0) {
       result += yearDiff === 1 ? t('oneYear') : `${yearDiff} ${t('years')}`
-      if (monthDiff > 0) {
-        result += ` ${t('and')} `
-      }
+
+      if (monthDiff > 0) result += ` ${t('and')} `
     }
 
     if (monthDiff > 0) {

@@ -1,9 +1,9 @@
+// i18n
+import { useTranslation } from 'react-i18next'
+
 import getDateFormat from './getDateFormat'
 import getTimeFromDates from './getTimeFromDates'
 import isToday from './isToday'
-
-// i18n
-import { useTranslation } from 'react-i18next'
 
 export interface IGetWorkTimeParams {
   lang: string

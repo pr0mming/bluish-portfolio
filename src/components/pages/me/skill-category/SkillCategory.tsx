@@ -17,6 +17,8 @@ import { SkillCategoryEnum } from '@src/modules/features/pages/me/domain/enums/S
 
 // Components
 import SkillCard from '@src/components/ui/skill-card/SkillCard'
+
+// Hooks
 import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 
 export interface ISkillCategoryProps {

@@ -11,9 +11,11 @@ import { IconName } from '@fortawesome/fontawesome-svg-core'
 // Components
 import NavLink from '@src/components/ui/nav-link/NavLink'
 
+// Modules
+import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
+
 // Extensions
 import { backdropMotion, sidebarMotion } from './MobileSidebar.animations'
-import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
 
 export interface IMobileSidebarProps {
   menus: MenuEntity[]
@@ -22,18 +24,18 @@ export interface IMobileSidebarProps {
 const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
   return (
     <m.section
-      className="block md:hidden fixed w-screen h-screen bg-accent-900 bg-opacity-40 backdrop-blur-sm"
+      className="block lg:hidden fixed w-screen h-screen bg-accent-900 bg-opacity-40 backdrop-blur-sm"
       initial="closed"
       animate="open"
       exit="closed"
       variants={backdropMotion}
     >
       <m.nav
-        className="absolute -right-1/2 w-3/6 sm:w-5/12 h-screen bg-primary border-s-accent border-opacity-70 overflow-auto"
+        className="absolute -right-1/2 h-screen bg-primary border-s-accent border-opacity-70 overflow-auto"
         variants={sidebarMotion}
-        style={{ borderInlineStartWidth: '1px' }}
+        style={{ width: 230, borderInlineStartWidth: '1px' }}
       >
-        <div className="flex flex-nowrap items-center justify-between mx-auto py-5 px-1">
+        <div className="flex flex-nowrap items-center justify-between mx-auto py-5 px-0 md:px-1">
           <div className="shrink-1 w-full">
             <ul className="flex flex-col gap-10 p-4">
               {menus.map((menu) => (
@@ -42,9 +44,9 @@ const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
                     text={menu.text}
                     path={menu.path}
                     type={MenuTypeEnum.SIDEBAR}
-                    className="relative inline-block w-full p-3 text-white text-opacity-70 text-sm font-medium uppercase z-20"
+                    className="relative flex items-center p-3 text-white text-opacity-70 text-sm font-medium uppercase z-20"
                   >
-                    <FontAwesomeIcon icon={menu.icon as IconName} size="lg" />
+                    <FontAwesomeIcon icon={menu.icon as IconName} />
                   </NavLink>
                 </li>
               ))}

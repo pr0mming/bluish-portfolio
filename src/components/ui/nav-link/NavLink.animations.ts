@@ -1,13 +1,6 @@
-// Tailwind Config
-import getTailwindConfig from '@src/modules/common/getTailwindConfig'
-
-const whiteColor = getTailwindConfig().theme?.colors?.white as {
-  [key: string]: string
-}
-
 export const textMotion = {
   rest: {
-    color: whiteColor['DEFAULT'],
+    color: '#E8E8E8',
     opacity: 0.7,
     x: 0,
     transition: {
@@ -17,7 +10,7 @@ export const textMotion = {
     }
   },
   hover: {
-    color: whiteColor['DEFAULT'],
+    color: '#E8E8E8',
     opacity: 1,
     x: 26,
     transition: {
@@ -36,7 +29,7 @@ export const slashMotion = {
     type: 'tween'
   },
   hover: {
-    color: whiteColor['DEFAULT'],
+    color: '#E8E8E8',
     opacity: 1,
     x: 12,
     transition: {

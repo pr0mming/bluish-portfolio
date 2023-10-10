@@ -1,8 +1,5 @@
 'use client'
 
-// Next
-import Link from 'next/link'
-
 // React
 import { useMemo } from 'react'
 
@@ -37,7 +34,15 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
   const isActive = useMemo(() => path === activeMenu, [activeMenu, path])
 
   const handleClick = () => {
-    //document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    // I decided to use this approach instead the classic Next Link + URL Hash
+    // This due I had a weird behaviour after a time doing the scroll navigation
+
+    document
+      .getElementById(path)
+      ?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+
+    history.replaceState(null, '', `#${path}`)
+
     if (type === MenuTypeEnum.SIDEBAR) setOpenSidebar(false)
   }
 
@@ -48,11 +53,7 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
       whileHover="hover"
       animate={isActive ? 'hover' : 'rest'}
     >
-      <Link
-        href={`#${path}`}
-        className={className}
-        onClick={() => handleClick()}
-      >
+      <button className={className} onClick={() => handleClick()}>
         <m.div
           className="absolute left-0 translate-x-1/2 translate-y-1/2 opacity-0"
           variants={slashMotion}
@@ -60,12 +61,12 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
           {children}
         </m.div>
         <m.h1
-          className="tracking-widest text-xs md:text-lg mr-7"
+          className="tracking-widest text-xs lg:text-lg mr-7"
           variants={textMotion}
         >
           {text}
         </m.h1>
-      </Link>
+      </button>
 
       {isActive && (
         <m.div

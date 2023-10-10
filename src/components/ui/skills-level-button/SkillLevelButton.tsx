@@ -15,8 +15,8 @@ import Tooltip from '../tooltip/Tooltip'
 import MeSkillLevelEntity from '@src/modules/features/pages/me/domain/MeSkillLevelEntity'
 
 // Store
-import useAppStore from '@src/store/AppStore'
 import { shallow } from 'zustand/shallow'
+import useAppStore from '@src/store/AppStore'
 
 library.add(faCircleInfo)
 

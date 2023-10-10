@@ -29,6 +29,8 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
   useEffect(() => {
     if (isScrolled && activeMenu != menuId) {
       setActiveMenu(menuId)
+
+      history.replaceState(null, '', `#${menuId}`)
     }
   }, [isScrolled, activeMenu, menuId, setActiveMenu])
 

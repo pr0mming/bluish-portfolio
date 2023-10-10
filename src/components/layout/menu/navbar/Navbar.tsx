@@ -8,10 +8,12 @@ import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEnti
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 
+// Modules
+import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
+
 // Components
 import NavLink from '@src/components/ui/nav-link/NavLink'
 import MenuSwitcher from '@src/components/ui/menu-switcher/MenuSwitcher'
-import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
 
 export interface INavbarProps {
   menus: MenuEntity[]
@@ -39,7 +41,7 @@ const Navbar = ({ menus }: INavbarProps) => {
 
         <MenuSwitcher />
 
-        <div className="hidden w-full md:flex justify-center md:w-auto">
+        <div className="hidden w-full lg:flex justify-center md:w-auto">
           <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row xl:space-x-8 md:mt-0 md:p-0">
             {menus.map((menu) => (
               <li key={menu.type}>
@@ -47,7 +49,7 @@ const Navbar = ({ menus }: INavbarProps) => {
                   text={menu.text}
                   path={menu.path}
                   type={MenuTypeEnum.NAVBAR}
-                  className="relative inline-block w-full p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
+                  className="relative inline-block p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
                 >
                   <FontAwesomeIcon icon={menu.icon as IconName} />
                 </NavLink>
@@ -56,7 +58,7 @@ const Navbar = ({ menus }: INavbarProps) => {
           </ul>
         </div>
 
-        <div className="hidden flex-1 w-full md:flex justify-center md:w-auto">
+        <div className="hidden flex-1 w-full lg:flex justify-center md:w-auto">
           <button
             className="transition ease-in-out delay-50 text-white text-opacity-70 hover:scale-125 hover:text-white duration-200"
             type="button"

@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 .custom-background-primary {
+  background: -o-linear-gradient(
+    345deg,
+    theme('colors.primary.500') 8.33%,
+    theme('colors.black') 97.92%
+  );
   background: linear-gradient(
     105deg,
     theme('colors.primary.500') 8.33%,

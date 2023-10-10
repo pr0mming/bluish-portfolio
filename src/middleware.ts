@@ -1,4 +1,9 @@
+// Taken from: https://locize.com/blog/next-13-app-dir-i18n/
+
+// Next
 import { NextRequest, NextResponse } from 'next/server'
+
+// Utils
 import acceptLanguage from 'accept-language'
 import { fallbackLng, languages, cookieName } from '@src/app/i18n/settings'
 
