@@ -54,14 +54,12 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
       animate={isActive ? 'hover' : 'rest'}
     >
       <button className={className} onClick={() => handleClick()}>
-        <m.div
-          className="absolute left-0 translate-x-1/2 translate-y-1/2 opacity-0"
-          variants={slashMotion}
-        >
+        <m.div className="relative" variants={slashMotion}>
           {children}
         </m.div>
         <m.h1
-          className="tracking-widest text-xs lg:text-lg mr-7"
+          className="tracking-widest text-xs lg:text-lg"
+          style={{ marginRight: 10 }}
           variants={textMotion}
         >
           {text}

@@ -4,12 +4,17 @@ import Link from 'next/link'
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import {
+  faArrowUp,
+  faChevronUp,
+  faChevronDown
+} from '@fortawesome/free-solid-svg-icons'
 
 // Modules
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
+import { useRef, useState } from 'react'
 
-library.add(faArrowUp)
+library.add(faArrowUp, faChevronUp, faChevronDown)
 
 export interface IExperienceCardProps {
   experience: ExperienceEntity
@@ -22,9 +27,13 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
     companyWebsite,
     timeStr,
     description,
+    detailsLabel,
     details,
     technologies
   } = experience
+
+  const detailsRef = useRef<HTMLUListElement>(null)
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false)
 
   return (
     <div
@@ -65,13 +74,39 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
 
-      <ul className="list-disc font-light text-sm md:text-base ms-5">
-        {details?.map((detail) => (
-          <li key={detail} className="mb-5">
-            <p dangerouslySetInnerHTML={{ __html: detail }}></p>
-          </li>
-        ))}
-      </ul>
+      <section className="flex flex-col gap-2">
+        <div className="flex">
+          <button
+            className="flex items-center gap-2"
+            onClick={() => setIsDetailsOpen((state) => !state)}
+            aria-label="Show details"
+          >
+            <h6 className="font-bold text-sm md:text-base text-white capitalize">
+              {detailsLabel}
+            </h6>
+            <FontAwesomeIcon
+              icon={isDetailsOpen ? 'chevron-down' : 'chevron-up'}
+            />
+          </button>
+        </div>
+        <div
+          className={`overflow-hidden transition-[height] ease-in-out delay-50 duration-150 `}
+          style={{
+            height: isDetailsOpen ? detailsRef.current?.clientHeight : 0
+          }}
+        >
+          <ul
+            ref={detailsRef}
+            className={`group list-disc font-light text-sm md:text-base ms-5`}
+          >
+            {details?.map((detail) => (
+              <li key={detail} className="mb-5">
+                <p dangerouslySetInnerHTML={{ __html: detail }}></p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <section className="flex flex-wrap gap-1">
         {technologies.map((tech) => (

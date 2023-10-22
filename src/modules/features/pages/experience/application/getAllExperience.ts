@@ -13,6 +13,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           endDate: new Date()
         },
         description: 'sixthExperience.description',
+        detailsLabel: 'detailsLabel',
         details: ['sixthExperience.details.first'],
         technologies: [
           '.NET Framework',
@@ -38,6 +39,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           endDate: new Date(2023, 0, 1)
         },
         description: 'fifthExperience.description',
+        detailsLabel: 'detailsLabel',
         details: [
           'fifthExperience.details.first',
           'fifthExperience.details.second'
@@ -66,6 +68,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           endDate: new Date(2022, 2, 1)
         },
         description: 'fourthExperience.description',
+        detailsLabel: 'detailsLabel',
         details: [
           'fourthExperience.details.first',
           'fourthExperience.details.second'
@@ -97,6 +100,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           endDate: new Date(2021, 9, 1)
         },
         description: 'thirdExperience.description',
+        detailsLabel: 'detailsLabel',
         details: [
           'thirdExperience.details.first',
           'thirdExperience.details.second'
@@ -127,6 +131,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           endDate: new Date(2021, 1, 1)
         },
         description: 'secondExperience.description',
+        detailsLabel: 'detailsLabel',
         details: ['secondExperience.details.first'],
         technologies: [
           '.NET Framework',
@@ -147,6 +152,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
           endDate: new Date(2019, 11, 1)
         },
         description: 'firstExperience.description',
+        detailsLabel: 'detailsLabel',
         details: [
           'firstExperience.details.first',
           'firstExperience.details.second'

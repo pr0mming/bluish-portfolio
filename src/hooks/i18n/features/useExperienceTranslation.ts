@@ -26,6 +26,7 @@ const useExperienceTranslation = (lang: string) => {
           ...experience,
           position: t(experience.position),
           description: t(experience.description),
+          detailsLabel: t(experience.detailsLabel),
           details: experience.details?.map((detail) => t(detail)),
           timeStr
         }

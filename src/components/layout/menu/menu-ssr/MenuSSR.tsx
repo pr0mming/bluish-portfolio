@@ -11,7 +11,7 @@ export interface IMenuSSRProps {
 const MenuSSR = async ({ lang }: IMenuSSRProps) => {
   const menus = await getMenuTranslation(lang)
 
-  return <Menu menus={menus} />
+  return <Menu lang={lang} menus={menus} />
 }
 
 export default MenuSSR

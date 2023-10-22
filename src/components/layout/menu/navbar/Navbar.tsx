@@ -12,14 +12,16 @@ import { IconName } from '@fortawesome/fontawesome-svg-core'
 import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
 
 // Components
+import LanguageSwitchButton from '@src/components/ui/language-switch-button/LanguageSwitchButton'
 import NavLink from '@src/components/ui/nav-link/NavLink'
 import MenuSwitcher from '@src/components/ui/menu-switcher/MenuSwitcher'
 
 export interface INavbarProps {
+  lang: string
   menus: MenuEntity[]
 }
 
-const Navbar = ({ menus }: INavbarProps) => {
+const Navbar = ({ lang, menus }: INavbarProps) => {
   return (
     <nav
       className="block bg-primary border-b-accent border-opacity-70"
@@ -42,14 +44,14 @@ const Navbar = ({ menus }: INavbarProps) => {
         <MenuSwitcher />
 
         <div className="hidden w-full lg:flex justify-center md:w-auto">
-          <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row xl:space-x-8 md:mt-0 md:p-0">
+          <ul className="flex flex-col gap-10 mt-4 p-4 md:flex-row md:mt-0 md:p-0">
             {menus.map((menu) => (
               <li key={menu.type}>
                 <NavLink
                   text={menu.text}
                   path={menu.path}
                   type={MenuTypeEnum.NAVBAR}
-                  className="relative inline-block p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
+                  className="relative flex items-center p-3 text-white text-opacity-70 text-sm xl:text-lg font-medium uppercase z-20"
                 >
                   <FontAwesomeIcon icon={menu.icon as IconName} />
                 </NavLink>
@@ -59,13 +61,7 @@ const Navbar = ({ menus }: INavbarProps) => {
         </div>
 
         <div className="hidden flex-1 w-full lg:flex justify-center md:w-auto">
-          <button
-            className="transition ease-in-out delay-50 text-white text-opacity-70 hover:scale-125 hover:text-white duration-200"
-            type="button"
-            aria-label="Change Language"
-          >
-            <FontAwesomeIcon icon={'globe'} size="2x" />
-          </button>
+          <LanguageSwitchButton lang={lang} type={MenuTypeEnum.NAVBAR} />
         </div>
       </div>
     </nav>

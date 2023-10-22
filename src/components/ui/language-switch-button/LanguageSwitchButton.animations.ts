@@ -1,20 +1,22 @@
 export const textMotion = {
   rest: {
-    x: 0,
+    x: 10,
     color: '#E8E8E8',
-    opacity: 0.7,
+    opacity: 0,
     transition: {
+      delay: 0.1,
       duration: 0.2,
       type: 'tween',
       ease: 'easeIn'
     }
   },
-  hover: {
-    x: 10,
+  active: {
+    x: 0,
     color: '#E8E8E8',
     opacity: 1,
     transition: {
-      duration: 0.4,
+      delay: 0.1,
+      duration: 0.2,
       type: 'tween',
       ease: 'easeOut'
     }
@@ -23,30 +25,22 @@ export const textMotion = {
 
 export const slashMotion = {
   rest: {
-    x: -10,
-    opacity: 0,
+    x: 0,
     transition: {
-      ease: 'easeOut',
+      delay: 0.1,
       duration: 0.2,
-      type: 'tween'
+      type: 'tween',
+      ease: 'easeIn'
     }
   },
-  hover: {
-    x: 0,
+  active: {
+    x: -15,
     color: '#E8E8E8',
-    opacity: 1,
     transition: {
-      duration: 0.4,
+      delay: 0.1,
+      duration: 0.2,
       type: 'tween',
       ease: 'easeIn'
     }
   }
-}
-
-export const selectedLinkMotion = {
-  type: 'spring',
-  bounce: 0.25,
-  stiffness: 130,
-  damping: 9,
-  duration: 0.3
 }

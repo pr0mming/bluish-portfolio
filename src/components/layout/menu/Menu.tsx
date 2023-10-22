@@ -12,8 +12,7 @@ import {
   faHome,
   faSmileBeam,
   faBriefcase,
-  faArrowTrendUp,
-  faGlobe
+  faArrowTrendUp
 } from '@fortawesome/free-solid-svg-icons'
 
 // Components
@@ -31,20 +30,21 @@ import useAppStore from '@src/store/AppStore'
 import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
 
 // Load icons for normal/responsive menu
-library.add(faHome, faSmileBeam, faBriefcase, faArrowTrendUp, faGlobe)
+library.add(faHome, faSmileBeam, faBriefcase, faArrowTrendUp)
 
 export interface IMenuProps {
+  lang: string
   menus: MenuEntity[]
 }
 
-const Menu = ({ menus }: IMenuProps) => {
+const Menu = ({ lang, menus }: IMenuProps) => {
   const isOpenSidebar = useAppStore((state) => state.isOpenSidebar)
 
   return (
     <header className="fixed w-full z-10">
-      <Navbar menus={menus} />
+      <Navbar lang={lang} menus={menus} />
       <AnimatePresence>
-        {isOpenSidebar && <MobileSidebar menus={menus} />}
+        {isOpenSidebar && <MobileSidebar lang={lang} menus={menus} />}
       </AnimatePresence>
     </header>
   )

@@ -5,10 +5,9 @@ import { useEffect, useState } from 'react'
 
 const usePageHash = () => {
   const [menu, setMenu] = useState('')
-  const [scrollFirstTime, setScrollFirstTime] = useState(true)
 
   useEffect(() => {
-    setMenu(() => window.location.hash.slice(1))
+    setMenu(window.location.hash.slice(1))
 
     window.addEventListener('hashchange', hashChangeHandler)
 
@@ -23,11 +22,9 @@ const usePageHash = () => {
         const id = menu
 
         document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-      }, 650)
-
-      setScrollFirstTime(false)
+      }, 750)
     }
-  }, [menu, scrollFirstTime])
+  }, [menu])
 
   const hashChangeHandler = () => {
     setMenu(window.location.hash.slice(1))

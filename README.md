@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Bluish Portfolio
 
-## Getting Started
+This is the first version of my portfolio, I decided to mix different blue colors in my Figma project and the result was pretty cool
 
-First, run the development server:
+## Getting Started :rocket:
+
+- Run the development server and open [http://localhost:3000](http://localhost:3000) with your browser to see the result.:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Run the Storybook server and open [http://localhost:6006](http://localhost:6006) with your browser to see the Design System.:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run storybook
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies :fire:
 
-## Learn More
+I used these technologies:
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js (App Directory)](https://nextjs.org/) - an awesome React Framework.
+- [Tailwind](https://tailwindcss.com/) - my favorite library to manage the CSS.
+- [Framer Motion](https://www.framer.com/motion/) - my first time with an impressive library to manage the animations.
+- [Zustand](https://zustand-demo.pmnd.rs/) - a magic and fast solution for State Management.
+- [Font Awesome](https://fontawesome.com/) - a pretty good library to work with icons.
+- [i18next](https://i18next.com/) - a pretty cool solution to manage the [Internationalization](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/i18n).
+- [Storybook](https://storybook.js.org/) - it's just an awesome approach to manage the Design System and UI Testing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Demo :sunglasses:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Just chek it out [right here](https://pr0mming.dev)!

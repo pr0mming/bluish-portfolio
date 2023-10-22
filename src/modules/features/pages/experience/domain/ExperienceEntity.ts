@@ -9,6 +9,7 @@ type ExperienceEntity = {
   }
   timeStr?: string
   description: string
+  detailsLabel: string
   details?: string[]
   technologies: string[]
 }

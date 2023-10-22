@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName } from '@fortawesome/fontawesome-svg-core'
 
 // Components
+import LanguageSwitchButton from '@src/components/ui/language-switch-button/LanguageSwitchButton'
 import NavLink from '@src/components/ui/nav-link/NavLink'
 
 // Modules
@@ -18,10 +19,11 @@ import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuT
 import { backdropMotion, sidebarMotion } from './MobileSidebar.animations'
 
 export interface IMobileSidebarProps {
+  lang: string
   menus: MenuEntity[]
 }
 
-const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
+const MobileSidebar = ({ lang, menus }: IMobileSidebarProps) => {
   return (
     <m.section
       className="block lg:hidden fixed w-screen h-screen bg-accent-900 bg-opacity-40 backdrop-blur-sm"
@@ -50,14 +52,8 @@ const MobileSidebar = ({ menus }: IMobileSidebarProps) => {
                   </NavLink>
                 </li>
               ))}
-              <li>
-                <button
-                  className="transition ease-in-out delay-50 text-white text-opacity-70 hover:scale-125 hover:text-white duration-200 px-3"
-                  type="button"
-                  aria-label="Change Language"
-                >
-                  <FontAwesomeIcon icon={'globe'} size="2x" />
-                </button>
+              <li className="ps-3">
+                <LanguageSwitchButton lang={lang} type={MenuTypeEnum.SIDEBAR} />
               </li>
             </ul>
           </div>
