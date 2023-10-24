@@ -18,6 +18,9 @@ import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuT
 // Extensions
 import { slashMotion, textMotion } from './LanguageSwitchButton.animations'
 
+// Store
+import useAppStore from '@src/store/AppStore'
+
 // i18n
 import { languages } from '@src/app/i18n/settings'
 
@@ -30,11 +33,20 @@ export interface ILanguageSwitchButtonProps {
 
 const LanguageSwitchButton = ({ lang, type }: ILanguageSwitchButtonProps) => {
   const [isActive, setActive] = useState(false)
+  const setOpenSidebar = useAppStore((state) => state.setOpenSidebar)
 
   const availableLangs = languages.filter((item) => item !== lang)
 
-  const handleClick = () => {
-    if (type === MenuTypeEnum.SIDEBAR) setActive((state) => !state)
+  const handleButtonClick = () => {
+    if (type === MenuTypeEnum.SIDEBAR) {
+      setActive((state) => !state)
+    }
+  }
+
+  const handleLinkClick = () => {
+    if (type === MenuTypeEnum.SIDEBAR) {
+      setOpenSidebar(false)
+    }
   }
 
   return (
@@ -48,8 +60,9 @@ const LanguageSwitchButton = ({ lang, type }: ILanguageSwitchButtonProps) => {
         <m.button
           type="button"
           className="relative text-white text-opacity-70"
+          aria-label="Change Language"
           variants={slashMotion}
-          onClick={() => handleClick}
+          onClick={() => handleButtonClick()}
         >
           <FontAwesomeIcon icon={'globe'} size="2x" />
         </m.button>
@@ -58,6 +71,7 @@ const LanguageSwitchButton = ({ lang, type }: ILanguageSwitchButtonProps) => {
             <Link
               key={language}
               href={`/${language}`}
+              onClick={() => handleLinkClick()}
               className="transition ease-in-out delay-50 uppercase tracking-widest text-xs lg:text-lg font-medium hover:scale-125 hover:text-white duration-200"
             >
               {language}

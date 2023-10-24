@@ -26,6 +26,7 @@ const ProjectCard = ({ project }: IProjectCardProps) => {
       className={`
         flex
         flex-col
+        justify-between
         gap-3
         bg-white
         bg-opacity-95

@@ -37,11 +37,7 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
     // I decided to use this approach instead the classic Next Link + URL Hash
     // This due I had a weird behaviour after a time doing the scroll navigation
 
-    document
-      .getElementById(path)
-      ?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-
-    history.replaceState(null, '', `#${path}`)
+    document.getElementById(path)?.scrollIntoView({ behavior: 'smooth' })
 
     if (type === MenuTypeEnum.SIDEBAR) setOpenSidebar(false)
   }

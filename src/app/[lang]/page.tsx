@@ -22,7 +22,7 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     manifest: '/manifest.json',
-    themeColor: '#e8e8e8'
+    themeColor: '#00334e'
   }
 }
 

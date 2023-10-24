@@ -4,14 +4,14 @@ const getAllAchievements = (): AchievementEntity[] => {
   return [
     {
       id: 1,
-      title: 'Eulerian',
+      title: 'Project Euler',
       description: 'firstAchievements.description',
       platformUrl: 'https://projecteuler.net/',
       imgPath: '/projects/p_euler.png'
     },
     {
       id: 2,
-      title: 'HTB Player',
+      title: 'Hack The Box',
       description: 'secondAchievements.description',
       platformUrl: 'https://app.hackthebox.com/profile/21806',
       imgPath: '/projects/htb.png'

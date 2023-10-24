@@ -30,7 +30,7 @@ const Navbar = ({ lang, menus }: INavbarProps) => {
       <div className="w-full flex flex-nowrap items-center justify-between mx-auto px-4 py-6">
         <a
           href="/"
-          className="flex flex-1 justify-start lg:justify-center items-center px-5 lg:px-10"
+          className="flex lg:flex-1 justify-start lg:justify-center items-center px-5 lg:px-10"
         >
           <Image
             src="/me/me-logo.svg"

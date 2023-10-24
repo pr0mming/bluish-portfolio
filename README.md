@@ -1,6 +1,6 @@
 ## Bluish Portfolio
 
-This is the first version of my portfolio, I decided to mix different blue colors in my Figma project and the result was pretty cool
+This is the first version of my portfolio, I decided to mix different blue colors in my Figma project and the result was pretty cool.
 
 ## Getting Started :rocket:
 

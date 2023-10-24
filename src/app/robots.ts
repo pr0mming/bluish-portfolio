@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: languages.map((lang) => `/${lang}`)
     },
-    sitemap: 'http://localhost:3000/sitemap.xml'
+    sitemap: `${process.env.PORTFOLIO_DOMAIN}/sitemap.xml`
   }
 }

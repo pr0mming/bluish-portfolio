@@ -18,6 +18,21 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
   const activeMenu = useAppStore((state) => state.activeMenu)
   const setActiveMenu = useAppStore((state) => state.setActiveMenu)
 
+  const handleScroll = () => {
+    if (pageRef.current) {
+      const offsetTop = pageRef.current.offsetTop - pxUnitOffset * 2
+      const offsetBottom =
+        pageRef.current.offsetTop -
+        pxUnitOffset * 2 +
+        (pageRef.current.clientHeight - pxUnitOffset * 4)
+
+      const isInViewport =
+        window.scrollY >= offsetTop && window.scrollY <= offsetBottom
+
+      setIsScrolled(isInViewport)
+    }
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
 
@@ -33,21 +48,6 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
       history.replaceState(null, '', `#${menuId}`)
     }
   }, [isScrolled, activeMenu, menuId, setActiveMenu])
-
-  const handleScroll = () => {
-    if (pageRef.current) {
-      const offsetTop = pageRef.current.offsetTop - pxUnitOffset * 2
-      const offsetBottom =
-        pageRef.current.offsetTop -
-        pxUnitOffset * 2 +
-        (pageRef.current.clientHeight - pxUnitOffset * 4)
-
-      const isInViewport =
-        window.scrollY >= offsetTop && window.scrollY <= offsetBottom
-
-      setIsScrolled(isInViewport)
-    }
-  }
 
   return { pageRef }
 }

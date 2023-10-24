@@ -19,7 +19,10 @@ import { dir } from 'i18next'
 
 config.autoAddCss = false
 
-const font = Montserrat({ subsets: ['latin'], display: 'swap' })
+const font = Montserrat({
+  subsets: ['latin'],
+  display: 'swap'
+})
 
 // Generate SSG routes
 export async function generateStaticParams() {

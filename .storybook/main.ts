@@ -1,7 +1,7 @@
+import path from 'path'
 import type { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
-  //stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
   addons: [
@@ -9,6 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
+    'storybook-react-i18next',
     {
       name: '@storybook/addon-styling',
       options: {
@@ -27,6 +28,16 @@ const config: StorybookConfig = {
   },
   core: {
     builder: '@storybook/builder-webpack5'
+  },
+  webpackFinal: async (config) => {
+    if (config.resolve)
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@src': path.resolve(__dirname, '../src'),
+        '@root': path.resolve(__dirname, '../')
+      }
+
+    return config
   }
 }
 

@@ -47,17 +47,21 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
 
   return (
     <div className="lg:mt-10">
-      <PageWrapper menuId="me">
-        <MePage lang={lang} />
-      </PageWrapper>
+      <PageWrapper lang={lang} loadLazy={false} PageFn={MePage} menuId="me" />
 
-      <PageWrapper menuId="experience">
-        <ExperiencePage lang={lang} />
-      </PageWrapper>
+      <PageWrapper
+        lang={lang}
+        loadLazy={false}
+        PageFn={ExperiencePage}
+        menuId="experience"
+      />
 
-      <PageWrapper menuId="projects">
-        <ProjectsPage lang={lang} />
-      </PageWrapper>
+      <PageWrapper
+        lang={lang}
+        loadLazy={true}
+        PageFn={ProjectsPage}
+        menuId="projects"
+      />
     </div>
   )
 }
