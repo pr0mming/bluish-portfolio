@@ -9,6 +9,7 @@ const useSkillLevelsTranslation = (lang: string) => {
 
   const { t } = useClientTranslation(lang, 'skillLevels')
 
+  // I reuse the same object to translate all the necessary keys
   return skillLevels.map((level) => ({
     ...level,
     title: t(level.title),

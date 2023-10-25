@@ -8,6 +8,7 @@ export interface IFramerWrapperProps {
   children: React.ReactNode
 }
 
+// This approach is just for loading the necessary animations from Framer Motion and reduce the bundle size
 const FramerWrapper = ({ children }: IFramerWrapperProps) => {
   return <LazyMotion features={loadFeatures}>{children}</LazyMotion>
 }

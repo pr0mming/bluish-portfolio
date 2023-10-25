@@ -16,7 +16,7 @@ import MeSkillLevelEntity from '@src/modules/features/pages/me/domain/MeSkillLev
 
 // Store
 import { shallow } from 'zustand/shallow'
-import useAppStore from '@src/store/AppStore'
+import useBoundStore from '@src/store/AppStore'
 
 library.add(faCircleInfo)
 
@@ -34,7 +34,7 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
     removeSkillFilter,
     addFavSkillFilter,
     removeFavSkillFilter
-  } = useAppStore(
+  } = useBoundStore(
     (state) => ({
       addSkillFilter: state.addSkillFilter,
       removeSkillFilter: state.removeSkillFilter,

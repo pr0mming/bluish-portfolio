@@ -9,13 +9,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 // Store
-import useAppStore from '@src/store/AppStore'
+import useBoundStore from '@src/store/AppStore'
 
 library.add(faBars, faXmark)
 
 const MenuSwitcher = () => {
-  const isOpenSidebar = useAppStore((state) => state.isOpenSidebar)
-  const setOpenSidebar = useAppStore((state) => state.setOpenSidebar)
+  const isOpenSidebar = useBoundStore((state) => state.isOpenSidebar)
+  const setOpenSidebar = useBoundStore((state) => state.setOpenSidebar)
 
   return (
     <m.button

@@ -2,7 +2,8 @@
 import { createWithEqualityFn } from 'zustand/traditional'
 
 // State
-import { IAppState } from './state/IAppState'
+import { IAppSlice } from './state/IAppSlice'
+import { ISkillsSlice } from './state/ISkillsSlice'
 
 // Reducers
 import { setActiveMenu } from './reducers/menuReducers'
@@ -17,29 +18,51 @@ import {
   setSkillsFilters
 } from './reducers/skillsReducers'
 
-const useAppStore = createWithEqualityFn<IAppState>(
-  (set) => ({
-    isOpenSidebar: false,
-    activeMenu: '',
-    skillsFilters: {
-      levels: [],
-      isFavorite: false
-    },
-    initialSkills: [],
-    skillsFiltered: [],
-    setOpenSidebar: (value) => set(() => setOpenSidebar(value)),
-    setActiveMenu: (value) => set(() => setActiveMenu(value)),
+// Zustand
+import { StateCreator } from 'zustand/vanilla'
 
-    setSkillsFilters: (value) => set(() => setSkillsFilters(value)),
-    setInitialSkills: (value) => set(() => setInitialSkills(value)),
-    addSkillFilter: (skillLevel) =>
-      set((state) => addSkillFilter(skillLevel, state)),
-    removeSkillFilter: (skillLevel) =>
-      set((state) => removeSkillFilter(skillLevel, state)),
-    addFavSkillFilter: () => set((state) => addFavSkillFilter(state)),
-    removeFavSkillFilter: () => set((state) => removeFavSkillFilter(state))
+// I decided to separate the state using the Slices approach
+const createAppSlice: StateCreator<
+  IAppSlice & ISkillsSlice,
+  [],
+  [],
+  IAppSlice
+> = (set) => ({
+  isOpenSidebar: false,
+  activeMenu: '',
+  setOpenSidebar: (value) => set(() => setOpenSidebar(value)),
+  setActiveMenu: (value) => set(() => setActiveMenu(value))
+})
+
+const createSkillsSlice: StateCreator<
+  IAppSlice & ISkillsSlice,
+  [],
+  [],
+  ISkillsSlice
+> = (set) => ({
+  skillsFilters: {
+    levels: [],
+    isFavorite: false
+  },
+  initialSkills: [],
+  skillsFiltered: [],
+  setSkillsFilters: (value) => set(() => setSkillsFilters(value)),
+  setInitialSkills: (value) => set(() => setInitialSkills(value)),
+  addSkillFilter: (skillLevel) =>
+    set((state) => addSkillFilter(skillLevel, state)),
+  removeSkillFilter: (skillLevel) =>
+    set((state) => removeSkillFilter(skillLevel, state)),
+  addFavSkillFilter: () => set((state) => addFavSkillFilter(state)),
+  removeFavSkillFilter: () => set((state) => removeFavSkillFilter(state))
+})
+
+// For using those slices we need to mix them using it
+const useBoundStore = createWithEqualityFn<IAppSlice & ISkillsSlice>()(
+  (...a) => ({
+    ...createAppSlice(...a),
+    ...createSkillsSlice(...a)
   }),
   Object.is
 )
 
-export default useAppStore
+export default useBoundStore

@@ -22,6 +22,13 @@ const initI18next = async (lang: string, ns: string) => {
   return i18nInstance
 }
 
+/**
+ * This hook manage the i18next instance for the Server React Components
+ * @param {string} lang is the target language to use
+ * @param {string} ns is the namespace
+ * @param options is the object to use in the i18next configuration
+ * @returns the react-i18next instance ready to use
+ */
 export async function getServerTranslation(
   lang: string,
   ns: string,

@@ -11,6 +11,7 @@ const useExperienceTranslation = (lang: string) => {
   const { t } = useClientTranslation(lang, 'experience')
   const i18nForTime = useClientTranslation(lang, 'others')
 
+  // I reuse the same object to translate all the necessary keys
   return {
     title: t('title'),
     workExperience: workExperience.map((experiences) =>

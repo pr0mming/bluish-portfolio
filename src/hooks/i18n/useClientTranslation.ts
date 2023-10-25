@@ -41,6 +41,13 @@ i18next
     preload: runsOnServerSide ? languages : []
   })
 
+/**
+ * This hook manage the i18next instance for the Client React Components,
+ * but is also executed when is done the SSG
+ * @param {string} lang is the target language to use
+ * @param {string} ns is the namespace
+ * @returns the react-i18next instance ready to use
+ */
 export function useClientTranslation(lang: string, ns: string) {
   const [cookies, setCookie] = useCookies([cookieName])
   const { t, i18n } = useTranslationOrg(ns)
@@ -50,7 +57,7 @@ export function useClientTranslation(lang: string, ns: string) {
   }
 
   if (runsOnServerSide) {
-    return { t, i18n }
+    return { t }
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -73,5 +80,5 @@ export function useClientTranslation(lang: string, ns: string) {
     }
   }, [lang, cookies.i18next, setCookie])
 
-  return { t, i18n }
+  return { t }
 }

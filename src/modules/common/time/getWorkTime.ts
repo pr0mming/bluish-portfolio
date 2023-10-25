@@ -12,6 +12,11 @@ export interface IGetWorkTimeParams {
   endDate: Date
 }
 
+/**
+ * This util get string date format + the string timespan between two dates
+ * @param params the object with the two target dates
+ * @returns the string date
+ */
 const getWorkTime = (params: IGetWorkTimeParams) => {
   const { lang, t, startDate, endDate } = params
 

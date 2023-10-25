@@ -9,15 +9,10 @@ export interface ISkillFilters {
   levels: SkillLevelEnum[]
 }
 
-export interface IAppState {
-  isOpenSidebar: boolean
-  activeMenu: string
+export interface ISkillsSlice {
   skillsFilters: ISkillFilters
   initialSkills: MeSkillCatalogEntity[]
   skillsFiltered: MeSkillCatalogEntity[]
-  setOpenSidebar: (value: boolean) => void
-  setActiveMenu: (value: string) => void
-
   setSkillsFilters: (value: ISkillFilters) => void
   setInitialSkills: (value: MeSkillCatalogEntity[]) => void
   addSkillFilter: (value: SkillLevelEnum) => void

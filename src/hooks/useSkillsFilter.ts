@@ -9,10 +9,15 @@ import getActiveSkillFilters from '@src/modules/features/pages/me/application/ge
 
 // Store
 import { shallow } from 'zustand/shallow'
-import useAppStore from '@src/store/AppStore'
+import useBoundStore from '@src/store/AppStore'
 
+/**
+ * This hook is only to manage the filters on the Me Page with the skills cards
+ * and the hook uses the data from the Store
+ * @returns the new skills filtered and a flag to mark if the filter is empty
+ */
 const useSkillsFilter = () => {
-  const { skills, setSkillsFilters, setInitialSkills } = useAppStore(
+  const { skills, setSkillsFilters, setInitialSkills } = useBoundStore(
     (state) => ({
       skills: state.skillsFiltered,
       setSkillsFilters: state.setSkillsFilters,

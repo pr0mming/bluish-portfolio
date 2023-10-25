@@ -24,7 +24,7 @@ const MobileSidebar = dynamic(
 )
 
 // Store
-import useAppStore from '@src/store/AppStore'
+import useBoundStore from '@src/store/AppStore'
 
 // Modules
 import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
@@ -38,7 +38,7 @@ export interface IMenuProps {
 }
 
 const Menu = ({ lang, menus }: IMenuProps) => {
-  const isOpenSidebar = useAppStore((state) => state.isOpenSidebar)
+  const isOpenSidebar = useBoundStore((state) => state.isOpenSidebar)
 
   return (
     <header className="fixed w-full z-10">

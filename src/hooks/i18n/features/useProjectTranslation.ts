@@ -9,6 +9,7 @@ const useProjectTranslation = (lang: string) => {
 
   const { t } = useClientTranslation(lang, 'projects')
 
+  // I reuse the same object to translate all the necessary keys
   return {
     title: t('title'),
     projects: projects.map((project) => ({

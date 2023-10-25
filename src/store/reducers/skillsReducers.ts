@@ -1,7 +1,6 @@
-import { IAppState, ISkillFilters } from '../state/IAppState'
-
 import { SkillLevelEnum } from '@src/modules/features/pages/me/domain/enums/SkillLevelEnum'
 import MeSkillCatalogEntity from '@src/modules/features/pages/me/domain/MeSkillCatalogEntity'
+import { ISkillFilters, ISkillsSlice } from '../state/ISkillsSlice'
 
 export const setSkillsFilters = (value: ISkillFilters) => ({
   skillsFilters: value
@@ -14,7 +13,7 @@ export const setInitialSkills = (value: MeSkillCatalogEntity[]) => ({
 
 export const addSkillFilter = (
   skillLevel: SkillLevelEnum,
-  state: IAppState
+  state: ISkillsSlice
 ) => ({
   skillsFilters: {
     ...state.skillsFilters,
@@ -47,7 +46,7 @@ export const addSkillFilter = (
 
 export const removeSkillFilter = (
   skillLevel: SkillLevelEnum,
-  state: IAppState
+  state: ISkillsSlice
 ) => ({
   skillsFilters: {
     ...state.skillsFilters,
@@ -67,7 +66,7 @@ export const removeSkillFilter = (
   ]
 })
 
-export const addFavSkillFilter = (state: IAppState) => ({
+export const addFavSkillFilter = (state: ISkillsSlice) => ({
   skillsFilters: {
     ...state.skillsFilters,
     isFavorite: true
@@ -88,7 +87,7 @@ export const addFavSkillFilter = (state: IAppState) => ({
   ]
 })
 
-export const removeFavSkillFilter = (state: IAppState) => ({
+export const removeFavSkillFilter = (state: ISkillsSlice) => ({
   skillsFilters: {
     ...state.skillsFilters,
     isFavorite: false

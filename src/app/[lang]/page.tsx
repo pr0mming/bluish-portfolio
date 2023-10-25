@@ -16,6 +16,7 @@ export async function generateMetadata({
     lang: string
   }
 }): Promise<Metadata> {
+  // Here is translated the page metadata
   const { t } = await getServerTranslation(lang, 'metadata')
 
   return {

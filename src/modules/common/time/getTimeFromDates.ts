@@ -7,6 +7,11 @@ export interface IGetTimeFromDatesParams {
   endDate: Date
 }
 
+/**
+ * This util give the string timespan (in months or years) between two dates
+ * @param params the object with the two target dates
+ * @returns the string timespan
+ */
 const getTimeFromDates = (params: IGetTimeFromDatesParams): string => {
   const { t, startDate, endDate } = params
 

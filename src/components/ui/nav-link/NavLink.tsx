@@ -17,7 +17,7 @@ import {
 } from './NavLink.animations'
 
 // Store
-import useAppStore from '@src/store/AppStore'
+import useBoundStore from '@src/store/AppStore'
 
 export interface INavLinkProps {
   className: string
@@ -28,8 +28,8 @@ export interface INavLinkProps {
 }
 
 const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
-  const activeMenu = useAppStore((state) => state.activeMenu)
-  const setOpenSidebar = useAppStore((state) => state.setOpenSidebar)
+  const activeMenu = useBoundStore((state) => state.activeMenu)
+  const setOpenSidebar = useBoundStore((state) => state.setOpenSidebar)
 
   const isActive = useMemo(() => path === activeMenu, [activeMenu, path])
 

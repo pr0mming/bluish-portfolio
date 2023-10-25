@@ -9,6 +9,7 @@ const useAchievementsTranslation = (lang: string) => {
 
   const { t } = useClientTranslation(lang, 'achievements')
 
+  // I reuse the same object to translate all the necessary keys
   return {
     title: t('title'),
     description: t('description'),

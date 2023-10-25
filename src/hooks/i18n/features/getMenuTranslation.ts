@@ -9,6 +9,7 @@ const getMenuTranslation = async (lang: string) => {
 
   const { t } = await getServerTranslation(lang, 'menu')
 
+  // I reuse the same object to translate all the necessary keys
   return menus.map((menu) => ({
     ...menu,
     text: t(menu.text)

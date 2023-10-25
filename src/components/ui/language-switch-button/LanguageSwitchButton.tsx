@@ -21,7 +21,7 @@ import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuT
 import { slashMotion, textMotion } from './LanguageSwitchButton.animations'
 
 // Store
-import useAppStore from '@src/store/AppStore'
+import useBoundStore from '@src/store/AppStore'
 
 // i18n
 import { languages } from '@src/app/i18n/settings'
@@ -35,7 +35,7 @@ export interface ILanguageSwitchButtonProps {
 
 const LanguageSwitchButton = ({ lang, type }: ILanguageSwitchButtonProps) => {
   const [isActive, setActive] = useState(false)
-  const setOpenSidebar = useAppStore((state) => state.setOpenSidebar)
+  const setOpenSidebar = useBoundStore((state) => state.setOpenSidebar)
 
   const availableLangs = languages.filter((item) => item !== lang)
 
