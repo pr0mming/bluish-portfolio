@@ -1,6 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react'
-import { IHomePageProps } from './HomePage'
-import HomePage from './HomePage'
+import HomePage, { IHomePageProps } from './HomePage'
 import { mockProps } from './HomePage.mock'
 
 export default {
@@ -10,7 +9,7 @@ export default {
 } as Meta<typeof HomePage>
 
 const Story: StoryFn<typeof HomePage> = (arguments_) => (
-  <HomePage {...(arguments_ as IHomePageProps)} />
+  <HomePage {...arguments_} />
 )
 
 export const Component = Story.bind({})

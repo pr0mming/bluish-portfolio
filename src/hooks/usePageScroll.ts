@@ -1,7 +1,7 @@
 'use client'
 
 // React
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 // Store
 import useAppStore from '@src/store/AppStore'
@@ -18,7 +18,7 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
   const activeMenu = useAppStore((state) => state.activeMenu)
   const setActiveMenu = useAppStore((state) => state.setActiveMenu)
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (pageRef.current) {
       const offsetTop = pageRef.current.offsetTop - pxUnitOffset * 2
       const offsetBottom =
@@ -31,7 +31,7 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
 
       setIsScrolled(isInViewport)
     }
-  }
+  }, [pxUnitOffset, setIsScrolled])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -39,7 +39,7 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  })
+  }, [handleScroll])
 
   useEffect(() => {
     if (isScrolled && activeMenu != menuId) {

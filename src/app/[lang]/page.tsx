@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 
 // Components
 import HomePage from '@src/components/pages/home/HomePage'
-import PagesTree from '@src/components/pages/pages-tree/PagesTree'
+import PagesTree from '@src/components/pages-tree/PagesTree'
 
 // i18n
 import { getServerTranslation } from '@src/app/i18n/getServerTranslation'

@@ -34,14 +34,12 @@ const HomeIntroPanel = () => {
           initial="initial"
           animate="animate"
           variants={justMeMotion}
-          style={{ left: '100vw' }}
         >
           <Image
             src="/me/just-me-intro.png"
             alt="Just Me"
             width={373}
             height={581}
-            quality={70}
             priority
           />
         </m.div>

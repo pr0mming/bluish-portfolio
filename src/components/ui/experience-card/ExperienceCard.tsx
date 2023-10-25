@@ -1,5 +1,10 @@
+'use client'
+
 // Next
 import Link from 'next/link'
+
+// React
+import { useRef, useState } from 'react'
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,7 +17,6 @@ import {
 
 // Modules
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
-import { useRef, useState } from 'react'
 
 library.add(faArrowUp, faChevronUp, faChevronDown)
 

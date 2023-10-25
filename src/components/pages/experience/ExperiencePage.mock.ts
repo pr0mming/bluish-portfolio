@@ -1,7 +1,7 @@
 import { fallbackLng } from '@src/app/i18n/settings'
-import { IHomePageProps } from './HomePage'
+import { IExperiencePageProps } from './ExperiencePage'
 
-const base: IHomePageProps = {
+const base: IExperiencePageProps = {
   lang: fallbackLng
 }
 

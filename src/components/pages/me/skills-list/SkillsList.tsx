@@ -1,5 +1,3 @@
-'use client'
-
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {

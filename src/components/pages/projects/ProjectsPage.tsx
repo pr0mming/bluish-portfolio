@@ -1,6 +1,3 @@
-// React
-import { useEffect } from 'react'
-
 // Components
 import ContentWrapper from '@src/components/ui/content-wrapper/ContentWrapper'
 import ProjectCard from '@src/components/ui/project-card/ProjectCard'
@@ -8,7 +5,6 @@ import AchievementsList from './achievements-list/AchievementsList'
 
 // Hooks
 import useProjectTranslation from '@src/hooks/i18n/features/useProjectTranslation'
-import useAppStore from '@src/store/AppStore'
 
 export interface IProjectsPageProps {
   lang: string
@@ -16,17 +12,6 @@ export interface IProjectsPageProps {
 
 const ProjectsPage = ({ lang }: IProjectsPageProps) => {
   const { title, projects } = useProjectTranslation(lang)
-
-  const setActiveMenu = useAppStore((state) => state.setActiveMenu)
-
-  // It's a little workaround to set the menu on the Lazy loaded component
-
-  useEffect(() => {
-    const menuId = 'projects'
-    setActiveMenu(menuId)
-
-    history.replaceState(null, '', `#${menuId}`)
-  }, [setActiveMenu])
 
   return (
     <ContentWrapper type="primary">

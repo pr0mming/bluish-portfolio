@@ -3,20 +3,12 @@
 // Next
 import dynamic from 'next/dynamic'
 
-// React
-import { useEffect } from 'react'
-
 // Components
+import NavigationEvents from '@src/components/abstraction/navigation-events/NavigationEvents'
 import PageWrapper from './PageWrapper'
 
-// Store
-import useAppStore from '@src/store/AppStore'
-
-// Hooks
-import usePageHash from '@src/hooks/usePageHash'
-import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
-
 // i18n
+import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 import { defaultNS } from '@src/app/i18n/settings'
 
 // Lazy
@@ -33,35 +25,25 @@ export interface IPageTreeProps {
 }
 
 const PagesTree = ({ lang }: IPageTreeProps) => {
-  const setActiveMenu = useAppStore((state) => state.setActiveMenu)
-
-  const { menu } = usePageHash()
-
   // Little workaround to solve the changeLanguage call (async)
   // Before the wrong language reaches the other client components :(
   useClientTranslation(lang, defaultNS)
 
-  useEffect(() => {
-    setActiveMenu(menu)
-  }, [menu, setActiveMenu])
-
   return (
     <div className="lg:mt-10">
-      <PageWrapper lang={lang} loadLazy={false} PageFn={MePage} menuId="me" />
+      <NavigationEvents />
 
-      <PageWrapper
-        lang={lang}
-        loadLazy={false}
-        PageFn={ExperiencePage}
-        menuId="experience"
-      />
+      <PageWrapper menuId="me">
+        <MePage lang={lang} />
+      </PageWrapper>
 
-      <PageWrapper
-        lang={lang}
-        loadLazy={true}
-        PageFn={ProjectsPage}
-        menuId="projects"
-      />
+      <PageWrapper menuId="experience">
+        <ExperiencePage lang={lang} />
+      </PageWrapper>
+
+      <PageWrapper menuId="projects">
+        <ProjectsPage lang={lang} />
+      </PageWrapper>
     </div>
   )
 }

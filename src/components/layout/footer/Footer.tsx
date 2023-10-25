@@ -40,7 +40,7 @@ const Footer = ({ legend }: IFooterProps) => {
                   style={{
                     objectFit: 'contain'
                   }}
-                  priority
+                  loading="lazy"
                 />
               </Tooltip>
             </div>

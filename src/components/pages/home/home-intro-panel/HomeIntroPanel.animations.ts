@@ -13,15 +13,15 @@ export const barsMotion = {
 
 export const justMeMotion = {
   initial: {
-    x: 0
+    x: '100vw'
   },
   animate: {
-    x: '-100vw',
+    x: 0,
     transition: {
       type: 'spring',
       bounce: 0.4,
-      duration: 0.8,
-      delay: 0.3
+      duration: 0.7,
+      delay: 0.2
     }
   }
 }

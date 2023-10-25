@@ -1,8 +1,9 @@
 import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
 import { IMobileSidebarProps } from './MobileSidebar'
+import { fallbackLng } from '@src/app/i18n/settings'
 
 const base: IMobileSidebarProps = {
-  lang: 'en',
+  lang: fallbackLng,
   menus: getAllMenus()
 }
 

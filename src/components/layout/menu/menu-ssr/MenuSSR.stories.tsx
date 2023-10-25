@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react'
-import Menu, { IMenuProps } from './Menu'
-import { mockProps } from './Menu.mock'
+import Menu, { IMenuSSRProps } from './MenuSSR'
+import { mockProps } from './MenuSSR.mock'
 
 export default {
   title: 'Design System/Layout/Menu',
@@ -8,12 +8,10 @@ export default {
   argTypes: {}
 } as Meta<typeof Menu>
 
-const Story: StoryFn<typeof Menu> = (arguments_) => (
-  <Menu {...(arguments_ as IMenuProps)} />
-)
+const Story: StoryFn<typeof Menu> = (arguments_) => <Menu {...arguments_} />
 
 export const Component = Story.bind({})
 
 Component.args = {
   ...mockProps.base
-} as IMenuProps
+} as IMenuSSRProps

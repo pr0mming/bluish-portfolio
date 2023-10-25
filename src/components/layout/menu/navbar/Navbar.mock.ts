@@ -1,8 +1,9 @@
 import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
 import { INavbarProps } from './Navbar'
+import { fallbackLng } from '@src/app/i18n/settings'
 
 const base: INavbarProps = {
-  lang: 'en',
+  lang: fallbackLng,
   menus: getAllMenus()
 }
 
