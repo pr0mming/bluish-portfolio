@@ -79,7 +79,7 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
           ? '-translate-x-2 -translate-y-2 shadow-custom-sm shadow-secondary'
           : 'translate-x-0 translate-y-0 shadow-none'
       }`}
-      aria-label={`Filter ${level.title} Level`}
+      aria-label={title}
       onClick={handleButtonClick}
     >
       {children}

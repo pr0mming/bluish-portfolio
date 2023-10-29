@@ -26,6 +26,7 @@ const MePage = dynamic(() => import('@src/components/pages/me/MePage'), {
     />
   )
 })
+
 const ExperiencePage = dynamic(
   () => import('@src/components/pages/experience/ExperiencePage'),
   {
@@ -38,6 +39,7 @@ const ExperiencePage = dynamic(
     )
   }
 )
+
 const ProjectsPage = dynamic(
   () => import('@src/components/pages/projects/ProjectsPage'),
   {
@@ -64,18 +66,27 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
     <div className="lg:mt-10">
       <NavigationEvents />
 
-      <PageWrapper lang={lang} menuId="me" menuOrder={1} PageFn={MePage} />
+      <PageWrapper
+        lang={lang}
+        menuId={menus.find((menu) => menu.type === MenuEnum.ME)?.text ?? ''}
+        menuOrder={1}
+        PageFn={MePage}
+      />
 
       <PageWrapper
         lang={lang}
-        menuId="experience"
+        menuId={
+          menus.find((menu) => menu.type === MenuEnum.EXPERIENCE)?.text ?? ''
+        }
         menuOrder={2}
         PageFn={ExperiencePage}
       />
 
       <PageWrapper
         lang={lang}
-        menuId="projects"
+        menuId={
+          menus.find((menu) => menu.type === MenuEnum.PROJECTS)?.text ?? ''
+        }
         menuOrder={3}
         PageFn={ProjectsPage}
       />
