@@ -56,6 +56,7 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
 
   return (
     <button
+      type="button"
       className={`
       flex
       flex-col

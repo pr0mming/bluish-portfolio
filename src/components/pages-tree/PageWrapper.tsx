@@ -1,16 +1,24 @@
+// React
+import { ComponentType } from 'react'
+
 // Framer
 import { useInView } from 'framer-motion'
 
 // Hooks
 import usePageScroll from '@src/hooks/usePageScroll'
+import usePageLoader from '@src/hooks/usePageLoader'
 
 export interface IPageInViewProps {
+  lang: string
   menuId: string
-  children: React.ReactNode
+  menuOrder: number
+  PageFn: ComponentType<{ lang: string }>
 }
 
-const PageWrapper = ({ menuId, children }: IPageInViewProps) => {
+const PageWrapper = ({ lang, menuId, menuOrder, PageFn }: IPageInViewProps) => {
   const { pageRef } = usePageScroll({ menuId, pxUnitOffset: 56 })
+  const { loadLazyPage } = usePageLoader({ menuOrder })
+
   const pageInView = useInView(pageRef, { once: true })
 
   return (
@@ -30,7 +38,7 @@ const PageWrapper = ({ menuId, children }: IPageInViewProps) => {
         `}
         ref={pageRef}
       >
-        {children}
+        {(pageInView || loadLazyPage) && <PageFn lang={lang} />}
       </div>
     </section>
   )

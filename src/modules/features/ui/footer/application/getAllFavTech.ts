@@ -11,7 +11,7 @@ const getAllFavTech = (): FavTechEntity[] => {
       iconPath: '/icons/nextjs-icon.svg'
     },
     {
-      name: 'Framer',
+      name: 'Framer Motion',
       iconPath: '/icons/framer-icon.svg'
     }
   ]

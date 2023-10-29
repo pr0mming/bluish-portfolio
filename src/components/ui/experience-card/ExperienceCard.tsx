@@ -81,6 +81,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
       <section className="flex flex-col gap-2">
         <div className="flex">
           <button
+            type="button"
             className="flex items-center gap-2"
             onClick={() => setIsDetailsOpen((state) => !state)}
             aria-label="Show details"

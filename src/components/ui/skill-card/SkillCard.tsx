@@ -40,7 +40,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
           w-24
           h-auto
           relative
-        bg-white
+          bg-white
           rounded-xl
           border-2
           border-secondary

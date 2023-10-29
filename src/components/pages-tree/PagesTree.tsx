@@ -5,19 +5,50 @@ import dynamic from 'next/dynamic'
 
 // Components
 import NavigationEvents from '@src/components/abstraction/navigation-events/NavigationEvents'
+import PageLoading from './PageLoading'
 import PageWrapper from './PageWrapper'
+
+// Modules
+import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
+import { MenuEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuEnum'
 
 // i18n
 import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 import { defaultNS } from '@src/app/i18n/settings'
 
 // Lazy
-const MePage = dynamic(() => import('@src/components/pages/me/MePage'))
+const menus = getAllMenus()
+
+const MePage = dynamic(() => import('@src/components/pages/me/MePage'), {
+  loading: () => (
+    <PageLoading
+      menuId={menus.find((menu) => menu.type === MenuEnum.ME)?.text ?? ''}
+    />
+  )
+})
 const ExperiencePage = dynamic(
-  () => import('@src/components/pages/experience/ExperiencePage')
+  () => import('@src/components/pages/experience/ExperiencePage'),
+  {
+    loading: () => (
+      <PageLoading
+        menuId={
+          menus.find((menu) => menu.type === MenuEnum.EXPERIENCE)?.text ?? ''
+        }
+      />
+    )
+  }
 )
 const ProjectsPage = dynamic(
-  () => import('@src/components/pages/projects/ProjectsPage')
+  () => import('@src/components/pages/projects/ProjectsPage'),
+  {
+    loading: () => (
+      <PageLoading
+        menuId={
+          menus.find((menu) => menu.type === MenuEnum.PROJECTS)?.text ?? ''
+        }
+      />
+    )
+  }
 )
 
 export interface IPageTreeProps {
@@ -33,17 +64,21 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
     <div className="lg:mt-10">
       <NavigationEvents />
 
-      <PageWrapper menuId="me">
-        <MePage lang={lang} />
-      </PageWrapper>
+      <PageWrapper lang={lang} menuId="me" menuOrder={1} PageFn={MePage} />
 
-      <PageWrapper menuId="experience">
-        <ExperiencePage lang={lang} />
-      </PageWrapper>
+      <PageWrapper
+        lang={lang}
+        menuId="experience"
+        menuOrder={2}
+        PageFn={ExperiencePage}
+      />
 
-      <PageWrapper menuId="projects">
-        <ProjectsPage lang={lang} />
-      </PageWrapper>
+      <PageWrapper
+        lang={lang}
+        menuId="projects"
+        menuOrder={3}
+        PageFn={ProjectsPage}
+      />
     </div>
   )
 }

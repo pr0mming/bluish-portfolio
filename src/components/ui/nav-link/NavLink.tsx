@@ -28,7 +28,11 @@ export interface INavLinkProps {
 }
 
 const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
+  const pagesLoaded = useBoundStore((state) => state.pagesLoaded)
   const activeMenu = useBoundStore((state) => state.activeMenu)
+  const setActiveMenuToScroll = useBoundStore(
+    (state) => state.setActiveMenuToScroll
+  )
   const setOpenSidebar = useBoundStore((state) => state.setOpenSidebar)
 
   const isActive = useMemo(() => path === activeMenu, [activeMenu, path])
@@ -36,8 +40,11 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
   const handleClick = () => {
     // I decided to use this approach instead the classic Next Link + URL Hash
     // This due I had a weird behaviour after a time doing the scroll navigation
-
-    document.getElementById(path)?.scrollIntoView({ behavior: 'smooth' })
+    if (pagesLoaded.indexOf(path) > -1) {
+      document.getElementById(path)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      setActiveMenuToScroll(path)
+    }
 
     if (type === MenuTypeEnum.SIDEBAR) setOpenSidebar(false)
   }
@@ -49,7 +56,7 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
       whileHover="hover"
       animate={isActive ? 'hover' : 'rest'}
     >
-      <button className={className} onClick={() => handleClick()}>
+      <button type="button" className={className} onClick={() => handleClick()}>
         <m.div className="relative" variants={slashMotion}>
           {children}
         </m.div>
