@@ -20,14 +20,16 @@ export function middleware(req: NextRequest) {
   if (!lng) lng = acceptLanguage.get(req.headers.get('Accept-Language'))
   if (!lng) lng = fallbackLng
 
-  // Redirect if lng in path is not supported
+  const pathname = req.nextUrl.pathname
+  const validRoutePattern = /^\/\w+\/(#[^/]+)?$/
+
+  // Redirect if lng in path is not supported or the route is 404
   if (
-    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !req.nextUrl.pathname.startsWith('/_next')
+    (!languages.some((loc) => pathname.startsWith(`/${loc}`)) ||
+      !validRoutePattern.test(pathname)) &&
+    !pathname.startsWith('/_next')
   ) {
-    return NextResponse.redirect(
-      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
-    )
+    return NextResponse.redirect(new URL(`/${lng}`, req.url))
   }
 
   if (req.headers.has('referer')) {

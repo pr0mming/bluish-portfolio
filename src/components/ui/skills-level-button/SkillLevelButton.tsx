@@ -55,8 +55,8 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
   }
 
   return (
-    <button
-      type="button"
+    <div
+      role="button"
       className={`
       flex
       flex-col
@@ -79,28 +79,26 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
           ? '-translate-x-2 -translate-y-2 shadow-custom-sm shadow-secondary'
           : 'translate-x-0 translate-y-0 shadow-none'
       }`}
-      aria-label={title}
+      aria-labelledby={title}
       onClick={handleButtonClick}
     >
       {children}
-      <span className="flex flex-col gap-2 text-center md:text-left ">
-        <span className="flex gap-1">
+      <div className="flex flex-col gap-2 text-center md:text-left ">
+        <div className="flex gap-1">
           <span className="text-base md:text-xl">{title}</span>
           <Tooltip text={description} className="hidden md:flex">
             <FontAwesomeIcon icon={'circle-info'} size="sm" />
           </Tooltip>
-        </span>
+        </div>
 
-        <span className=" flex flex-col lg:flex-row md:gap-2 text-xs md:text-base font-semibold">
-          {workExperience && (
-            <>
-              <span className="font-bold">{workExperienceLabel}:</span>
-              {workExperience}
-            </>
-          )}
-        </span>
-      </span>
-    </button>
+        {workExperience && (
+          <div className=" flex flex-col lg:flex-row md:gap-2 text-xs md:text-base font-semibold">
+            <span className="font-bold">{workExperienceLabel}:</span>
+            {workExperience}
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 

@@ -8,6 +8,7 @@ import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus
 
 // Store
 import useBoundStore from '@src/store/AppStore'
+import getDefaultMenu from '@src/modules/features/ui/navbar/application/getDefaultMenu'
 
 const NavigationEvents = () => {
   const pagesLoaded = useBoundStore((state) => state.pagesLoaded)
@@ -17,6 +18,7 @@ const NavigationEvents = () => {
     (state) => state.setActiveMenuToScroll
   )
 
+  const defaultMenu = useMemo(() => getDefaultMenu().path, [])
   const pagesOrder = useMemo(() => getAllMenus().map((menu) => menu.text), [])
 
   const isActivePageToLoad = useMemo(
@@ -29,12 +31,14 @@ const NavigationEvents = () => {
   useEffect(() => {
     const menu = window.location.hash.slice(1)
 
-    if (menu) {
+    const isValidMenu = pagesOrder.indexOf(menu) > -1
+
+    if (menu && isValidMenu) {
       setActiveMenuToScroll(menu)
-    } else {
-      setActiveMenu(menu)
     }
-  }, [setActiveMenuToScroll, setActiveMenu])
+
+    setActiveMenu(isValidMenu ? menu : defaultMenu)
+  }, [defaultMenu, pagesOrder, setActiveMenuToScroll, setActiveMenu])
 
   // Here is known if the page has loaded the lazy pages and is scrolled to the pending menu
   useEffect(() => {
