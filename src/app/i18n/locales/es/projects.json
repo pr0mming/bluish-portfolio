@@ -1,7 +1,7 @@
 {
   "title": "Proyectos personales",
   "firstProject.title": "Bomberman (NES)",
-  "firstProject.description": "Un pequeño proyecto universitario, es una copia del clásico Bomberman (NES) (aún <strong>sin terminar</strong>) desarrollado con la ayuda de un super Framework para videojuegos usando el paradigma <strong>basado en prototipos</strong>.",
+  "firstProject.description": "Un pequeño proyecto universitario, es una copia del clásico Bomberman (NES) (aún <strong>sin terminar</strong>) desarrollado con la ayuda de un grandioso Framework para videojuegos usando el paradigma <strong>basado en prototipos</strong>.",
   "secondProject.title": "Torre de Hanoi",
   "secondProject.description": "Otro pequeño proyecto universitario, es una copia del clásico rompecabezas Torre de Hanoi (con la intención de entender el algoritmo) y además simula la solución del juego a partir de <strong>cualquier combinación</strong>.",
   "thirdProject.title": "\"Culebrita\"",
