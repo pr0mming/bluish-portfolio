@@ -78,7 +78,7 @@ const ExperienceCard = ({ experience }: IExperienceCardProps) => {
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
 
-      <section className="flex flex-col gap-2">
+      <section className="flex flex-col gap-2 mb-2">
         <div className="flex">
           <button
             type="button"
