@@ -53,7 +53,7 @@ const SkillCategory = ({ lang, categoryType, skills }: ISkillCategoryProps) => {
       <div className="flex flex-wrap justify-center gap-6 mx-2 lg:mx-20">
         <AnimatePresence>
           {skills.map((skill) => (
-            <SkillCard key={skill.id} skill={skill} />
+            <SkillCard key={skill.id} skill={skill} initialAnimation="hidden" />
           ))}
         </AnimatePresence>
       </div>

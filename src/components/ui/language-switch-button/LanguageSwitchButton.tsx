@@ -72,9 +72,9 @@ const LanguageSwitchButton = ({ lang, type }: ILanguageSwitchButtonProps) => {
           {availableLangs.map((language) => (
             <Link
               key={language}
-              href={`/${language}`}
+              href={`/${language}/`}
               onClick={() => handleLinkClick()}
-              className="transition ease-in-out delay-50 uppercase tracking-widest text-xs lg:text-lg font-medium hover:scale-125 hover:text-white duration-200"
+              className="transition ease-in-out delay-50 duration-200 uppercase tracking-widest text-xs lg:text-lg font-medium hover:scale-125 hover:text-white"
             >
               {language}
             </Link>

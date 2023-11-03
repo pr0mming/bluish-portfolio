@@ -20,13 +20,14 @@ import { backdropMotion, sidebarMotion } from './MobileSidebar.animations'
 
 export interface IMobileSidebarProps {
   lang: string
+  className?: string
   menus: MenuEntity[]
 }
 
-const MobileSidebar = ({ lang, menus }: IMobileSidebarProps) => {
+const MobileSidebar = ({ lang, className, menus }: IMobileSidebarProps) => {
   return (
     <m.section
-      className="block lg:hidden fixed w-screen h-screen bg-accent-900 bg-opacity-40 backdrop-blur-sm"
+      className={`block lg:hidden fixed w-screen h-screen bg-accent-900 bg-opacity-40 backdrop-blur-sm ${className}`}
       initial="closed"
       animate="open"
       exit="closed"

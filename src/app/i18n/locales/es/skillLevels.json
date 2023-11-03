@@ -6,9 +6,9 @@
   "secondLevel.description": "Tengo más experiencia y puedo usar la habilidad sin problemas",
   "secondLevel.workExperience": "2 años",
   "thirdLevel.title": "\"Reposaito\"",
-  "thirdLevel.description": "He trabajado con esta habilidad durante mucho tiempo y me he enfrentado a problemas difíciles.",
+  "thirdLevel.description": "He trabajado con esta habilidad durante mucho tiempo y me he enfrentado a problemas difíciles",
   "thirdLevel.workExperience": "3 años o más",
   "fourthLevel.title": "Mi favorita",
-  "fourthLevel.description": "Es solo una bandera para marcar mis habilidades favoritas independientemente de mi experiencia.",
+  "fourthLevel.description": "Mi habilidad favorita sin considerar mi experiencia",
   "workExperienceLabel": "Experiencia"
 }

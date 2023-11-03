@@ -4,6 +4,7 @@ import { fallbackLng } from '@src/app/i18n/settings'
 
 const base: IMobileSidebarProps = {
   lang: fallbackLng,
+  className: 'lg:block',
   menus: getAllMenus()
 }
 

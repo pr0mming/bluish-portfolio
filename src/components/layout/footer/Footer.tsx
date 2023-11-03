@@ -22,24 +22,17 @@ const Footer = ({ legend }: IFooterProps) => {
       style={{ borderTopWidth: 1 }}
     >
       <div className="flex justify-center items-center flex-wrap">
-        <p className="me-2">{legend}</p>
+        <p className="me-2" dangerouslySetInnerHTML={{ __html: legend }} />
 
-        <div className="flex gap-1 flex-wrap">
+        <div className="flex gap-2 items-center flex-wrap">
           {favTechs.map((tech) => (
-            <div
-              key={tech.name}
-              className="relative"
-              style={{ width: 30, height: 30 }}
-            >
+            <div key={tech.name}>
               <Tooltip text={tech.name}>
                 <Image
                   src={tech.iconPath}
                   alt={tech.name}
-                  sizes="30px"
-                  fill
-                  style={{
-                    objectFit: 'contain'
-                  }}
+                  width={30}
+                  height={30}
                   loading="lazy"
                 />
               </Tooltip>

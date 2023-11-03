@@ -12,12 +12,12 @@ import AchievementEntity from '@src/modules/features/pages/projects/domain/Achie
 
 library.add(faArrowUp)
 
-export interface IProjectCardProps {
+export interface IAchievementCardProps {
   isLast: boolean
   achievement: AchievementEntity
 }
 
-const AchievementCard = ({ isLast, achievement }: IProjectCardProps) => {
+const AchievementCard = ({ isLast, achievement }: IAchievementCardProps) => {
   const { title, description, platformUrl, imgPath } = achievement
 
   return (

@@ -6,9 +6,9 @@
   "secondLevel.description": "I have more experience and I can use the skill without problems",
   "secondLevel.workExperience": "2 years",
   "thirdLevel.title": "\"Reposaito\"",
-  "thirdLevel.description": "I have worked with this skill for a long time and have faced difficult problems",
+  "thirdLevel.description": "I have worked with this skill for a long time and have faced hard problems",
   "thirdLevel.workExperience": "3 years or more",
   "fourthLevel.title": "My Favorite",
-  "fourthLevel.description": "It's just a flag for mark my favorite skills regardless of my expertise",
+  "fourthLevel.description": "My favorite skill regardless of my experience",
   "workExperienceLabel": "Work Exp"
 }

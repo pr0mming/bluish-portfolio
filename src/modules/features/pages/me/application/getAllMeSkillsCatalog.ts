@@ -109,7 +109,7 @@ const getAllMeSkillsCatalog = (): MeSkillCatalogEntity[] => {
           id: 14,
           name: 'Golang',
           imgPath: '/skills/golang.png',
-          level: SkillLevelEnum.CONFIDENT,
+          level: SkillLevelEnum.ENTHUSIAST,
           isFavorite: true
         }
       ]

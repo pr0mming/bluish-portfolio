@@ -28,9 +28,10 @@ library.add(faFaceSmile, faFaceLaughBeam, faFaceKiss, faHeart)
 
 export interface ISkillCardProps {
   skill: MeSkillEntity
+  initialAnimation: string
 }
 
-const SkillCard = ({ skill }: ISkillCardProps) => {
+const SkillCard = ({ skill, initialAnimation }: ISkillCardProps) => {
   const { name, imgPath, level, isFavorite } = skill
   const skillLevelIcon = useMemo(() => resolveIconForSkillLevel(level), [level])
 
@@ -49,7 +50,7 @@ const SkillCard = ({ skill }: ISkillCardProps) => {
           shadow-custom-xs
           shadow-secondary
         `}
-      initial="hidden"
+      initial={initialAnimation}
       animate="show"
       exit="hidden"
       variants={skillCardMotion}

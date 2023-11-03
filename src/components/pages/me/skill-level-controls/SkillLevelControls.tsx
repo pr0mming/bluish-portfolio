@@ -32,7 +32,7 @@ const SkillLevelControls = ({ lang }: ISkillLevelControlsProps) => {
         {t('title')}
       </h3>
       <p
-        className="text-center text-md md:text-xl font-semibold text-secondary mx-5"
+        className="text-center text-md md:text-xl font-medium text-secondary mx-5"
         dangerouslySetInnerHTML={{ __html: t('description') }}
       />
       <section className="grid grid-cols-2 gap-5 w-fit items-stretch mx-auto my-10">

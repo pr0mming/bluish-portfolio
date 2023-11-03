@@ -3,7 +3,7 @@ import MobileSidebar, { IMobileSidebarProps } from './MobileSidebar'
 import { mockProps } from './MobileSidebar.mock'
 
 export default {
-  title: 'Design System/Layout/MobileSidebar',
+  title: 'Design System/Layout/Mobile Sidebar',
   component: MobileSidebar,
   argTypes: {}
 } as Meta<typeof MobileSidebar>
