@@ -21,7 +21,7 @@ const useFloatingIconsAnimation = ({
     animate(
       scope.current,
       { opacity: 1 },
-      { delay: 0.2 + delayOffset / 10, ease: 'easeInOut' }
+      { delay: 0.3 + delayOffset / 100, ease: 'easeInOut' }
     )
     animate(
       scope.current,

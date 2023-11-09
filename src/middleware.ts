@@ -38,10 +38,13 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(`/${lng}/`, req.url))
   }
 
-  console.log('Epa')
+  const parameters = pathname.split('/')
+
+  if (parameters.length >= 3 && !validRoutePattern.test(pathname)) {
+    return NextResponse.redirect(new URL(`/${lng}/`, req.url))
+  }
 
   if (req.headers.has('referer')) {
-    console.log('Cookie')
     const refererUrl = new URL(req.headers.get('referer') ?? '')
     const lngInReferer = languages.find((l) =>
       refererUrl.pathname.startsWith(`/${l}`)
