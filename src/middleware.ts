@@ -30,10 +30,12 @@ export function middleware(req: NextRequest) {
     !languages.some((loc) => pathname.startsWith(`/${loc}`)) ||
     !validRoutePattern.test(pathname)
   ) {
+    console.log('Jouder!')
     return NextResponse.redirect(new URL(`/${lng}/`, req.url))
   }
 
   if (req.headers.has('referer')) {
+    console.log('Cookie')
     const refererUrl = new URL(req.headers.get('referer') ?? '')
     const lngInReferer = languages.find((l) =>
       refererUrl.pathname.startsWith(`/${l}`)
