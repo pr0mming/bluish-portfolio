@@ -51,5 +51,5 @@ export function middleware(req: NextRequest) {
     return response
   }
 
-  //return NextResponse.next()
+  return NextResponse.next()
 }
