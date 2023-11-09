@@ -10,7 +10,7 @@ const getAllSocialMedia = (): SocialMediaEntity[] => {
     {
       id: 2,
       imgPath: '/icons/linkedin-icon.svg',
-      url: 'https://www.linkedin.com/in/julian-bernal-09b393207/'
+      url: 'https://www.linkedin.com/in/pr0mming'
     },
     {
       id: 3,
