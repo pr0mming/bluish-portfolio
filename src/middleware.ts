@@ -30,7 +30,7 @@ export function middleware(req: NextRequest) {
     !languages.some((loc) => pathname.startsWith(`/${loc}`)) ||
     !validRoutePattern.test(pathname)
   ) {
-    return NextResponse.redirect(new URL(`/${lng}`, req.url))
+    return NextResponse.redirect(new URL(`/${lng}/`, req.url))
   }
 
   if (req.headers.has('referer')) {
@@ -43,5 +43,5 @@ export function middleware(req: NextRequest) {
     return response
   }
 
-  return NextResponse.next()
+  //return NextResponse.next()
 }
