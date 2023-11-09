@@ -23,11 +23,12 @@ export function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname
   const validRoutePattern = /^\/\w+\/(#[^/]+)?$/
 
+  console.log(pathname)
+
   // Redirect if lng in path is not supported or the route is 404
   if (
-    (!languages.some((loc) => pathname.startsWith(`/${loc}`)) ||
-      !validRoutePattern.test(pathname)) &&
-    !pathname.startsWith('/_next')
+    !languages.some((loc) => pathname.startsWith(`/${loc}`)) ||
+    !validRoutePattern.test(pathname)
   ) {
     return NextResponse.redirect(new URL(`/${lng}`, req.url))
   }
