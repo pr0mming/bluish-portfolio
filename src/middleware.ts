@@ -21,23 +21,13 @@ export function middleware(req: NextRequest) {
   if (!lng) lng = fallbackLng
 
   const pathname = req.nextUrl.pathname
-  const validRoutePattern = /^\/\w+\/(#[^/]+)?$/
-
-  console.log(
-    pathname,
-    !languages.some((loc) => pathname.startsWith(`/${loc}`)),
-    !validRoutePattern.test(pathname)
-  )
 
   // Redirect if lng in path is not supported or the route is 404
-  if (
-    !languages.some((loc) => pathname.startsWith(`/${loc}`)) ||
-    !validRoutePattern.test(pathname)
-  ) {
-    console.log('Jouder!')
+  if (!languages.some((loc) => pathname.startsWith(`/${loc}`))) {
     return NextResponse.redirect(new URL(`/${lng}/`, req.url))
   }
 
+  const validRoutePattern = /^\/\w+\/(#[^/]+)?$/
   const parameters = pathname.split('/')
 
   if (parameters.length >= 3 && !validRoutePattern.test(pathname)) {
