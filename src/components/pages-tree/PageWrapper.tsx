@@ -1,5 +1,5 @@
 // React
-import { ComponentType } from 'react'
+import { ComponentType, useMemo } from 'react'
 
 // Framer
 import { useInView } from 'framer-motion'
@@ -7,6 +7,9 @@ import { useInView } from 'framer-motion'
 // Hooks
 import usePageScroll from '@src/hooks/usePageScroll'
 import usePageLoader from '@src/hooks/usePageLoader'
+
+// Modules
+import { MenuEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuEnum'
 
 export interface IPageInViewProps {
   lang: string
@@ -20,6 +23,10 @@ const PageWrapper = ({ lang, menuId, menuOrder, PageFn }: IPageInViewProps) => {
   const { loadLazyPage } = usePageLoader({ menuOrder })
 
   const pageInView = useInView(pageRef, { once: true })
+  const loadPage = useMemo(
+    () => menuOrder === MenuEnum.ME || pageInView || loadLazyPage,
+    [menuOrder, pageInView, loadLazyPage]
+  )
 
   return (
     <section
@@ -38,7 +45,7 @@ const PageWrapper = ({ lang, menuId, menuOrder, PageFn }: IPageInViewProps) => {
         `}
         ref={pageRef}
       >
-        {(pageInView || loadLazyPage) && <PageFn lang={lang} />}
+        {loadPage && <PageFn lang={lang} />}
       </div>
     </section>
   )

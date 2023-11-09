@@ -36,7 +36,7 @@ const createAppSlice: StateCreator<
   isOpenSidebar: false,
   activeMenu: '',
   activeMenuToScroll: '',
-  pagesLoaded: ['home', 'me'],
+  pagesLoaded: ['home'],
   setOpenSidebar: (value) => set(() => setOpenSidebar(value)),
   setActiveMenu: (value) => set(() => setActiveMenu(value)),
   setActiveMenuToScroll: (value) => set(() => setActiveMenuToScroll(value)),
