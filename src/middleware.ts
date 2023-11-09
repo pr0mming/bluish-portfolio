@@ -23,7 +23,11 @@ export function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname
   const validRoutePattern = /^\/\w+\/(#[^/]+)?$/
 
-  console.log(pathname, languages, !validRoutePattern.test(pathname))
+  console.log(
+    pathname,
+    !languages.some((loc) => pathname.startsWith(`/${loc}`)),
+    !validRoutePattern.test(pathname)
+  )
 
   // Redirect if lng in path is not supported or the route is 404
   if (
@@ -33,6 +37,8 @@ export function middleware(req: NextRequest) {
     console.log('Jouder!')
     return NextResponse.redirect(new URL(`/${lng}/`, req.url))
   }
+
+  console.log('Epa')
 
   if (req.headers.has('referer')) {
     console.log('Cookie')
