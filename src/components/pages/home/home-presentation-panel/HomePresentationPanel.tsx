@@ -15,8 +15,8 @@ const HomePresentationPanel = ({ lang }: IHomePresentationPanelProps) => {
   const { t } = useClientTranslation(lang, 'home')
 
   return (
-    <header className="flex flex-col mx-5 md:ms-20 mt-5">
-      <hgroup className="text-center lg:text-start">
+    <header className="flex flex-col mb-0 mt-20 mx-10">
+      <hgroup className="text-center">
         <span className="text-white font-semibold text-3xl my-2">
           {t('title.welcome')}
         </span>
@@ -37,7 +37,7 @@ const HomePresentationPanel = ({ lang }: IHomePresentationPanelProps) => {
         </h2>
       </hgroup>
       <p
-        className="text-white font-normal text-lg lg:text-2xl text-center lg:text-start  mt-2"
+        className="text-white font-normal text-lg lg:text-2xl text-center mt-2"
         dangerouslySetInnerHTML={{ __html: t('title.p') }}
       />
 

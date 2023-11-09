@@ -14,23 +14,18 @@ const getAllMeFeatures = (): MeFeaturesEntity[] => {
     },
     {
       id: 3,
-      icon: 'fa-solid fa-brain',
+      icon: 'fa-solid fa-user-group',
       textKey: 'me.thirdFeature'
     },
     {
       id: 4,
-      icon: 'fa-solid fa-book',
+      icon: 'fa-solid fa-brain',
       textKey: 'me.fourthFeature'
     },
     {
       id: 5,
-      icon: 'fa-solid fa-dumbbell',
+      icon: 'fa-solid fa-fire',
       textKey: 'me.fifthFeature'
-    },
-    {
-      id: 6,
-      icon: 'fa-solid fa-guitar',
-      textKey: 'me.sixthFeature'
     }
   ]
 }

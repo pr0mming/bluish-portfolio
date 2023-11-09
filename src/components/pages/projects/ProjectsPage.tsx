@@ -15,7 +15,7 @@ const ProjectsPage = ({ lang }: IProjectsPageProps) => {
 
   return (
     <ContentWrapper type="primary">
-      <section className="mb-10">
+      <section className="mb-20">
         <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-10">
           {title}
         </h3>

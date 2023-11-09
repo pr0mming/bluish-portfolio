@@ -16,7 +16,11 @@ const usePageLoader = ({ menuOrder }: IUsePageLoader) => {
 
   const [loadLazyPage, setLoadLazyPage] = useState(false)
 
-  const pagesOrder = useMemo(() => getAllMenus().map((menu) => menu.text), [])
+  const allMenus = useMemo(() => getAllMenus(), [])
+  const pagesOrder = useMemo(
+    () => allMenus.map((menu) => menu.text),
+    [allMenus]
+  )
   const activeMenuOrder = useMemo(
     () => pagesOrder.indexOf(activeMenuToScroll),
     [pagesOrder, activeMenuToScroll]

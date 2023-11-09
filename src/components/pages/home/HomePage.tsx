@@ -3,21 +3,19 @@
 // Next
 import dynamic from 'next/dynamic'
 
-// React
-import { useRef } from 'react'
-
-// Framer
-import { useInView } from 'framer-motion'
-
 // Components
 import HomePresentationPanel from './home-presentation-panel/HomePresentationPanel'
 
 // Hooks
 import usePageScroll from '@src/hooks/usePageScroll'
 
+import { useRef } from 'react'
+import { useInView } from 'framer-motion'
+
 // Lazy
-const HomeIntroPanel = dynamic(
-  () => import('./home-intro-panel/HomeIntroPanel')
+const HomeBarsPanel = dynamic(() => import('./home-intro-panel/HomeBarsPanel'))
+const HomeIconsPanel = dynamic(
+  () => import('@src/components/ui/home-icons-panel/HomeIconsPanel')
 )
 
 export interface IHomePageProps {
@@ -25,8 +23,8 @@ export interface IHomePageProps {
 }
 
 const HomePage = ({ lang }: IHomePageProps) => {
-  const homeIntroPanelRef = useRef(null)
-  const pageInView = useInView(homeIntroPanelRef, { once: true })
+  const homeRef = useRef(null)
+  const isHomeInView = useInView(homeRef, { once: true })
 
   const { pageRef } = usePageScroll({
     menuId: 'home',
@@ -34,20 +32,23 @@ const HomePage = ({ lang }: IHomePageProps) => {
   })
 
   return (
-    <section
-      ref={pageRef}
-      className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20"
-      style={{ marginTop: 130, marginBottom: 250 }}
-    >
-      <HomePresentationPanel lang={lang} />
-
+    <div ref={pageRef}>
       <section
-        ref={homeIntroPanelRef}
-        className="w-auto lg:w-[550px] lg:h-[500px]"
+        ref={homeRef}
+        className="flex flex-col justify-center items-center gap-10"
+        style={{ marginTop: 130 }}
       >
-        {pageInView && <HomeIntroPanel />}
+        <HomePresentationPanel lang={lang} />
+
+        <section className="w-auto h-auto lg:h-[150px]">
+          {isHomeInView && <HomeIconsPanel />}
+        </section>
       </section>
-    </section>
+
+      <section style={{ height: 216 }}>
+        {isHomeInView && <HomeBarsPanel />}
+      </section>
+    </div>
   )
 }
 

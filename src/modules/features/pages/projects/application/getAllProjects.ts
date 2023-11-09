@@ -9,7 +9,7 @@ const getAllProjects = (): ProjectEntity[] => {
       skills: ['HTML', 'CSS', 'Phaser.js', 'JavaScript'],
       imgPath: '/projects/01.png',
       repoUrl: 'https://github.com/pr0mming/Bomberman-JS',
-      demoUrl: 'https://www.youtube.com/watch?v=W5vcOb7laG0'
+      demoUrl: 'https://bomberman.pr0mming.dev'
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const getAllProjects = (): ProjectEntity[] => {
       skills: ['HTML', 'CSS', 'Phaser.js', 'JavaScript'],
       imgPath: '/projects/02.png',
       repoUrl: 'https://github.com/pr0mming/TowerHanoi',
-      demoUrl: 'https://www.youtube.com/watch?v=4g_4nM0yOCE'
+      demoUrl: 'https://hanoi-tower.pr0mming.dev'
     },
     {
       id: 3,

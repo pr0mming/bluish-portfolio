@@ -39,9 +39,9 @@ const createAppSlice: StateCreator<
   pagesLoaded: ['home'],
   setOpenSidebar: (value) => set(() => setOpenSidebar(value)),
   setActiveMenu: (value) => set(() => setActiveMenu(value)),
+  setActiveMenuToScroll: (value) => set(() => setActiveMenuToScroll(value)),
   addPageLoaded: (value) => set((state) => addPageLoaded(value, state)),
-  removePageLoaded: (value) => set((state) => removePageLoaded(value, state)),
-  setActiveMenuToScroll: (value) => set(() => setActiveMenuToScroll(value))
+  removePageLoaded: (value) => set((state) => removePageLoaded(value, state))
 })
 
 const createSkillsSlice: StateCreator<

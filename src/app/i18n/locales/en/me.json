@@ -1,9 +1,8 @@
 {
   "title": "About Me",
   "me.firstFeature": "I'm from <strong>Cali, Colombia</strong>",
-  "me.secondFeature": "Over <strong>5 years</strong> of experience working as <strong>Full Stack Developer</strong>",
-  "me.thirdFeature": "I love the <strong>coding challenges</strong> on competitive platforms",
-  "me.fourthFeature": "The <strong>Stephen King</strong>'s horror books are my favorites",
-  "me.fifthFeature": "Not everything is <strong>code</strong>, <strong>exercise with weights</strong> is part of my routine",
-  "me.sixthFeature": "Oftentimes I like to learn songs to play in <strong>Fingerstyle</strong>"
+  "me.secondFeature": "More than <strong>5 years of experience</strong> working in the <strong>Software Development</strong> Industry",
+  "me.thirdFeature": "I have had different experiences in projects as <strong>Full Stack Developer</strong>",
+  "me.fourthFeature": "I love <strong>code challenges</strong> on competitive platforms",
+  "me.fifthFeature": "Part of my free time is dedicated to developing small <strong>personal projects</strong>"
 }

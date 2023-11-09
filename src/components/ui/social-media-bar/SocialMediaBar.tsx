@@ -16,11 +16,7 @@ const SocialMediaBar = ({ type }: ISocialMediaBarProps) => {
   const iconSize = isDefault ? 50 : 30
 
   return (
-    <section
-      className={`flex flex-nowrap ${
-        isDefault ? 'justify-center lg:justify-start' : 'justify-center'
-      } gap-5`}
-    >
+    <section className={`flex flex-nowrap justify-center gap-5`}>
       {socialMedia.map((item) => (
         <Link
           key={item.id}

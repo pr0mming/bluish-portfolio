@@ -51,7 +51,7 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
 
   return (
     <m.div
-      className="relative"
+      className="relative mr-5"
       initial={isActive ? 'hover' : 'rest'}
       whileHover="hover"
       animate={isActive ? 'hover' : 'rest'}

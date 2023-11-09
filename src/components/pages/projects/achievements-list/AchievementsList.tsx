@@ -13,10 +13,10 @@ const AchievementsList = ({ lang }: IAchievementsListProps) => {
 
   return (
     <section>
-      <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-10">
+      <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-5">
         {title}
       </h3>
-      <p className="text-center text-md md:text-xl font-semibold text-secondary">
+      <p className="text-center text-md md:text-xl font-medium text-secondary">
         {description}
       </p>
 
