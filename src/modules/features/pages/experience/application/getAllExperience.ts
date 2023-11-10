@@ -7,7 +7,7 @@ const getAllExperience = (): ExperienceEntity[][] => {
         id: 1,
         position: 'sixthExperience.position',
         companyName: 'Sofka Technologies',
-        companyWebsite: 'https://sofka.com.co',
+        companyWebsite: 'https://www.sofka.com.co',
         time: {
           startDate: new Date(2023, 0, 1),
           endDate: new Date()
