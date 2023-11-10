@@ -23,7 +23,10 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     manifest: '/manifest.json',
-    themeColor: '#00334e'
+    themeColor: '#00334e',
+    verification: {
+      google: process.env.GOOGLE_VERIFICATION_ID
+    }
   }
 }
 
