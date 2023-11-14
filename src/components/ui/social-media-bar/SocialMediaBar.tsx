@@ -37,7 +37,7 @@ const SocialMediaBar = ({ type }: ISocialMediaBarProps) => {
         >
           <Image
             src={item.imgPath}
-            alt="Social Media Item"
+            alt={item.name}
             width={iconSize}
             height={iconSize}
             className={`${isDefault ? 'rounded-full' : ''}`}

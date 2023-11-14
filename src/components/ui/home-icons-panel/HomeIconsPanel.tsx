@@ -14,11 +14,7 @@ const HomeIconsPanel = () => {
     <section className="relative flex flex-wrap justify-center items-center gap-6">
       {icons.map((icon, i) => (
         <Fragment key={icon.iconPath}>
-          <FloatingIcon
-            iconPath={icon.iconPath}
-            durationAnimation={icon.durationAnimation}
-            delayOffset={i}
-          />
+          <FloatingIcon icon={icon} delayOffset={i} />
         </Fragment>
       ))}
     </section>
