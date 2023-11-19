@@ -24,6 +24,14 @@ export async function generateMetadata({
     description: t('description'),
     manifest: '/manifest.json',
     themeColor: '#00334e',
+    keywords: [
+      'pr0mming',
+      'Julián Bernal',
+      'Full Stack Developer',
+      'Software Engineer',
+      'Hack The Box',
+      'Hacker Rank'
+    ],
     alternates: {
       canonical: '/',
       languages: languages.reduce(
