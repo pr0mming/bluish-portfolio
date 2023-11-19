@@ -24,6 +24,16 @@ export async function generateMetadata({
     description: t('description'),
     manifest: '/manifest.json',
     themeColor: '#00334e',
+    alternates: {
+      canonical: '/',
+      languages: languages.reduce(
+        (acc, lang) => {
+          acc[lang] = `/${lang}`
+          return acc
+        },
+        {} as Record<string, string>
+      )
+    },
     verification: {
       google: process.env.GOOGLE_VERIFICATION_ID
     }
