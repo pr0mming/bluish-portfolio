@@ -33,7 +33,7 @@ export async function generateMetadata({
       'Hacker Rank'
     ],
     alternates: {
-      canonical: '/',
+      canonical: process.env.PORTFOLIO_DOMAIN ?? '',
       languages: languages.reduce(
         (acc, lang) => {
           acc[lang] = `${process.env.PORTFOLIO_DOMAIN}/${lang}`
