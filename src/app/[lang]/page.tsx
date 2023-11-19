@@ -36,7 +36,7 @@ export async function generateMetadata({
       canonical: '/',
       languages: languages.reduce(
         (acc, lang) => {
-          acc[lang] = `/${lang}`
+          acc[lang] = `${process.env.PORTFOLIO_DOMAIN}/${lang}`
           return acc
         },
         {} as Record<string, string>
