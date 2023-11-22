@@ -1,3 +1,6 @@
+// Next
+import dynamic from 'next/dynamic'
+
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconName, library } from '@fortawesome/fontawesome-svg-core'
@@ -9,7 +12,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 // Components
-import SkillLevelButton from '@src/components/ui/skills-level-button/SkillLevelButton'
+const SkillLevelButton = dynamic(
+  () => import('@src/components/ui/skills-level-button/SkillLevelButton')
+)
 
 // Hooks
 import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'

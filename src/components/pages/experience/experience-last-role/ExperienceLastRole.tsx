@@ -1,3 +1,6 @@
+// Next
+import dynamic from 'next/dynamic'
+
 // Components
 import ExperienceCard from '@src/components/ui/experience-card/ExperienceCard'
 
@@ -5,8 +8,14 @@ import ExperienceCard from '@src/components/ui/experience-card/ExperienceCard'
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
 
 // Components
-import ExperienceCurvedArrow from '@src/components/ui/experience-curved-arrow/ExperienceCurvedArrow'
-import ExperienceTwistedArrow from '@src/components/ui/experience-twisted-arrow/ExperienceTwistedArrow'
+const ExperienceCurvedArrow = dynamic(
+  () =>
+    import('@src/components/ui/experience-curved-arrow/ExperienceCurvedArrow')
+)
+const ExperienceTwistedArrow = dynamic(
+  () =>
+    import('@src/components/ui/experience-twisted-arrow/ExperienceTwistedArrow')
+)
 
 export interface IExperienceLastRoleProps {
   type: 'left' | 'right'

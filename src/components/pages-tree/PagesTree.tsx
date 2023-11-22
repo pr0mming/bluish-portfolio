@@ -1,11 +1,7 @@
 'use client'
 
-// Next
-import dynamic from 'next/dynamic'
-
 // Components
 import NavigationEvents from '@src/components/abstraction/navigation-events/NavigationEvents'
-import PageLoading from './PageLoading'
 import PageWrapper from './PageWrapper'
 
 // Modules
@@ -16,48 +12,18 @@ import { MenuEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuEnum'
 import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 import { defaultNS } from '@src/app/i18n/settings'
 
-// Lazy
-const menus = getAllMenus()
-
-const MePage = dynamic(() => import('@src/components/pages/me/MePage'), {
-  loading: () => (
-    <PageLoading
-      menuId={menus.find((menu) => menu.type === MenuEnum.ME)?.text ?? ''}
-    />
-  )
-})
-
-const ExperiencePage = dynamic(
-  () => import('@src/components/pages/experience/ExperiencePage'),
-  {
-    loading: () => (
-      <PageLoading
-        menuId={
-          menus.find((menu) => menu.type === MenuEnum.EXPERIENCE)?.text ?? ''
-        }
-      />
-    )
-  }
-)
-
-const ProjectsPage = dynamic(
-  () => import('@src/components/pages/projects/ProjectsPage'),
-  {
-    loading: () => (
-      <PageLoading
-        menuId={
-          menus.find((menu) => menu.type === MenuEnum.PROJECTS)?.text ?? ''
-        }
-      />
-    )
-  }
-)
+// Components
+import MePage from '@src/components/pages/me/MePage'
+import ExperiencePage from '@src/components/pages/experience/ExperiencePage'
+import ProjectsPage from '@src/components/pages/projects/ProjectsPage'
 
 export interface IPageTreeProps {
   lang: string
 }
 
 const PagesTree = ({ lang }: IPageTreeProps) => {
+  const menus = getAllMenus()
+
   // Little workaround to solve the changeLanguage call (async)
   // Before the wrong language reaches the other client components :(
   useClientTranslation(lang, defaultNS)
@@ -67,29 +33,26 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
       <NavigationEvents />
 
       <PageWrapper
-        lang={lang}
         menuId={menus.find((menu) => menu.type === MenuEnum.ME)?.text ?? ''}
-        menuOrder={1}
-        PageFn={MePage}
-      />
+      >
+        <MePage lang={lang} />
+      </PageWrapper>
 
       <PageWrapper
-        lang={lang}
         menuId={
           menus.find((menu) => menu.type === MenuEnum.EXPERIENCE)?.text ?? ''
         }
-        menuOrder={2}
-        PageFn={ExperiencePage}
-      />
+      >
+        <ExperiencePage lang={lang} />
+      </PageWrapper>
 
       <PageWrapper
-        lang={lang}
         menuId={
           menus.find((menu) => menu.type === MenuEnum.PROJECTS)?.text ?? ''
         }
-        menuOrder={3}
-        PageFn={ProjectsPage}
-      />
+      >
+        <ProjectsPage lang={lang} />
+      </PageWrapper>
     </div>
   )
 }

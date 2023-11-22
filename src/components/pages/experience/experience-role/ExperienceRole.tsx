@@ -1,3 +1,6 @@
+// Next
+import dynamic from 'next/dynamic'
+
 // Components
 import ExperienceCard from '@src/components/ui/experience-card/ExperienceCard'
 
@@ -5,7 +8,9 @@ import ExperienceCard from '@src/components/ui/experience-card/ExperienceCard'
 import ExperienceEntity from '@src/modules/features/pages/experience/domain/ExperienceEntity'
 
 // Components
-import ExperienceMiniArrow from '@src/components/ui/experience-mini-arrow/ExperienceMiniArrow'
+const ExperienceMiniArrow = dynamic(
+  () => import('@src/components/ui/experience-mini-arrow/ExperienceMiniArrow')
+)
 
 export interface IExperienceRoleProps {
   type: 'left' | 'right'

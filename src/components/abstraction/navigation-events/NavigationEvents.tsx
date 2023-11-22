@@ -5,49 +5,38 @@ import { useEffect, useMemo } from 'react'
 
 // Modules
 import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
+import getDefaultMenu from '@src/modules/features/ui/navbar/application/getDefaultMenu'
 
 // Store
 import useBoundStore from '@src/store/AppStore'
-import getDefaultMenu from '@src/modules/features/ui/navbar/application/getDefaultMenu'
 
 const NavigationEvents = () => {
-  const pagesLoaded = useBoundStore((state) => state.pagesLoaded)
   const setActiveMenu = useBoundStore((state) => state.setActiveMenu)
-  const activeMenuToScroll = useBoundStore((state) => state.activeMenuToScroll)
-  const setActiveMenuToScroll = useBoundStore(
-    (state) => state.setActiveMenuToScroll
-  )
 
   const defaultMenu = useMemo(() => getDefaultMenu().path, [])
   const pagesOrder = useMemo(() => getAllMenus().map((menu) => menu.text), [])
 
-  const isActivePageToLoad = useMemo(
-    () => pagesOrder.indexOf(activeMenuToScroll) === pagesLoaded.length - 1,
-    [pagesOrder, pagesLoaded, activeMenuToScroll]
-  )
-
   // This effect is to capture the menu from the URL in the first time (if the user enters by the URL directly)
-  // If there is a pending menu to scroll is loaded all the components before it and then is scrolled
+  // And if there is a pending menu to scroll it'll be done, the timeout is to give time to the lazy components to load
   useEffect(() => {
     const menu = window.location.hash.slice(1)
 
     const isValidMenu = pagesOrder.indexOf(menu) > -1
 
     if (menu && isValidMenu) {
-      setActiveMenuToScroll(menu)
+      const pageScrollTimer = setTimeout(
+        () =>
+          document.getElementById(menu)?.scrollIntoView({ behavior: 'smooth' }),
+        650
+      )
+
+      return () => {
+        if (pageScrollTimer) clearTimeout(pageScrollTimer)
+      }
     }
 
     setActiveMenu(isValidMenu ? menu : defaultMenu)
-  }, [defaultMenu, pagesOrder, setActiveMenuToScroll, setActiveMenu])
-
-  // Here is known if the page has loaded the lazy pages and is scrolled to the pending menu
-  useEffect(() => {
-    if (isActivePageToLoad) {
-      document
-        .getElementById(activeMenuToScroll)
-        ?.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, [activeMenuToScroll, isActivePageToLoad])
+  }, [defaultMenu, pagesOrder, setActiveMenu])
 
   return null
 }

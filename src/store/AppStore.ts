@@ -20,11 +20,6 @@ import {
 
 // Zustand
 import { StateCreator } from 'zustand/vanilla'
-import {
-  addPageLoaded,
-  removePageLoaded,
-  setActiveMenuToScroll
-} from './reducers/pageReducers'
 
 // I decided to separate the state using the Slices approach
 const createAppSlice: StateCreator<
@@ -35,13 +30,8 @@ const createAppSlice: StateCreator<
 > = (set) => ({
   isOpenSidebar: false,
   activeMenu: '',
-  activeMenuToScroll: '',
-  pagesLoaded: ['home'],
   setOpenSidebar: (value) => set(() => setOpenSidebar(value)),
-  setActiveMenu: (value) => set(() => setActiveMenu(value)),
-  setActiveMenuToScroll: (value) => set(() => setActiveMenuToScroll(value)),
-  addPageLoaded: (value) => set((state) => addPageLoaded(value, state)),
-  removePageLoaded: (value) => set((state) => removePageLoaded(value, state))
+  setActiveMenu: (value) => set(() => setActiveMenu(value))
 })
 
 const createSkillsSlice: StateCreator<
