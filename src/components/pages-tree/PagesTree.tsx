@@ -1,5 +1,8 @@
 'use client'
 
+// Next
+import dynamic from 'next/dynamic'
+
 // Components
 import NavigationEvents from '@src/components/abstraction/navigation-events/NavigationEvents'
 import PageWrapper from './PageWrapper'
@@ -12,10 +15,16 @@ import { MenuEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuEnum'
 import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
 import { defaultNS } from '@src/app/i18n/settings'
 
-// Components
-import MePage from '@src/components/pages/me/MePage'
-import ExperiencePage from '@src/components/pages/experience/ExperiencePage'
-import ProjectsPage from '@src/components/pages/projects/ProjectsPage'
+// Lazy Components
+const MePage = dynamic(() => import('@src/components/pages/me/MePage'))
+
+const ExperiencePage = dynamic(
+  () => import('@src/components/pages/experience/ExperiencePage')
+)
+
+const ProjectsPage = dynamic(
+  () => import('@src/components/pages/projects/ProjectsPage')
+)
 
 export interface IPageTreeProps {
   lang: string
@@ -33,26 +42,26 @@ const PagesTree = ({ lang }: IPageTreeProps) => {
       <NavigationEvents />
 
       <PageWrapper
+        lang={lang}
         menuId={menus.find((menu) => menu.type === MenuEnum.ME)?.text ?? ''}
-      >
-        <MePage lang={lang} />
-      </PageWrapper>
+        PageFn={MePage}
+      />
 
       <PageWrapper
+        lang={lang}
         menuId={
           menus.find((menu) => menu.type === MenuEnum.EXPERIENCE)?.text ?? ''
         }
-      >
-        <ExperiencePage lang={lang} />
-      </PageWrapper>
+        PageFn={ExperiencePage}
+      />
 
       <PageWrapper
+        lang={lang}
         menuId={
           menus.find((menu) => menu.type === MenuEnum.PROJECTS)?.text ?? ''
         }
-      >
-        <ProjectsPage lang={lang} />
-      </PageWrapper>
+        PageFn={ProjectsPage}
+      />
     </div>
   )
 }

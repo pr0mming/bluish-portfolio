@@ -1,3 +1,6 @@
+// React
+import { ComponentType } from 'react'
+
 // Framer
 import { useInView } from 'framer-motion'
 
@@ -5,11 +8,12 @@ import { useInView } from 'framer-motion'
 import usePageScroll from '@src/hooks/usePageScroll'
 
 export interface IPageInViewProps {
+  lang: string
   menuId: string
-  children: React.ReactNode
+  PageFn: ComponentType<{ lang: string }>
 }
 
-const PageWrapper = ({ menuId, children }: IPageInViewProps) => {
+const PageWrapper = ({ lang, menuId, PageFn }: IPageInViewProps) => {
   const { pageRef } = usePageScroll({ menuId, pxUnitOffset: 56 })
   const pageInView = useInView(pageRef, { once: true })
 
@@ -30,7 +34,7 @@ const PageWrapper = ({ menuId, children }: IPageInViewProps) => {
         `}
         ref={pageRef}
       >
-        {children}
+        <PageFn lang={lang} />
       </div>
     </section>
   )

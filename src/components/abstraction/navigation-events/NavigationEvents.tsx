@@ -17,17 +17,21 @@ const NavigationEvents = () => {
   const pagesOrder = useMemo(() => getAllMenus().map((menu) => menu.text), [])
 
   // This effect is to capture the menu from the URL in the first time (if the user enters by the URL directly)
-  // And if there is a pending menu to scroll it'll be done, the timeout is to give time to the lazy components to load
+  // And if there is a pending menu to scroll it'll be done
   useEffect(() => {
     const menu = window.location.hash.slice(1)
 
     const isValidMenu = pagesOrder.indexOf(menu) > -1
 
     if (menu && isValidMenu) {
+      // Due the pages is lazy loaded (in the SSR too) it takes a time to render
+      // This timeout is a workaround to scroll to the loaded page (from the URL)
       const pageScrollTimer = setTimeout(
         () =>
-          document.getElementById(menu)?.scrollIntoView({ behavior: 'smooth' }),
-        650
+          document
+            .getElementById(menu)
+            ?.scrollIntoView({ block: 'start', behavior: 'smooth' }),
+        850
       )
 
       return () => {
