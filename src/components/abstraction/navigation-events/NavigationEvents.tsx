@@ -31,7 +31,7 @@ const NavigationEvents = () => {
           document
             .getElementById(menu)
             ?.scrollIntoView({ block: 'start', behavior: 'smooth' }),
-        850
+        950
       )
 
       return () => {
