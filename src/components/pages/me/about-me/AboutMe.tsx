@@ -44,7 +44,7 @@ const AboutMe = ({ lang }: IAboutMeProps) => {
             height={525}
           />
         </div>
-        <ul className="list-none me-10">
+        <ul className="list-none mx-2 md:mx-6">
           {meFeatures.map((feature) => (
             <li
               key={feature.id}

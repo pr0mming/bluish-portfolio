@@ -33,16 +33,14 @@ export async function generateMetadata({
       'Hacker Rank'
     ],
     alternates: {
-      canonical: `${process.env.PORTFOLIO_DOMAIN}/${fallbackLng}`,
-      languages: languages
-        .filter((lang) => lang != fallbackLng)
-        .reduce(
-          (acc, lang) => {
-            acc[lang] = `${process.env.PORTFOLIO_DOMAIN}/${lang}`
-            return acc
-          },
-          {} as Record<string, string>
-        )
+      canonical: `${process.env.PORTFOLIO_DOMAIN}/${lang}`,
+      languages: languages.reduce(
+        (acc, lang) => {
+          acc[lang] = `${process.env.PORTFOLIO_DOMAIN}/${lang}`
+          return acc
+        },
+        {} as Record<string, string>
+      )
     },
     verification: {
       google: process.env.GOOGLE_VERIFICATION_ID

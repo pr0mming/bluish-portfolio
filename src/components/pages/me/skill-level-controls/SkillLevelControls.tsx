@@ -32,7 +32,7 @@ const SkillLevelControls = ({ lang }: ISkillLevelControlsProps) => {
   const { t } = useClientTranslation(lang, 'skills')
 
   return (
-    <article className="mt-20">
+    <article className="mt-10">
       <h3 className="text-secondary text-2xl lg:text-3xl text-center font-bold tracking-wider uppercase mb-10">
         {t('title')}
       </h3>
