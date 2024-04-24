@@ -19,27 +19,26 @@ const NavigationEvents = () => {
   // This effect is to capture the menu from the URL in the first time (if the user enters by the URL directly)
   // And if there is a pending menu to scroll it'll be done
   useEffect(() => {
-    const menu = window.location.hash.slice(1)
+    const pageScrollTimer = setTimeout(() => {
+      const menu = window.location.hash.slice(1)
 
-    const isValidMenu = pagesOrder.indexOf(menu) > -1
+      const isValidMenu = pagesOrder.indexOf(menu) > -1
 
-    if (menu && isValidMenu) {
       // Due the pages is lazy loaded (in the SSR too) it takes a time to render
       // This timeout is a workaround to scroll to the loaded page (from the URL)
-      const pageScrollTimer = setTimeout(
-        () =>
-          document
-            .getElementById(menu)
-            ?.scrollIntoView({ block: 'start', behavior: 'smooth' }),
-        950
-      )
-
-      return () => {
-        if (pageScrollTimer) clearTimeout(pageScrollTimer)
+      if (menu && isValidMenu) {
+        document
+          .getElementById(menu)
+          ?.scrollIntoView({ block: 'start', behavior: 'smooth' })
       }
-    }
 
-    setActiveMenu(isValidMenu ? menu : defaultMenu)
+      // Update UI
+      setActiveMenu(isValidMenu ? menu : defaultMenu)
+    }, 950)
+
+    return () => {
+      if (pageScrollTimer) clearTimeout(pageScrollTimer)
+    }
   }, [defaultMenu, pagesOrder, setActiveMenu])
 
   return null

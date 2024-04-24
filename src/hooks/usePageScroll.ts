@@ -54,7 +54,7 @@ const usePageScroll = ({ menuId, pxUnitOffset }: IUsePageScroll) => {
     if (isScrolled && activeMenu != menuId) {
       setActiveMenu(menuId)
 
-      // This changes the URL (it avoids add a new history record in the user's browser
+      // This changes the URL (it avoids add a new history record in the user's browser)
       history.replaceState(null, '', `#${menuId}`)
     }
   }, [isScrolled, activeMenu, menuId, setActiveMenu])
