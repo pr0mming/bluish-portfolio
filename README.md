@@ -1,3 +1,5 @@
+![screenshot](https://github.com/pr0mming/bluish-portfolio/assets/20020612/c2ce6b95-bd88-4413-91fc-617d89ea8209)
+
 ## Bluish Portfolio
 
 This is the first version of my portfolio, I decided to mix different blue colors in my Figma project and the result was pretty cool.
