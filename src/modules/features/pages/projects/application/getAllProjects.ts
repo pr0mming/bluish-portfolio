@@ -18,7 +18,7 @@ const getAllProjects = (): ProjectEntity[] => {
       skills: ['HTML', 'CSS', 'Phaser.js', 'JavaScript'],
       imgPath: '/projects/02.png',
       repoUrl: 'https://github.com/pr0mming/TowerHanoi',
-      demoUrl: 'https://hanoi-tower.pr0mming.dev'
+      demoUrl: 'https://towerhanoi.pr0mming.dev'
     },
     {
       id: 3,

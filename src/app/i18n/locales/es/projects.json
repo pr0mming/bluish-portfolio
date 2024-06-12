@@ -1,9 +1,9 @@
 {
   "title": "Proyectos personales",
-  "firstProject.title": "Bomberman (NES)",
-  "firstProject.description": "Un pequeño proyecto universitario, es una copia del clásico Bomberman (NES) desarrollado con la ayuda de un grandioso Framework para videojuegos usando el paradigma <strong>basado en prototipos</strong>.",
+  "firstProject.title": "Bomberman JS",
+  "firstProject.description": "Un pequeño proyecto personal, es una copia del clásico Bomberman (NES) desarrollado con la ayuda de <strong>Phaser</strong>, un grandioso framework para crear videojuegos, explorando el paradigma <strong>POO</strong>.",
   "secondProject.title": "Torre de Hanoi",
-  "secondProject.description": "Otro pequeño proyecto universitario, es una copia del clásico rompecabezas Torre de Hanoi (con la intención de entender el algoritmo) y además simula la solución del juego a partir de <strong>cualquier combinación</strong>.",
+  "secondProject.description": "Un pequeño proyecto universitario, es una copia del clásico rompecabezas Torre de Hanoi (con la intención de entender el algoritmo) y además simula la solución del juego a partir de <strong>cualquier combinación</strong>.",
   "thirdProject.title": "\"Culebrita\"",
   "thirdProject.description": "Fue mi primer proyecto de videojuego inspirado en el clásico videojuego de Nokia, creé esta versión con la ayuda del popular kit de herramientas <strong>Java Swing</strong> en <strong>NetBeans</strong>, implementando una <strong>lógica de matriz 2D</strong> para darle vida al juego.",
   "fourthProject.title": "Juego de la vida de Conway",

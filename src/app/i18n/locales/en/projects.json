@@ -1,9 +1,9 @@
 {
   "title": "Personal Projects",
-  "firstProject.title": "Bomberman (NES)",
-  "firstProject.description": "A little universitarian project, it's a copy of the classic Bomberman (NES) developed with the help of an awesome JS Framework for videogames using the <strong>prototype-based</strong> programming.",
+  "firstProject.title": "Bomberman JS",
+  "firstProject.description": "A little side project, it's a copy of the classic Bomberman (NES) developed with the help of <strong>Phaser</strong>, an awesome framework to create videogames, exploring the <strong>OOP</strong> paradigm.",
   "secondProject.title": "Tower of Hanoi",
-  "secondProject.description": "Another little universitarian project, it's a copy of the classic puzzle Tower of Hanoi (with the intention to understand the algorithm) and also simulates the solution of the game from <strong>any combination</strong>.",
+  "secondProject.description": "A little universitarian project, it's a copy of the classic puzzle Tower of Hanoi (with the intention to understand the algorithm) and also simulates the solution of the game from <strong>any combination</strong>.",
   "thirdProject.title": "Snake",
   "thirdProject.description": "It was my first videogame project inspired in the classic videogame from Nokia, I created this version with the help of the widely-used  <strong>Java Swing</strong> toolkit on <strong>NetBeans</strong>, implementing a <strong>2D array logic</strong> to bring the game to life.",
   "fourthProject.title": "Conway's Game of Life",
