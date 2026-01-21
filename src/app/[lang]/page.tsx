@@ -1,29 +1,28 @@
 // Next
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 
 // Components
 import HomePage from '@src/components/pages/home/HomePage'
 import PagesTree from '@src/components/pages-tree/PagesTree'
 
 // i18n
-import { getServerTranslation } from '@src/app/i18n/getServerTranslation'
+import { useTranslation } from '@src/app/i18n/useTranslation'
 import { fallbackLng, languages } from '../i18n/settings'
 
 export async function generateMetadata({
-  params: { lang }
+  params
 }: {
-  params: {
-    lang: string
-  }
+  params: Promise<{ lang: string }>
 }): Promise<Metadata> {
+  const { lang } = await params
+
   // Here is translated the page metadata
-  const { t } = await getServerTranslation(lang, 'metadata')
+  const { t } = await useTranslation(lang, 'metadata')
 
   return {
     title: t('title'),
     description: t('description'),
     manifest: '/manifest.json',
-    themeColor: '#00334e',
     keywords: [
       'pr0mming',
       'Julián Bernal',
@@ -47,13 +46,17 @@ export async function generateMetadata({
   }
 }
 
+export const viewport: Viewport = {
+  themeColor: '#00334e'
+}
+
 export default async function App({
-  params: { lang }
+  params
 }: {
-  params: {
-    lang: string
-  }
+  params: Promise<{ lang: string }>
 }) {
+  let { lang } = await params
+
   if (languages.indexOf(lang) < 0) lang = fallbackLng
 
   return (

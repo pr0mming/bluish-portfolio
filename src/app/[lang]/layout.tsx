@@ -1,5 +1,5 @@
 // Styles
-import '../../styles/globals.css'
+import '@src/app/globals.css'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
 // Next
@@ -31,13 +31,13 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params: { lang }
+  params
 }: {
   children: React.ReactNode
-  params: {
-    lang: string
-  }
+  params: Promise<{ lang: string }>
 }) {
+  const { lang } = await params
+
   return (
     <html lang={lang} dir={dir(lang)}>
       <body

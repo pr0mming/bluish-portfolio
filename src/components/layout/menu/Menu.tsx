@@ -4,7 +4,7 @@
 import dynamic from 'next/dynamic'
 
 // Framer
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from "motion/react"
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'

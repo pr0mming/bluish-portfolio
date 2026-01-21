@@ -71,6 +71,7 @@ const SkillLevelButton = ({ level, children }: ISkillLevelButtonProps) => {
       border-2
       border-secondary
       p-5
+      cursor-pointer
       text-secondary
       font-bold
       transition ease-in-out duration-200

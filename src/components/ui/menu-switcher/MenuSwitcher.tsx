@@ -1,7 +1,7 @@
 'use client'
 
 // Framer
-import { m } from 'framer-motion'
+import * as m from "motion/react-m"
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

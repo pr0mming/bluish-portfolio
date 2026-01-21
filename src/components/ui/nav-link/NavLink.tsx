@@ -4,7 +4,7 @@
 import { useMemo } from 'react'
 
 // Framer
-import { m } from 'framer-motion'
+import * as m from "motion/react-m"
 
 // Modules
 import { MenuTypeEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuTypeEnum'
@@ -49,7 +49,10 @@ const NavLink = ({ className, text, path, type, children }: INavLinkProps) => {
       animate={isActive ? 'hover' : 'rest'}
     >
       <button type="button" className={className} onClick={() => handleClick()}>
-        <m.div className="relative" variants={slashMotion}>
+        <m.div
+          className="relative"
+          variants={slashMotion}
+        >
           {children}
         </m.div>
         <m.h1

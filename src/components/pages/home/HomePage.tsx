@@ -10,10 +10,10 @@ import HomePresentationPanel from './home-presentation-panel/HomePresentationPan
 import usePageScroll from '@src/hooks/usePageScroll'
 
 import { useRef } from 'react'
-import { useInView } from 'framer-motion'
+import { useInView } from "motion/react"
 
 // Lazy
-const HomeBarsPanel = dynamic(() => import('./home-intro-panel/HomeBarsPanel'))
+const HomeBarsPanel = dynamic(() => import('@src/components/pages/home/home-intro-panel/HomeBarsPanel'))
 const HomeIconsPanel = dynamic(
   () => import('@src/components/ui/home-icons-panel/HomeIconsPanel')
 )

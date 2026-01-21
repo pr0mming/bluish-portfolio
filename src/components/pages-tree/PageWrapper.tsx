@@ -2,7 +2,7 @@
 import { ComponentType } from 'react'
 
 // Framer
-import { useInView } from 'framer-motion'
+import { useInView } from "motion/react"
 
 // Hooks
 import usePageScroll from '@src/hooks/usePageScroll'

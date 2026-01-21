@@ -1,4 +1,6 @@
-export const sidebarMotion = {
+import { Variants } from "motion"
+
+export const sidebarMotion: Variants = {
   open: {
     x: '-50vw',
     transition: {
@@ -15,7 +17,7 @@ export const sidebarMotion = {
   }
 }
 
-export const backdropMotion = {
+export const backdropMotion: Variants = {
   open: {
     opacity: 1,
     transition: {

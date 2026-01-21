@@ -1,44 +1,19 @@
-import path from 'path'
-import type { StorybookConfig } from '@storybook/nextjs'
+import type { StorybookConfig } from '@storybook/nextjs-vite';
 
 const config: StorybookConfig = {
-  stories: ['../**/*.stories.@(js|jsx|ts|tsx)'],
-  staticDirs: ['../public'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-onboarding',
-    '@storybook/addon-interactions',
-    'storybook-react-i18next',
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        postCss: {
-          implementation: require.resolve('postcss')
-        }
-      }
-    }
+  "stories": [
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
-  framework: {
-    name: '@storybook/nextjs',
-    options: {}
-  },
-  docs: {
-    autodocs: 'tag'
-  },
-  core: {
-    builder: '@storybook/builder-webpack5'
-  },
-  webpackFinal: async (config) => {
-    if (config.resolve)
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@src': path.resolve(__dirname, '../src'),
-        '@root': path.resolve(__dirname, '../')
-      }
-
-    return config
-  }
-}
-
-export default config
+  "addons": [
+    "@chromatic-com/storybook",
+    "@storybook/addon-vitest",
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs"
+  ],
+  "framework": "@storybook/nextjs-vite",
+  "staticDirs": [
+    "..\\public"
+  ]
+};
+export default config;

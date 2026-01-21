@@ -2,13 +2,13 @@ import dynamic from 'next/dynamic'
 
 // Components
 import ContentWrapper from '@src/components/ui/content-wrapper/ContentWrapper'
-import SkillLevelControls from './skill-level-controls/SkillLevelControls'
+import SkillLevelControls from '@src/components/pages/me/skill-level-controls/SkillLevelControls'
 
 // About
 import AboutMe from './about-me/AboutMe'
 
 // Lazy
-const SkillsList = dynamic(() => import('./skills-list/SkillsList'))
+const SkillsList = dynamic(() => import('@src/components/pages/me/skills-list/SkillsList'))
 
 export interface IMePageProps {
   lang: string

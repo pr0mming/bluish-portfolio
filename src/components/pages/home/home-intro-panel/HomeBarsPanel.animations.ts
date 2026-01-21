@@ -1,4 +1,6 @@
-export const barsMotion = {
+import { Variants } from "motion";
+
+export const barsMotion: Variants = {
   initial: {
     x: '100vw'
   },

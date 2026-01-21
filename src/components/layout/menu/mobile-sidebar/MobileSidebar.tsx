@@ -1,5 +1,5 @@
 // Framer
-import { m } from 'framer-motion'
+import * as m from "motion/react-m"
 
 // Modules
 import MenuEntity from '@src/modules/features/ui/navbar/domain/entities/MenuEntity'
@@ -27,7 +27,7 @@ export interface IMobileSidebarProps {
 const MobileSidebar = ({ lang, className, menus }: IMobileSidebarProps) => {
   return (
     <m.section
-      className={`block lg:hidden fixed w-screen h-screen bg-accent-900 bg-opacity-40 backdrop-blur-sm ${className}`}
+      className={`block lg:hidden fixed w-screen h-screen bg-accent-900/40 backdrop-blur-sm ${className}`}
       initial="closed"
       animate="open"
       exit="closed"
@@ -39,7 +39,7 @@ const MobileSidebar = ({ lang, className, menus }: IMobileSidebarProps) => {
         style={{ width: 230, borderInlineStartWidth: '1px' }}
       >
         <div className="flex flex-nowrap items-center justify-between mx-auto py-5 px-0 md:px-1">
-          <div className="shrink-1 w-full">
+          <div className="shrink w-full">
             <ul className="flex flex-col gap-10 p-4">
               {menus.map((menu) => (
                 <li key={menu.type}>

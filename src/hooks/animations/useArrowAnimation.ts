@@ -4,7 +4,7 @@
 import { useEffect } from 'react'
 
 // Framer
-import { useAnimate, useInView } from 'framer-motion'
+import { useAnimate, useInView } from 'motion/react'
 
 const useArrowAnimation = () => {
   const [scope, animate] = useAnimate()

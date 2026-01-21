@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 // Framer
-import { m } from 'framer-motion'
+import * as m from "motion/react-m"
 
 // FontAwesome
 import { library } from '@fortawesome/fontawesome-svg-core'

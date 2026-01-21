@@ -1,7 +1,7 @@
 'use client'
 
 // Framer
-import { m } from 'framer-motion'
+import * as m from "motion/react-m"
 
 // Hooks
 import useArrowAnimation from '@src/hooks/animations/useArrowAnimation'

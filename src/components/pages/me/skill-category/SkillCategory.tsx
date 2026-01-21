@@ -4,7 +4,7 @@
 import { useMemo } from 'react'
 
 // Framer
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from "motion/react"
 
 // FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

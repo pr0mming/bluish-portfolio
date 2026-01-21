@@ -4,7 +4,7 @@
 
 // React
 import { useEffect, useState } from 'react'
-import { useCookies } from 'react-cookie'
+import { getCookie, setCookie } from 'cookies-next'
 
 // i18next
 import i18next from 'i18next'
@@ -49,14 +49,12 @@ i18next
  * @returns the react-i18next instance ready to use
  */
 export function useClientTranslation(lang: string, ns: string) {
-  const [cookies, setCookie] = useCookies([cookieName])
-  const { t, i18n } = useTranslationOrg(ns)
+  const cookies = getCookie(cookieName)
+  const { t, i18n } = useTranslationOrg(ns, { lng: lang })
 
-  if (i18n.resolvedLanguage !== lang) {
+  if (i18n.resolvedLanguage !== lang && runsOnServerSide) {
     i18n.changeLanguage(lang)
-  }
 
-  if (runsOnServerSide) {
     return { t }
   }
 
@@ -75,10 +73,10 @@ export function useClientTranslation(lang: string, ns: string) {
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    if (cookies.i18next !== lang) {
+    if (cookies !== lang) {
       setCookie(cookieName, lang, { path: '/' })
     }
-  }, [lang, cookies.i18next, setCookie])
+  }, [lang, cookies, setCookie])
 
   return { t }
 }

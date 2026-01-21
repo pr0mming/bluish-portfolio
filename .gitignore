@@ -44,3 +44,6 @@ next-env.d.ts
 
 # temporal, just for testing!
 src/stories
+
+*storybook.log
+storybook-static

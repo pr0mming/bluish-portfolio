@@ -1,5 +1,5 @@
 // i18n
-import { getServerTranslation } from '@src/app/i18n/getServerTranslation'
+import { useTranslation } from '@src/app/i18n/useTranslation'
 
 // Components
 import Footer from '../Footer'
@@ -9,7 +9,7 @@ export interface IFooterSSRProps {
 }
 
 const FooterSSR = async ({ lang }: IFooterSSRProps) => {
-  const { t } = await getServerTranslation(lang, 'footer')
+  const { t } = await useTranslation(lang, 'footer')
 
   return <Footer legend={t('legend')} />
 }

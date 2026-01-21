@@ -1,4 +1,6 @@
-export const textMotion = {
+import { Variants } from "motion"
+
+export const textMotion: Variants = {
   rest: {
     x: 15,
     color: '#E8E8E8',
@@ -23,7 +25,7 @@ export const textMotion = {
   }
 }
 
-export const slashMotion = {
+export const slashMotion: Variants = {
   rest: {
     transition: {
       delay: 0.1,

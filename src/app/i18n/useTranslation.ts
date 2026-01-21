@@ -29,13 +29,14 @@ const initI18next = async (lang: string, ns: string) => {
  * @param options is the object to use in the i18next configuration
  * @returns the react-i18next instance ready to use
  */
-export async function getServerTranslation(
+export async function useTranslation(
   lang: string,
   ns: string,
   // eslint-disable-next-line
   options: any = {}
 ) {
   const i18nextInstance = await initI18next(lang, ns)
+
   return {
     t: i18nextInstance.getFixedT(
       lang,

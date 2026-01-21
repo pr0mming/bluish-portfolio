@@ -1,6 +1,6 @@
 'use client'
 
-import { LazyMotion } from 'framer-motion'
+import { LazyMotion, MotionConfig } from "motion/react"
 
 const loadFeatures = () => import('./features').then((res) => res.default)
 
@@ -10,7 +10,9 @@ export interface IFramerWrapperProps {
 
 // This approach is just for loading the necessary animations from Framer Motion and reduce the bundle size
 const FramerWrapper = ({ children }: IFramerWrapperProps) => {
-  return <LazyMotion features={loadFeatures}>{children}</LazyMotion>
+  return <MotionConfig reducedMotion={process.env.NODE_ENV === "production" ? "user" : "never"}>
+    <LazyMotion features={loadFeatures}>{children}</LazyMotion>
+  </MotionConfig>
 }
 
 export default FramerWrapper

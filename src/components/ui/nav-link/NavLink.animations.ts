@@ -1,4 +1,6 @@
-export const textMotion = {
+import { Transition, Variants } from "motion"
+
+export const textMotion: Variants = {
   rest: {
     x: 0,
     color: '#E8E8E8',
@@ -21,7 +23,7 @@ export const textMotion = {
   }
 }
 
-export const slashMotion = {
+export const slashMotion: Variants = {
   rest: {
     x: -10,
     opacity: 0,
@@ -43,7 +45,7 @@ export const slashMotion = {
   }
 }
 
-export const selectedLinkMotion = {
+export const selectedLinkMotion: Transition = {
   type: 'spring',
   bounce: 0.25,
   stiffness: 130,

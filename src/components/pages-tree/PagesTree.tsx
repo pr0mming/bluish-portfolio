@@ -11,10 +11,6 @@ import PageWrapper from './PageWrapper'
 import getAllMenus from '@src/modules/features/ui/navbar/application/getAllMenus'
 import { MenuEnum } from '@src/modules/features/ui/navbar/domain/enums/MenuEnum'
 
-// i18n
-import { useClientTranslation } from '@src/hooks/i18n/useClientTranslation'
-import { defaultNS } from '@src/app/i18n/settings'
-
 // Lazy Components
 const MePage = dynamic(() => import('@src/components/pages/me/MePage'))
 
@@ -32,10 +28,6 @@ export interface IPageTreeProps {
 
 const PagesTree = ({ lang }: IPageTreeProps) => {
   const menus = getAllMenus()
-
-  // Little workaround to solve the changeLanguage call (async)
-  // Before the wrong language reaches the other client components :(
-  useClientTranslation(lang, defaultNS)
 
   return (
     <div className="lg:mt-10">

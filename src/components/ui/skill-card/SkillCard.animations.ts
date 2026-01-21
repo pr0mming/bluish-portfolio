@@ -1,4 +1,6 @@
-export const skillCardMotion = {
+import { Variants } from "motion";
+
+export const skillCardMotion: Variants = {
   show: {
     opacity: 1,
     transition: {
